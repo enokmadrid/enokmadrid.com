@@ -2,7 +2,7 @@
     <nav class="navbar navbar-expand-lg py-3 {% if isDark %}navbar-dark{% endif %} {% if islight %}navbar-light{% endif %} {% if isSplit %}navbar-split{% endif %} z-10 fixed-top">
         <div class="container">
             <a class="navbar-brand text-uppercase" href="#">
-                <img class="logo" src="assets/images/enok-logo.svg" alt="Enok Madrid Logo">
+                <img class="logo" src="~/assets/images/enok-logo.svg" alt="Enok Madrid Logo">
                 Enok Madrid
             </a>
 

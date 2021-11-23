@@ -12,7 +12,13 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://use.typekit.net/qnk6szk.css' },
+      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' }
+    ],
+    script: [
+      { hid: 'typekit', src:'https://use.typekit.net/llv3zsc.js', defer: true },
+      { hid: 'fontawesome', src:'https://kit.fontawesome.com/52c8510a26.js', crossorigin:'anonymous', defer: true }
     ]
   },
 
@@ -30,8 +36,6 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
     '@nuxtjs/style-resources'
   ],
 
