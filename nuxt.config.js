@@ -41,6 +41,12 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/content'
+  ],
+
+  // Nuxt Content: https://content.nuxtjs.org
+  content: [
+    // Nuxt Content Options
   ],
 
   styleResources: {
