@@ -1,11 +1,14 @@
 <template>
-  <Navigation/>
+  <div>
+    <SectionHero />
+    <SectionWhatIDo />
+    <SectionProcessCTA />
+    <SectionSubdivision />
+    <SectionProjects />
+  </div>
 </template>
 
 <script>
 export default {
-  mounted() {
-    console.log(this.$content);
-  }
 }
 </script>

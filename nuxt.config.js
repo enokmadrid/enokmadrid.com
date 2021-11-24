@@ -24,7 +24,8 @@ export default {
 
   // Global CSS: https://go.nuxtjs.dev/config-css
   css: [
-    '~/assets/scss/main.scss'
+    '~/assets/scss/main.scss',
+    '~/assets/scss/font-icons.scss'
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
@@ -51,7 +52,7 @@ export default {
 
   styleResources: {
     scss: [
-      'assets/scss/_variables.scss'
+      'assets/scss/_custom.scss'
     ]
   },
 
