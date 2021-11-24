@@ -15,7 +15,7 @@
                     <NuxtLink class="nav-link" to="/about">About</NuxtLink>
                 </li>
                 <li class="nav-item">
-                    <NuxtLink class="nav-link" to="/process">Process</NuxtLink>
+                    <NuxtLink class="nav-link" to="/process/discovery">Process</NuxtLink>
                 </li>
                 <li class="nav-item">
                     <NuxtLink class="nav-link" to="/learn">Training</NuxtLink>
