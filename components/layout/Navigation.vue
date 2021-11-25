@@ -9,16 +9,16 @@
             <div class="navbar-collapse collapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <NuxtLink class="nav-link" to="/">Work</NuxtLink>
+                    <NuxtLink to="/" exact class="nav-link">Work</NuxtLink>
                 </li>
                 <li class="nav-item">
-                    <NuxtLink class="nav-link" to="/about">About</NuxtLink>
+                    <NuxtLink to="/about" class="nav-link">About</NuxtLink>
                 </li>
                 <li class="nav-item">
-                    <NuxtLink class="nav-link" to="/process/discovery">Process</NuxtLink>
+                    <NuxtLink to="/process" class="nav-link">Process</NuxtLink>
                 </li>
                 <li class="nav-item">
-                    <NuxtLink class="nav-link" to="/learn">Training</NuxtLink>
+                    <NuxtLink to="/learn" class="nav-link">Training</NuxtLink>
                 </li>
             </ul>
             

@@ -1,5 +1,6 @@
 <template>
   <div>
+    <LayoutNavigationMobile />
     <LayoutNavigation />
     <Nuxt />
     <LayoutFooter />

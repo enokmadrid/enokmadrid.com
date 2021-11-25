@@ -187,28 +187,32 @@
   .flex {
     flex: 1;
   }
-  .card {
-    padding: 35px;
-    border: none;
+}
+.card {
+  padding: 35px;
+  border: none;
 
-    img {
-      height: 65px;
-      margin: 30px auto;
-    }
+  img, .icon {
+    height: 65px;
+    margin: 30px auto;
+  }
 
-    .card-subtitle, p {
-      text-align: center;
-      display: block;
-      max-width: 30ch;
-      margin: 0 auto;
-    }
+  .icon {
+    font-size: 70px;
+  }
 
-    .card-subtitle {
-      font-size: 24px;
-      font-weight: 600;
-      padding-bottom: 15px;
+  .card-subtitle, p {
+    text-align: center;
+    display: block;
+    max-width: 30ch;
+    margin: 0 auto;
+  }
 
-    }
+  .card-subtitle {
+    font-size: 24px;
+    font-weight: 600;
+    padding-bottom: 15px;
+
   }
 }
 

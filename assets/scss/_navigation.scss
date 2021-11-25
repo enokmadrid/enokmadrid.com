@@ -54,7 +54,7 @@
         }
       }
 
-      &.active {
+      &.nuxt-link-active {
         background: $brand-black;
         border-bottom: solid 6px $secondary;
         color: $secondary;
@@ -149,7 +149,7 @@
         text-decoration: none;
         color: $brand-action-secondary;
       }
-      &.active {
+      &.nuxt-link-active {
         background: $brand-black;
         border-bottom: solid 6px $secondary;
         color: $secondary;
@@ -242,47 +242,6 @@
     }
   }
 
-  // .navigation {
-  //   -webkit-box-flex: 4;
-  //   -ms-flex: 4;
-  //   flex: 4;
-
-  //   ul {
-  //     display: -webkit-box;
-  //     display: -webkit-flex;
-  //     display: -ms-flexbox;
-  //     display: flex;
-
-  //     height: inherit;
-  //     justify-content: center;
-
-  //     li {
-  //       display: -webkit-box;
-  //       display: -webkit-flex;
-  //       display: -ms-flexbox;
-  //       display: flex;
-
-  //       text-align: center;
-  //       align-items: center;
-  //       justify-content: center;
-  //       font-family: "proxima-nova";
-  //       font-size: 1rem;
-  //       margin: 0 30px;
-
-  //       a {
-  //         color: $brand-black-light;
-
-  //         &:hover {
-  //           -webkit-transition: all 0.5s ease;
-  //           transition: all 0.5s ease;
-  //           color: $brand-secondary;
-  //           text-decoration: none;
-  //         }
-  //       }
-  //     }
-  //   }
-  // }
-
   .logo {
     img {
       width: 30px;
@@ -329,6 +288,16 @@
 }
 .navbar-offset {
   transform: translateY(-71px);
+}
+
+.navbar-dark {
+  .nav-link {
+    &.nuxt-link-active,
+    &.nuxt-link-exact-active { 
+      color: white; 
+    }
+  }
+  
 }
 
 // LOGO CONTAINER
