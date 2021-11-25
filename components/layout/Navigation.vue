@@ -1,5 +1,9 @@
 <template>
-    <nav class="navbar navbar-expand-lg py-3 navbar-dark {% if islight %}navbar-light{% endif %} navbar-split z-10 fixed-top">
+    <nav class="navbar navbar-expand-lg py-3 z-10 fixed-top" 
+        :class="[
+            isLight ? 'navbar-light' : 'navbar-dark',
+            isSplit ? 'navbar-split' : ''
+        ]">
         <div class="container">
             <NuxtLink class="navbar-brand text-uppercase" to="/">
                 <img class="logo" src="~/assets/images/enok-logo.svg" alt="Enok Madrid Logo">
@@ -33,5 +37,50 @@
 </template>
 
 <script>
+export default {
+    data: () => ({
+        isLight: false,
+        isSplit: true
+    }),
+    mounted: () => {
+        console.log("Hello! from Nav");
+        let scrollPos = 0;
+        let nav = document.querySelector('.navbar.fixed-top');
+        
 
+        if (nav.classList.contains("navbar-dark")) {
+            let height = nav.clientHeight;
+            window.addEventListener('scroll', () => { 
+                console.log(height);
+                if (window.scrollY > height) {
+                    nav.classList.remove("navbar-dark");
+                    nav.classList.add("navbar-light");
+                } 
+                if (window.scrollY < height)  {
+                    nav.classList.remove("navbar-light");
+                    nav.classList.add("navbar-dark");
+                }
+        //         if ((document.body.getBoundingClientRect()).top > scrollPos)
+        //             nav.classList.remove("navbar-offset");
+        //         else
+        //             nav.classList.add("navbar-offset");
+        //     scrollPos = (document.body.getBoundingClientRect()).top
+            });
+        }
+    },
+    watch: {
+        '$route' () {
+            if (this.$route.path === '/') {
+                this. isLight = false;
+                this. isSplit = true;
+            } else if (this.$route.path === '/about'){
+                this. isLight = true;
+                this. isSplit = false;
+            } else {
+                this. isLight = false;
+                this. isSplit = false;
+            }
+        }
+    }
+}
 </script>

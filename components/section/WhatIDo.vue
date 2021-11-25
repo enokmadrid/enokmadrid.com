@@ -11,7 +11,7 @@
                     <div class="col-md-4 col-sm-6 col-xs-12">
                         <div class="card">
                             <img src="~/assets/images/svg/illustration-icons/user-testing.svg" alt="">
-                            <b class="card-subtitle">Research & Testing</b>
+                            <b class="card-subtitle">Research &amp; Testing</b>
                             <p>
                                 I dive into the unknown to understand what motivates people and what their pain points are.
                             </p>
