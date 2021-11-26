@@ -43,11 +43,10 @@ export default {
         isSplit: true
     }),
     mounted: () => {
-        console.log("Hello! from Nav");
         let scrollPos = 0;
         let nav = document.querySelector('.navbar.fixed-top');
         
-
+        // Switch between dark and light navbar on scroll
         if (nav.classList.contains("navbar-dark")) {
             let height = nav.clientHeight;
             window.addEventListener('scroll', () => { 
@@ -60,11 +59,13 @@ export default {
                     nav.classList.remove("navbar-light");
                     nav.classList.add("navbar-dark");
                 }
-        //         if ((document.body.getBoundingClientRect()).top > scrollPos)
-        //             nav.classList.remove("navbar-offset");
-        //         else
-        //             nav.classList.add("navbar-offset");
-        //     scrollPos = (document.body.getBoundingClientRect()).top
+                // hide and show navbar on scroll
+                if ((document.body.getBoundingClientRect()).top > scrollPos) {
+                    nav.classList.remove("navbar-offset");
+                } else {
+                    nav.classList.add("navbar-offset");
+                }
+                scrollPos = (document.body.getBoundingClientRect()).top
             });
         }
     },
