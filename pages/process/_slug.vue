@@ -41,7 +41,7 @@
 <script>
 export default {
     data: () => ({
-        step: []
+        step: {}
     }),
     async created() {
         this.step = await this.$content(`steps/${this.$route.params.slug}`).fetch();

@@ -1,14 +1,14 @@
 ---
-id: 1
-imageHero: "bg-av.jpg"
-imageScreen: "screens-av.png"
-title: "AnthemVault"
+id: 4
+imageHero: "bg-ablv.jpg"
+imageScreen: "screens-ablv.png"
+title: "Airbrush Las Vegas"
 description: "There was a monumental change in the Gold Industry. I was brought on to clean up their identity and bring a world class look to a world class company."
 challenge: "Many clients simply couldn't make gold purchases from their mobile phone and on desktop..."
 solution: "It was time for a complete ovehaul..."
-roles: ['User Research','Branding','UI/UX','Front-end Developer']
+roles: ['Branding','Graphic Design', 'UX']
 tech: ['Axure RP', 'Sketch', 'InvisionApp', 'Foundation CSS Framework', 'Assembla', 'Github']
-url: "https://www.anthemvault.com"
-client: "Anthem Vault Inc"
-clientDescription: "Anthemvault, an online service for anyone to start owning real gold and silver at affordable prices."
+url: "https://www.airbrushlasvegas.com"
+client: "Airbrush Las Vegas"
+clientDescription: "Airbrush Las Vegas, a beautiful retail store specializing in all airbrush apparel and events located in the heart of Vegas."
 ---
