@@ -18,7 +18,7 @@ Then UXPin came to the rescue, because it was the one tool where I could design,
 
 With the design system in place, developers were able to use this for the development of each individual component for this new website."
 roles: ['User Research', 'UI/UX', 'Design System', 'Documentation', 'Front-End Devlopment']
-tech: ['Pen & Paper', 'UXPin', 'Sketch', 'InvisionApp', 'HTML/CSS', 'Jira', 'Github']
+tools: ['Pen & Paper', 'UXPin', 'Sketch', 'InvisionApp', 'HTML/CSS', 'Jira', 'Github']
 url: "https://www.caesars.com/las-vegas"
 client: "Caesars Entertainment Corporation"
 clientDescription: "Employed at Caesars Entertainment Corporation as the UX Developer."
@@ -41,7 +41,9 @@ We would get together with product owner, stakeholders, analytics team, e-commer
 I used UXPin for the creation of the final wireframes and built a design system for scalability across all 50+ property websites. I approached the design system with an atomic design methodology.
 
 /storage/app/media/total-vegas/design-language-1.png
+
 /storage/app/media/total-vegas/design-language-2.png
+
 /storage/app/media/total-vegas/design-language-3.png
 
 
@@ -50,9 +52,13 @@ I used UXPin for the creation of the final wireframes and built a design system 
 Using UXPin, I was able to build a library of components fully responsive and documented for the developers. While also considering the interaction experience behind each component and how they would work across devices and browsers.
 
 /storage/app/media/total-vegas/design-language-4.png
+
 /storage/app/media/total-vegas/design-language-5.png
+
 /storage/app/media/total-vegas/design-language-6.png
+
 /storage/app/media/total-vegas/wireframe-1.jpg
+
 /storage/app/media/total-vegas/wireframe-2.jpg
 
 
@@ -61,6 +67,9 @@ Using UXPin, I was able to build a library of components fully responsive and do
 Having a full set of components, I was able to use them to construct the main pages that made up the new Total Vegas website. This is where I was able to hone down the user experience and usability of the website.
 
 /storage/app/media/total-vegas/page-2.jpg
+
 /storage/app/media/total-vegas/page-3.jpg
+
 /storage/app/media/total-vegas/page-4.jpg
+
 /storage/app/media/total-vegas/page-5.jpg

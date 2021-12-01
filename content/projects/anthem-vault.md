@@ -12,7 +12,7 @@ An entirely new user experience that included a new user interface design, illus
 
 I worked very closely with a remote team of backend engineers from Scalable Path under an agile workflow."
 roles: ['User Research','Branding','UI/UX','Front-end Development']
-tech: ['Axure RP', 'Sketch', 'InvisionApp', 'Foundation CSS Framework', 'Assembla', 'Github']
+tools: ['Axure RP', 'Sketch', 'InvisionApp', 'Foundation CSS Framework', 'Assembla', 'Github']
 url: "https://www.anthemvault.com"
 client: "Anthem Vault Inc"
 clientDescription: "Anthemvault, an online service for anyone to start owning real gold and silver at affordable prices."
@@ -46,6 +46,7 @@ I created user flows to reduce the amount of clicks involved during the signup p
 Since the app had changed so much based on research and user testings. The wireframing process helped me to guide how the new user interface was going to work.
 
 /storage/app/media/AV/home.png
+
 /storage/app/media/AV/dashboard_wireframe.png
 
 
@@ -63,7 +64,9 @@ We needed an entirely new brand identity which would align with the rest of the 
 With the new brand guideline I was now ready to start designing the landing pages and use a modern web 2.0 feel.
 
 /storage/app/media/AV/homepage-redesign.png
+
 /storage/app/media/AV/why-gold.jpg
+
 /storage/app/media/AV/new-pricing.jpg
 
 
@@ -72,7 +75,9 @@ With the new brand guideline I was now ready to start designing the landing page
 I was able to create the full high fidelity prototype. This was then presented to the company’s product manager and team members for more internal testings to help guide and find areas which needed improvements.
 
 /storage/app/media/AV/AV - New Dashboard colors 2.png
+
 /storage/app/media/AV/dashboard_buy.png
+
 /storage/app/media/AV/dashboard_refferals.png
 
 
@@ -81,5 +86,7 @@ I was able to create the full high fidelity prototype. This was then presented t
 Created user friendly illustrations to help better communicate concepts.
 
 /storage/app/media/AV/purchase.png
+
 /storage/app/media/AV/savings.png
+
 /storage/app/media/AV/vaulting.png

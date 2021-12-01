@@ -15,7 +15,7 @@ The app tracks your inventory by logging your purchases, tracking the warranties
 
 The concept behind Invalog’s name came from putting together this “Inventory Value Logging” system."
 roles: ['Co-Founder', 'User Research', 'Product Design', 'Branding', 'UI/UX', 'Front-end Development', 'Back-end Development']
-tech: ['Axure RP', 'Sketch', 'InvisionApp', 'Bootstrap', 'Laravel 5', 'October CMS']
+tools: ['Axure RP', 'Sketch', 'InvisionApp', 'Bootstrap', 'Laravel 5', 'October CMS']
 url: "https://www.invalog.com"
 client: "Invalog"
 clientDescription: "Invalog, the Home Lifecycle Management system for home owners"

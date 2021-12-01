@@ -16,32 +16,28 @@
                     <div class="row content--container">
                         <div class="col-md-4 content--summary">
                             <div class="row">
-                                <div class="col-md-6 col-lg-12">
+                                <div class="col-md-6 col-lg-12 mb-4">
                                     <span class="content--step-subtext">My Roles</span>
-                                    <div class="content--tools m-b-lg">
-                                        <ul class="project-tags mb-2">
-                                            <li v-for="role in project.roles" :key="role.slug + role">{{role}}</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="content--tools project-tags">
+                                        <li v-for="role in project.roles" :key="role.slug + role">{{role}}</li>
+                                    </ul>
                                 </div>
                                 <div class="col-md-6 col-lg-12">
                                     <span class="content--step-subtext">Technologies</span>
-                                    <div class="content--tools">
-                                        <ul class="project-tags mb-2">
-                                            <li v-for="tool in project.tools" :key="tool.slug + tool">{{tool}}</li>
-                                        </ul>
-                                    </div>
+                                    <ul class="content--tools project-tags">
+                                        <li v-for="tool in project.tools" :key="tool.slug + tool">{{tool}}</li>
+                                    </ul>
                                 </div>
 
                                 <div class="col-md-12 mt-3">
                                     <a :href="`${project.url}`" target="_blank" class="btn btn-sm btn-primary rounded-pill btn-space">
                                         Launch Project
                                     </a>
-                                    <br>
+                                    <!-- <br>
                                     <a href="#" class="btn btn-sm btn-primary-outline rounded-pill">
                                         <i class="fa fa-share-alt"></i>
                                         Share this project
-                                    </a>
+                                    </a> -->
                                 </div>
                             </div>
                         </div>

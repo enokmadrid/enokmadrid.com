@@ -7,7 +7,7 @@ description: "Blockchain technology was beginning to emerge. It was the perfect 
 challenge: "Many clients simply couldn't make gold purchases from their mobile phone and on desktop..."
 solution: "It was time for a complete ovehaul..."
 roles: ['User Research','Branding','UI/UX','Front-end Development']
-tech: ['Bootstrap', 'Material Design', 'Heroku', 'Github']
+tools: ['Bootstrap', 'Material Design', 'Heroku', 'Github']
 url: "https://anthemgold.herokuapp.com/views/overview.php"
 client: "Anthem Vault Inc"
 clientDescription: "Hayek Gold, an online service that allows anyone to start owning real gold and silver at affordable prices using. cryptocurrency technology"
@@ -29,10 +29,13 @@ I created user flows to reduce the amount of clicks involved during the signup p
 
 Using a front-end UI kit, I used it as the base to put together the wireframes. There wasn’t much time to go through the proper UX workflow, but still managed to have solid prototypes. 
 
-/storage/app/media/hayek/overview.png" style="width: 900px;" class="fr-fic fr-dib"> 
-/storage/app/media/hayek/my_wallets.png" style="width: 900px;" class="fr-fic fr-dib"> 
-/storage/app/media/hayek/sell.png" style="width: 600px;" class="fr-fic fr-dib"> 
-/storage/app/media/hayek/email_sample_1.png" style="width: 600px;" class="fr-fic fr-dib"> 
+/storage/app/media/hayek/overview.png
+
+/storage/app/media/hayek/my_wallets.png
+
+/storage/app/media/hayek/sell.png
+
+/storage/app/media/hayek/email_sample_1.png
  
 
 **Designing the app’s Dashboard**
@@ -42,8 +45,11 @@ I was able to create the full high fidelity prototype in front-end code. And had
  
 
 /storage/app/media/hayek/overview-prototype.png
+
 /storage/app/media/hayek/transactions-prototype.png
+
 /storage/app/media/hayek/Deposit-prototype.png
+
 /storage/app/media/hayek/Send-prototype.png
 
 Created user friendly illustrations to help better communicate concepts. 
