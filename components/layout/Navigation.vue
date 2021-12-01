@@ -49,8 +49,7 @@ export default {
         // Switch between dark and light navbar on scroll
         if (nav.classList.contains("navbar-dark")) {
             let height = nav.clientHeight;
-            window.addEventListener('scroll', () => { 
-                console.log(height);
+            window.addEventListener('scroll', () => {
                 if (window.scrollY > height) {
                     nav.classList.remove("navbar-dark");
                     nav.classList.add("navbar-light");
