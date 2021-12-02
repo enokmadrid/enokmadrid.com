@@ -4,8 +4,12 @@ imageHero: "bg-hg.jpg"
 imageScreen: "screens-hg.png"
 title: "HayekGold"
 description: "Blockchain technology was beginning to emerge. It was the perfect time and the perfect solution that allowed moving gold fluidly and freely through the cryptocurrency space"
-challenge: "Many clients simply couldn't make gold purchases from their mobile phone and on desktop..."
-solution: "It was time for a complete ovehaul..."
+challenge: "AnthemVault needed a new platform that simplified the conversion of a client’s gold savings into a digitized asset that is easy to manage in a global market. 
+
+Many of their clients simply couldn’t make direct transfers to other user’s accounts without going through intensive process that required lot’s of verification and took a long time."
+solution: "At the time of working on this project, blockchain technology was beginning to emerge. Leveraging this new blockchain technology in the cryptocurrency space, the co-founders figured out the perfect solution that allowed for clients to move their gold fluidly and freely, while minimizing transaction costs.
+
+I began by gathering as much information possible in digital cryptocurrency wallets to really understand how to best present our users a solution that aligned with the business objectives."
 roles: ['User Research','Branding','UI/UX','Front-end Development']
 tools: ['Bootstrap', 'Material Design', 'Heroku', 'Github']
 url: "https://anthemgold.herokuapp.com/views/overview.php"
