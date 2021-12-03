@@ -1,0 +1,16 @@
+query {
+  projects {
+    title,
+    slug,
+    clientDescription,
+    roles {
+      title
+    }
+    imageHero {
+      url
+    },
+    imageScreen {
+      url
+    }
+  }
+}

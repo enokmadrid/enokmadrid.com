@@ -42,8 +42,16 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
-    '@nuxtjs/content'
+    '@nuxtjs/content',
+    '@nuxtjs/apollo'
   ],
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: process.env.GRAPHCMS_ENDPOINT
+      }
+    }
+  },
 
   // Nuxt Content: https://content.nuxtjs.org
   content: [

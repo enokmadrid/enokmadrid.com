@@ -17,7 +17,7 @@ export default {
     methods: {
         imgSrc() {
             try {
-                return `/images/projectImages/${this.src}`;
+                return this.src;
             } catch (error) {
                 return null;
             }

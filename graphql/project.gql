@@ -1,0 +1,25 @@
+query ($slug: String!){
+  project(where: { slug: $slug }) {
+    title,
+    slug,
+    description,
+    challenge,
+    solution,
+    url,
+    client,
+    clientDescription,
+    roles {
+      title
+    },
+    tools {
+      title
+    }
+    imageHero {
+      url
+    },
+    imageScreen {
+      url
+    },
+    content
+  }
+}
