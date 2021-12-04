@@ -1,5 +1,6 @@
-query ($slug: String!){
+query getProject($slug: String!){
   project(where: { slug: $slug }) {
+    id,
     title,
     slug,
     description,

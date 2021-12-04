@@ -1,5 +1,5 @@
 <template>
-    <section>
+    <section v-if="!loading">
         <section v-for="project in projects" 
         :key="project.id" 
         :style="`background-image: url(${project.imageHero.url})`"
@@ -14,7 +14,12 @@
                         <p class="project-text">
                             {{project.clientDescription}}
                         </p>
-                        <NuxtLink :to="`/projects/${project.slug}`" class="btn btn-lg btn-light rounded-pill" target="blank">
+                        <NuxtLink 
+                            :to="`/projects/${project.slug}`"
+                            :key="project.slug"
+                            class="btn btn-lg btn-light rounded-pill" 
+                            target="blank"
+                            >
                             View Case Study
                         </NuxtLink>
                     </header>
@@ -31,21 +36,21 @@
 import projectsQuery from '~/graphql/projects.gql'
 export default {
 
-    data() {
-        return {
-            projects: []
-        }
+    data: () => ({
+        loading: 0,
+        projects: []
+    }),
+    created() {
+        console.log(this.$route.params.slug)
     },
     apollo: {
+        $loadingKey: 'loading',
         projects: {
             prefetch: true,
-            query: projectsQuery
-        }
-    },
-
-    methods: {
-        bgImg(img) {
-            return `background-image: url(${img})`;
+            query: projectsQuery,
+            variables() {
+                return { slug: this.$route.params.slug }
+            }
         }
     }
 }
