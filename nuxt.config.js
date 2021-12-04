@@ -43,14 +43,27 @@ export default {
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
     '@nuxtjs/content',
-    '@nuxtjs/apollo'
+    '@nuxtjs/apollo',
+    '@nuxtjs/markdownit'
   ],
+  // Apollo Options: 
   apollo: {
     clientConfigs: {
       default: {
         httpEndpoint: process.env.GRAPHCMS_ENDPOINT
       }
     }
+  },
+  // Markdownit Options: https://github.com/markdown-it/markdown-it
+  markdownit: {
+    preset: 'default',
+    runtime: true,
+    linkify: true,
+    breaks: true,
+    use: [
+      'markdown-it-div',
+      'markdown-it-attrs'
+    ]
   },
 
   // Nuxt Content: https://content.nuxtjs.org

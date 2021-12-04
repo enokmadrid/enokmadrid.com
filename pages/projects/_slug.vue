@@ -49,9 +49,7 @@
         <section class="container-fluid cms-editable format-paragraph">
             <div class="container">
                 <div class="row">
-                    <div class="col-12">
-                        {{project.content}}
-                    </div>
+                    <div class="col-12" v-html="$md.render(project.content)"></div>
                 </div>
             </div>
         </section>
