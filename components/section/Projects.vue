@@ -1,5 +1,5 @@
 <template>
-    <section v-if="!loading">
+    <section v-if="!loading" id="projects">
         <section v-for="project in projects" 
         :key="project.id" 
         :style="`background-image: url(${project.imageHero.url})`"

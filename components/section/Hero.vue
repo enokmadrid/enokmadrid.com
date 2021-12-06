@@ -11,12 +11,9 @@
             </div>
 
             <div class="mt-5">
-                <a href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank" class="btn btn-lg btn-primary brand-gradient rounded-pill" role="button">Hire Me</a>
-                <a href="#" class="btn btn-lg btn-light rounded-pill" role="button">View Portfolio</a>
+                <a href="#what-i-do" class="btn btn-lg btn-primary brand-gradient rounded-pill" role="button">Learn How I Can Help</a>
+                <a href="#featured-work" class="btn btn-lg btn-light rounded-pill" role="button">View Portfolio</a>
             </div>
-            <!--<span class="scroll">-->
-                <!--<i class="icon-arrow-down icons animated infinite pulse"></i>-->
-            <!--</span>-->
         </div>
         <div class="overflow-hidden d-none d-lg-block">
             <div class="angle-split">
