@@ -12,7 +12,9 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      { rel: 'alternative icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#FF1A55' },
       { rel: 'stylesheet', href: 'https://use.typekit.net/qnk6szk.css' },
       { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' }
     ],
