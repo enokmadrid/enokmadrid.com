@@ -24,7 +24,7 @@
                         </NuxtLink>
                     </header>
                     <aside class="col-lg-8 col-lg-push-1 no-gutter project--image">
-                        <ProjectImage :src="`${project.imageScreen.url}`" />
+                        <ProjectImage :src="`${project.imageScreen.url}`" class="img-fluid" />
                     </aside>
                 </div>
             </article>
@@ -57,5 +57,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+@import '~/assets/scss/_mixins.scss';
+.project--image {
+    img {
+        @media screen and (max-width: 991px ){
+            margin-top: $space-semi;
+            padding: {
+                left: $space-standard;
+                right: $space-standard;
+            }
+        }
+    }
+}
 </style>
