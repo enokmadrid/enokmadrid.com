@@ -3,7 +3,7 @@
         <div class="container">
             <div class="row text-xs-center text-md-left">
                 <h1 class="display-4 col-md-6 col-xs-12 copy-intro decoration-line">
-                    <blockquote class="display-4 decoration-text">Allow me to introduce myself</blockquote>
+                    <blockquote class="display-4  text-decoration">Allow me to introduce myself</blockquote>
                     A bit about me
                 </h1>
                 <div class="col-md-6 col-xs-12">

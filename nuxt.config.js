@@ -15,8 +15,7 @@ export default {
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
       { rel: 'alternative icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'mask-icon', href: '/safari-pinned-tab.svg', color: '#FF1A55' },
-      { rel: 'stylesheet', href: 'https://use.typekit.net/qnk6szk.css' },
-      { rel: 'stylesheet', href: 'https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css' }
+      { rel: 'stylesheet', href: 'https://use.typekit.net/qnk6szk.css' }
     ],
     script: [
       { hid: 'typekit', src:'https://use.typekit.net/llv3zsc.js', defer: true },

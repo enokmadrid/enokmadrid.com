@@ -1,7 +1,7 @@
 <template>
     <footer class="footer-page container-fluid text-center text-lg-left">
         <div class="container">
-            <h5 class="display-1 decoration-text mb-4">Let's Work Together!</h5>
+            <h5 class="display-1  text-decoration mb-4">Let's Work Together!</h5>
             <p class="lead mb-5">Talk to me about what I can do for your business.</p>
             <a href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank" class="btn btn-primary btn-lg rounded-pill brand-gradient hasArrow __right" role="button">Let's Connect</a>
         </div>
