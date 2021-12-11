@@ -1,5 +1,9 @@
 <template>
-    <main v-if="!loading">
+    <div v-if="loading" class="loader-wrapper">
+        <span class="loader"><span></span><span></span></span>
+        <b>Loading...</b>
+    </div>
+    <main v-else>
         <div class="jumbotron jumbotron-fluid dark shift-up has-overlay" :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${project.imageHero.url});`">
             <div class="container text-center">
                 <h1 class="display-3">{{project.title}}</h1>
@@ -88,3 +92,54 @@ export default {
     }
 }
 </script>
+
+<style lang="scss" scoped>
+.loader-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(darken($brand-text, 20%), darken($brand-text, 30%));
+    height: 100vh;
+    b {
+        color: lighten($brand-text, 10%);
+        text-transform: uppercase;
+        letter-spacing: 0.2rem;
+    }
+}
+
+.loader {
+  display: block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+  
+    > span {
+        position: absolute;
+        border: 4px solid $brand-action-primary;
+        opacity: 1;
+        border-radius: 50%;
+        animation: ripple 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+        &:nth-child(2) {
+            animation-delay: -0.5s;
+        }
+    }
+}
+
+@keyframes ripple {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+  }
+}
+</style>
