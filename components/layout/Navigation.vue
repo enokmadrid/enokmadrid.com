@@ -28,7 +28,7 @@
             
             <div class="my-2 my-md-0">
                 <a href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank" class="btn btn-primary rounded-pill btn-sm">
-                    <i class="fa fa-phone text-sm-center"></i> Contact me
+                    <fa :icon="['fas', 'phone']"/> Contact me
                 </a>
             </div>
             </div>
