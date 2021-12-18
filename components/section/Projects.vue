@@ -40,9 +40,6 @@ export default {
         loading: 0,
         projects: []
     }),
-    created() {
-        console.log(this.$route.params.slug)
-    },
     apollo: {
         $loadingKey: 'loading',
         projects: {

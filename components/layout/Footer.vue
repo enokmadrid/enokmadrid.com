@@ -7,19 +7,59 @@
         </div>
         <div class="footer--row">
             <div class="container d-none d-sm-flex justify-content-between align-items-center py-3">
-                <small>Made with <i class="fa fa-heart"></i> in Las Vegas</small>
+                <small>Made with <fa :icon="['fas', 'heart']"/> in Las Vegas</small>
                 <div class="social-media">
-                    <a href="https://github.com/enokmadrid" target="_blank"><i class="fa fa-2x fa-github"></i></a>
-                    <a href="https://www.instagram.com/enokmadrid" target="_blank"><i class="fa fa-2x fa-instagram"></i></a>
-                    <a href="https://twitter.com/enokmadrid" target="_blank"><i class="fa fa-2x fa-twitter"></i></a>
-                    <a href="https://dribbble.com/enokmadrid" target="_blank"><i class="fa fa-2x fa-dribbble"></i></a>
-                    <a href="https://www.linkedin.com/in/enokmadrid" target="_blank"><i class="fa fa-2x fa-linkedin"></i></a>
+                    <a href="https://github.com/enokmadrid" target="_blank"><fa :icon="['fab', 'github']"/></a>
+                    <a href="https://www.instagram.com/enokmadrid" target="_blank"><fa :icon="['fab', 'instagram']"/></a>
+                    <a href="https://twitter.com/enokmadrid" target="_blank"><fa :icon="['fab', 'twitter']"/></a>
+                    <a href="https://dribbble.com/enokmadrid" target="_blank"><fa :icon="['fab', 'dribbble']"/></a>
+                    <a href="https://www.linkedin.com/in/enokmadrid" target="_blank"><fa :icon="['fab', 'linkedin']"/></a>
                 </div>
             </div>
         </div>
     </footer>
 </template>
 
-<script>
 
-</script>
+<style lang="scss" scoped>
+//********* Footer *********
+.footer-page {
+  margin:0;
+  padding: 150px 0 0;
+
+  &.dark {
+    background: $brand-black;
+  }
+
+  .btn-lg {
+    margin-bottom: 100px;
+  }
+
+  .footer--row {
+    
+    small, .svg-inline--fa {
+      color: $gray-light;
+    }
+
+    .svg-inline--fa:not(.fa-heart) {
+      $iconSize: 2rem;
+      width: $iconSize;
+      height: $iconSize;
+      opacity: 0.7;
+      &:hover {
+        transition: all 0.15s ease-in-out;
+        opacity: 1;
+      }
+    }
+
+    .fa-heart {
+      color: $primary;
+    }
+  }
+
+  .social-media a {
+      padding-left: 20px;
+  }
+}
+
+</style>

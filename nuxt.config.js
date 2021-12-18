@@ -18,8 +18,7 @@ export default {
       { rel: 'stylesheet', href: 'https://use.typekit.net/qnk6szk.css' }
     ],
     script: [
-      { hid: 'typekit', src:'https://use.typekit.net/llv3zsc.js', defer: true },
-      { hid: 'fontawesome', src:'https://kit.fontawesome.com/52c8510a26.js', crossorigin:'anonymous', defer: true }
+      { hid: 'typekit', src:'https://use.typekit.net/llv3zsc.js', defer: true }
     ]
   },
 
@@ -38,7 +37,16 @@ export default {
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['@nuxtjs/fontawesome', {
+      component: 'fa',
+      proIcons: {
+        solid: ['faHeart']
+      },
+      icons: {
+        brands: ['faGithub', 'faInstagram', 'faTwitter', 'faLinkedin', 'faDribbble']
+      }
+    }]
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
@@ -74,7 +82,8 @@ export default {
 
   styleResources: {
     scss: [
-      'assets/scss/_custom.scss'
+      'assets/scss/_custom.scss',
+      '@fortawesome/fontawesome-svg-core/styles.css'
     ]
   },
 

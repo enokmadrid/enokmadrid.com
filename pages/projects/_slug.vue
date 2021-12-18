@@ -83,7 +83,6 @@ export default {
             prefetch: true,
             query: projectQuery,
             variables() {
-                console.log('from apollo!');
                 return {
                     slug: this.$route.params.slug
                 }

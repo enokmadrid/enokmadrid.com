@@ -553,46 +553,4 @@
 }
 
 
-//********* Footer *********
-.footer-page {
-  margin:0;
-  padding: 150px 0 0;
-
-  &.dark {
-    background: $brand-black;
-  }
-
-  .btn-lg {
-    margin-bottom: 100px;
-  }
-
-  .footer--row {
-    
-    small, i {
-      color: $gray-light;
-    }
-
-    i {
-      opacity: 0.7;
-    }
-
-    .fa-heart {
-      color: $primary;
-    }
-  }
-
-  .social-media {
-    a {
-      padding-left: 20px;
-      &:hover {
-        i {
-          transition: all 0.15s ease-in-out;
-          opacity: 1;
-        }
-      }
-    }
-  }
-}
-
-
 @import "media-queries";
