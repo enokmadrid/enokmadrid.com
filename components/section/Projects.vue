@@ -1,6 +1,18 @@
 <template>
-    <section v-if="!loading" id="projects">
-        <section v-for="project in projects" 
+    <section v-if="!loading" id="projects" class="projects">
+        <div class="grid container">
+            <project-card 
+                v-for="project in projects" 
+                :image-url="project.imageScreen.url"
+                :title="project.title"
+                :description="project.clientDescription"
+                :key="project.id"
+                :project-url="`/projects/${project.slug}`"
+                :color="project.color.hex"
+                >
+            </project-card>
+        </div>
+        <!-- <section v-for="project in projects" 
         :key="project.id" 
         :style="`background-image: url(${project.imageHero.url})`"
         class="container-fluid dark project--fullwidth" >
@@ -28,7 +40,7 @@
                     </aside>
                 </div>
             </article>
-        </section>
+        </section> -->
     </section>
 </template>
 
@@ -55,6 +67,16 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/scss/_mixins.scss';
+.projects {
+    background-color: $gray-lightest;
+}
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    @media screen and (max-width: 991px ){
+        grid-template-columns: 1fr;
+    }
+}
 .project--image {
     img {
         @media screen and (max-width: 991px ){

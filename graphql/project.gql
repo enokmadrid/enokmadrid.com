@@ -9,6 +9,9 @@ query getProject($slug: String!){
     url,
     client,
     clientDescription,
+    color {
+      hex
+    },
     roles {
       title
     },

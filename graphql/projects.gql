@@ -4,6 +4,9 @@ query getProjects {
     title,
     slug,
     clientDescription,
+    color {
+      hex
+    },
     roles {
       title
     }
