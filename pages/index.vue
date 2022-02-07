@@ -1,10 +1,9 @@
 <template>
   <div>
     <SectionHero />
+    <SectionProjects />
     <SectionWhatIDo />
     <SectionProcessCTA />
-    <SectionSubdivision />
-    <SectionProjects />
   </div>
 </template>
 

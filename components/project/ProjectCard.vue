@@ -1,12 +1,15 @@
 <template>
-    <a :class="['project-card', setGridClass]" :style="cssVars" :href="projectUrl">
-        <div class="project-card-background absolute"></div>
-        <div class="card-body relative">
-            <img class="card-img-top" :src="imageUrl" alt="Card image cap">
+    <a :class="['project-card', 'd-flex', 'align-items-end', setGridClass]" :href="projectUrl">
+        <span class="project-card-background absolute" :style="`background-image: url(${heroUrl})`"></span>
+        <div class="project-details d-flex justify-content-between">
             <h3 class="project-title h1 mb-4 font-weight-bold">{{title}}</h3>
-            <p>{{description}}</p>
+            <ul class="project-tags mb-2">
+                <li>Design &middot;</li>
+                <li>Front-End &middot;</li>
+                <li>UI/UX &middot;</li>
+                <li>More &middot;</li>
+            </ul>
         </div>
-        
     </a>
 </template>
 
@@ -15,6 +18,7 @@ export default {
     props: [
         "projectUrl",
         "imageUrl",
+        "heroUrl",
         "title",
         "description",
         "color",
@@ -41,29 +45,20 @@ export default {
     position: relative;
 }
 .project-card > .project-card-background {
-    background-color: var(--card-color);
+    background-size: cover;
     position: absolute;
     left: 0;
     top: 0;
-    height: 100%;
+    height: 86%;
     width: 100%;
-    opacity: 0.1;
+    opacity: 1;
+    z-index: -1;
 }
 .project-card {
     color: $brand-text;
-    padding: $space-large;
-    height: 840px;
+    
     &:hover {
         text-decoration: none;
-    }
-    &:nth-child(odd) {
-        margin-right: 20px;
-    }
-    @media screen and (max-width: 991px ){
-        margin: unset;
-        &:nth-child(odd) { 
-            margin: unset;
-        }
     }
 }
 .card-img-top {
@@ -72,6 +67,30 @@ export default {
 .project--image {
     img {
         @media screen and (max-width: 991px ){
+        }
+    }
+}
+.project-details {
+    width: 100%;
+}
+
+.project-tags {
+    display: block;
+    justify-content: flex-end;
+    list-style: none;
+    padding-left: auto;
+
+    li {
+        display: inline;
+        font-size: 10px;
+        font-weight: 600;
+        text-transform: uppercase;
+        opacity: 0.7;
+        &:not(:first-child) {
+        padding-left: 4px;
+            &::before {
+                padding-right: 8px;
+            }
         }
     }
 }
