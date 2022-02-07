@@ -1,18 +1,19 @@
 <template>
-    <section v-if="!loading" id="projects">
+    <section v-if="!loading" id="projects" class="section-space">
         <div class="grid container">
             <div class="item-first">
-                <span class="text-left display-1 text-decoration">Recent Work</span>
-                <img src="~/assets/images/svg/robot-animated.svg" width="360" alt="robot-animation" class="float-right">
+                <span class="text-left display-1 text-decoration d-block">Recent Work</span>
+                <img src="~/assets/images/svg/robot-animated.svg" width="360" alt="robot-animation" class="float-right d-block">
             </div>
             <project-card
                 v-for="(project, index) in projects"
                 :index="index"
+                :key="project.id"
                 :image-url="project.imageScreen.url"
                 :hero-url="project.imageHero.url"
                 :title="project.title"
                 :description="project.clientDescription"
-                :key="project.id"
+                :roles="project.roles"
                 :project-url="`/projects/${project.slug}`"
                 :color="project.color.hex"
                 >
@@ -22,7 +23,7 @@
                 <NuxtLink to="/process" class="btn btn-primary btn-lg rounded-pill brand-gradient hasArrow __right">See All my Projects</NuxtLink>
             </div>
         </div>
-        <section v-for="project in projects" 
+        <!-- <section v-for="project in projects" 
         :key="project.id" 
         :style="`background-image: url(${project.imageHero.url})`"
         class="container-fluid dark project--fullwidth" >
@@ -50,7 +51,7 @@
                     </aside>
                 </div>
             </article>
-        </section>
+        </section> -->
     </section>
 </template>
 
@@ -100,7 +101,15 @@ export default {
         "item-5 ."
         "item-5 item-last"; 
 
-    .item-first { grid-area: item-first; }
+    .item-first { 
+        grid-area: item-first;
+        span {
+            margin-top: 2rem;
+        }
+        img {
+            margin-top: -7rem;
+        }
+    }
     .item-1 { grid-area: item-1; }
     .item-2 { grid-area: item-2; }
     .item-3 { grid-area: item-3; }

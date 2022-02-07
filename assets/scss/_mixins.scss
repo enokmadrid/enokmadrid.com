@@ -22,6 +22,10 @@ $space-large:    48px;
 $space-xlarge:   64px;
 $space-xxlarge: 128px;
 
+.section-space {
+  padding-top: $space-xxlarge;
+}
+
 
 /*======================================
 =             MARGINS SPACES           =
@@ -158,3 +162,13 @@ $speed-700: 700ms;
   text-align: center;
 }
 
+/*======================================
+=             BACKGROUNDS              =
+======================================*/
+.background-gradient {
+  background: #f9f9f9;
+  background: -moz-linear-gradient(top, #f9f9f9 10%, #ffffff 47%);
+  background: -webkit-linear-gradient(top, #f9f9f9 10%,#ffffff 47%);
+  background: linear-gradient(to bottom, #f9f9f9 10%,#ffffff 47%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ffffff',GradientType=0 );
+}

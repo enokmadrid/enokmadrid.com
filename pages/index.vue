@@ -1,8 +1,9 @@
 <template>
   <div>
     <SectionHero />
+    <!-- <SectionSubdivision :section-title="`Featured Projects`"/> -->
     <SectionProjects />
-    <SectionWhatIDo />
+    <SectionPageBox />
     <SectionProcessCTA />
   </div>
 </template>
