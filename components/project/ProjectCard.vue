@@ -1,5 +1,5 @@
 <template>
-    <a class="project-card" :style="cssVars" :href="projectUrl">
+    <a :class="['project-card', setGridClass]" :style="cssVars" :href="projectUrl">
         <div class="project-card-background absolute"></div>
         <div class="card-body relative">
             <img class="card-img-top" :src="imageUrl" alt="Card image cap">
@@ -13,13 +13,17 @@
 <script>
 export default {
     props: [
-        'projectUrl',
-        'imageUrl',
-        'title',
-        'description',
-        'color',
+        "projectUrl",
+        "imageUrl",
+        "title",
+        "description",
+        "color",
+        "index"
     ],
     computed: {
+        setGridClass() {
+            return `item-${this.index + 1}`
+        },
         cssVars() {
             return {
                 '--card-color': this.color
@@ -48,10 +52,10 @@ export default {
 .project-card {
     color: $brand-text;
     padding: $space-large;
+    height: 840px;
     &:hover {
         text-decoration: none;
     }
-    margin-bottom: 20px;
     &:nth-child(odd) {
         margin-right: 20px;
     }

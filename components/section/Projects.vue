@@ -1,8 +1,10 @@
 <template>
     <section v-if="!loading" id="projects" class="projects">
         <div class="grid container">
+            <div class="item-first">Animation</div>
             <project-card 
-                v-for="project in projects" 
+                v-for="(project, index) in projects"
+                :index="index"
                 :image-url="project.imageScreen.url"
                 :title="project.title"
                 :description="project.clientDescription"
@@ -11,6 +13,7 @@
                 :color="project.color.hex"
                 >
             </project-card>
+            <div class="item-last">Last Item</div>
         </div>
         <!-- <section v-for="project in projects" 
         :key="project.id" 
@@ -58,7 +61,7 @@ export default {
             prefetch: true,
             query: projectsQuery,
             variables() {
-                return { slug: this.$route.params.slug }
+             return { slug: this.$route.params.slug }
             }
         }
     }
@@ -72,10 +75,30 @@ export default {
 }
 .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
     @media screen and (max-width: 991px ){
         grid-template-columns: 1fr;
     }
+
+    grid-template-columns: 1fr 1fr; 
+    grid-template-rows: 0.6fr 1fr 0.6fr 0.6fr 1fr 0.6fr 0.6fr 1fr 0.6fr; 
+    gap: 0px 0px; 
+    grid-template-areas: 
+        "item-first item-1"
+        "item-2     item-1"
+        "item-2          ."
+        ".          item-3"
+        "item-4     item-3"
+        "item-4          ."
+        ".          item-5"
+        "item-last  item-5"; 
+
+    .item-first { grid-area: item-first; }
+    .item-1 { grid-area: item-1; }
+    .item-2 { grid-area: item-2; }
+    .item-3 { grid-area: item-3; }
+    .item-4 { grid-area: item-4; }
+    .item-5 { grid-area: item-5; }
+    .item-last { grid-area: item-last; }
 }
 .project--image {
     img {
