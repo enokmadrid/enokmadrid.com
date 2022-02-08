@@ -26,6 +26,7 @@ $space-xxlarge: 128px;
   padding-top: $space-xxlarge;
 }
 
+$border-radius-default: 8px;
 
 /*======================================
 =             MARGINS SPACES           =
@@ -151,7 +152,7 @@ $speed-700: 700ms;
   background: #FFFFFF;
   padding-top: 60px;
   padding-bottom: 60px;
-  border-radius: 4px;
+  border-radius: $border-radius-default;
 }
 .offset-top {
   position: relative;

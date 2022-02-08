@@ -1,0 +1,59 @@
+<template>
+    <div class="text-center offset-top-50">
+        <b class="d-block">Tool I Use</b>
+        <div class="list-icons">
+            <i v-for="icon in icons" :key="icon">
+                <img :src="require(`~/assets/images/svg/logos/${icon}`)" alt="">
+            </i>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    data() {
+        return {
+            icons: [
+                'figma.svg',
+                'sketch.svg',
+                'invision.svg',
+                'principle.svg',
+                'ai.svg',
+                'html5.svg',
+                'sass.svg',
+                'javascript.svg',
+                'nuxt.svg'
+            ]
+        }
+    }
+}
+</script>
+
+<style lang="scss" scoped>
+@import '~/assets/scss/_mixins.scss';
+.offset-top-50 {
+    margin-top: -50px;
+}
+.list-icons {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    margin: 0 auto;
+    background-color: white;
+    max-width: 860px;
+    border-radius: $border-radius-default;
+    padding: $space-small;
+    box-shadow: $shadow-large;
+
+    i {
+        display: flex;
+        padding: $space-small;
+        align-content: center;
+        justify-content: center;
+        border-radius: 50%;
+        height: $space-xlarge;
+        width: $space-xlarge;
+        background-color: #F9F9F9;
+    }
+}
+</style>

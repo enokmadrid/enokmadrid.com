@@ -1,20 +1,21 @@
 <template>
     <section class="container-fluid background-gradient section-space mb-5">
+        <SectionTitle 
+            :title="`What I do`"
+            :subtitle="`I Design Interfaces for Digital Product Experiences`"
+        />
+        
         <div class="container page-box">
-            <div class="row text-xs-center no-gutters">
-                <SectionTitle 
-                    :title="`What I do`"
-                    :subtitle="`I Design Interfaces for Digital Product Experiences`"
+            <ul class="row text-xs-center no-gutters pl-0">
+                <sectionIconCard v-for="card in cards" :key="card.id"
+                    :icon="require(`~/assets/images/svg/illustration-icons/${card.icon}`)"
+                    :title="card.title"
+                    :description="card.description"
                 />
-                <div class="row">
-                    <sectionIconCard v-for="card in cards" :key="card.id"
-                        :icon="require(`~/assets/images/svg/illustration-icons/${card.icon}`)"
-                        :title="card.title"
-                        :description="card.description"
-                    />
-                </div>
-            </div>
+            </ul>
         </div>
+
+        <SectionListIcons/>
     </section>
 </template>
 
