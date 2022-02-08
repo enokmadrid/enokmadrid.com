@@ -2,7 +2,7 @@
     <div class="col-md-4 col-sm-6 col-xs-12">
         <div class="icon-card">
             <img :src="icon" :alt="`${title} Icon`" class="icon">
-            <b class="subtitle">{{ title }}</b>
+            <h4 class="title">{{ title }}</h4>
             <p>{{ description }}</p>
         </div>
     </div>
@@ -19,6 +19,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '~/assets/scss/_mixins.scss';
+
 .icon-card {
   padding: 35px;
   border: none;
@@ -30,15 +32,15 @@ export default {
         font-size: 70px;
     }
 
-    .subtitle, p {
+    .title, p {
         text-align: center;
         display: block;
         max-width: 30ch;
         margin: 0 auto;
     }
 
-    .subtitle {
-        font-size: 24px;
+    .title {
+        @include fontSize(32px);
         font-weight: 600;
         padding-bottom: 15px;
     }
