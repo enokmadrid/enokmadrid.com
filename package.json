@@ -31,8 +31,8 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.2.0",
     "bootstrap": "^4.4.1",
-    "node-sass": "^6.0.1",
     "postcss": "^8.3.5",
+    "sass": "^1.49.7",
     "sass-loader": "^10.2.0"
   }
 }
