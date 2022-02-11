@@ -84,6 +84,47 @@ $speed-300: 300ms;
 $speed-350: 350ms;
 $speed-700: 700ms;
 
+/*======================================
+=              BREAKPOINTS             =
+======================================*/
+// media-breakpoint-down(xs) - Extra small devices (portrait phones, less than 576px)
+$xs-max: 575.98px;
+
+// media-breakpoint-only(sm) - Small devices (landscape phones, less than 768px)
+$sm-min: 576px;
+$sm-max: 767.98px;
+
+//media-breakpoint-only(md) - Medium devices (tablets, less than 992px)
+$md-min: 768px;
+$md-max: 991.98px;
+
+// media-breakpoint-only(lg) - Large devices (desktops, less than 1200px)
+$lg-min: 992px;
+$lg-max: 1199.98px;
+
+// media-breakpoint-only(xl) - Extra large devices (large desktops, 1200px and up)
+$xl-min: 1200px;
+
+@mixin breakpoint($class) {
+  @if $class == xs {
+    @media (max-width: $xs-max) { @content; }
+  }
+  @else if $class == sm {
+    @media (min-width: $sm-min) and (max-width: $sm-max) { @content; }
+  }
+  @else if $class == md {
+    @media (min-width: $md-min) and (max-width: $md-max) { @content; }
+  }
+  @else if $class == lg {
+    @media (min-width: $lg-min) and (max-width: $lg-max) { @content; }
+  }
+  @else if $class == xl {
+    @media (min-width: $xl-min) { @content; }
+  }
+  @else {
+    @warn "Breakpoint mixin supports: xs, sm, md, lg, xl";
+  }
+}
 
 /*======================================
 =         MOTION & TRANSITIONS         =

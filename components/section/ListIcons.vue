@@ -35,7 +35,19 @@ export default {
     margin-top: -50px;
 }
 .list-icons {
+    @include breakpoint(xs) {
+    }
+    @include breakpoint(sm) {
+    }
+    @include breakpoint(md) {
+        max-width: 80%;
+    }
+    @include breakpoint(lg) {
+    }
+    @include breakpoint(xl) {
+    }
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-evenly;
     align-content: center;
     margin: 0 auto;
@@ -46,6 +58,11 @@ export default {
     box-shadow: $shadow-large;
 
     i {
+        @include breakpoint(xs) {
+            height: $space-large;
+            width: $space-large;
+            padding: $space-small;
+        }
         display: flex;
         padding: $space-small;
         align-content: center;
