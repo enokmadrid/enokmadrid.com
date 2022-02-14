@@ -24,8 +24,8 @@
 </template>
 
 <style lang="scss" scoped>
-
-@media (min-width: 940px) {
+@import '~/assets/scss/_mixins.scss';
+@include breakpoint(lg-up) {
     .text-hero-description {
         padding-right: 30%;
     }

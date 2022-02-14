@@ -21,8 +21,8 @@ export default {
                 'ai.svg',
                 'html5.svg',
                 'sass.svg',
-                'javascript.svg',
-                'nuxt.svg'
+                'nuxt.svg',
+                'laravel.svg'
             ]
         }
     }
@@ -35,16 +35,11 @@ export default {
     margin-top: -50px;
 }
 .list-icons {
-    @include breakpoint(xs) {
-    }
     @include breakpoint(sm) {
+        max-width: 520px;
     }
     @include breakpoint(md) {
-        max-width: 80%;
-    }
-    @include breakpoint(lg) {
-    }
-    @include breakpoint(xl) {
+        max-width: 620px;
     }
     display: flex;
     flex-wrap: wrap;
@@ -59,9 +54,12 @@ export default {
 
     i {
         @include breakpoint(xs) {
+            padding: $space-small;
+        }
+        @include breakpoint(sm-down) {
             height: $space-large;
             width: $space-large;
-            padding: $space-small;
+            padding: $space-xsmall;
         }
         display: flex;
         padding: $space-small;

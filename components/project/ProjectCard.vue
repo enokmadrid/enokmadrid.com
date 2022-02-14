@@ -65,8 +65,7 @@ export default {
 }
 .project--image {
     img {
-        @media screen and (max-width: 991px ){
-        }
+        
     }
 }
 .project-details {

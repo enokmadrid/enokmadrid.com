@@ -108,15 +108,33 @@ $xl-min: 1200px;
 @mixin breakpoint($class) {
   @if $class == xs {
     @media (max-width: $xs-max) { @content; }
-  }
+  } 
   @else if $class == sm {
     @media (min-width: $sm-min) and (max-width: $sm-max) { @content; }
+  }
+  @else if $class == sm-down {
+    @media screen and (max-width: $sm-max) { @content; }
+  }
+  @else if $class == sm-up {
+    @media (min-width: $sm-min) { @content; }
   }
   @else if $class == md {
     @media (min-width: $md-min) and (max-width: $md-max) { @content; }
   }
+  @else if $class == md-down {
+    @media screen and (max-width: $md-max) { @content; }
+  }
+  @else if $class == md-up {
+    @media (min-width: $md-min) { @content; }
+  }
   @else if $class == lg {
     @media (min-width: $lg-min) and (max-width: $lg-max) { @content; }
+  }
+  @else if $class == lg-down {
+    @media screen and (max-width: $lg-max) { @content; }
+  }
+  @else if $class == lg-up {
+    @media (min-width: $lg-min) { @content; }
   }
   @else if $class == xl {
     @media (min-width: $xl-min) { @content; }

@@ -80,7 +80,7 @@ export default {
 @import '~/assets/scss/_mixins.scss';
 
 .grid {
-    @media screen and (max-width: 991px ){
+    @include breakpoint(md-down) {
         display: flex;
         flex-direction: column;
     }
@@ -120,7 +120,7 @@ export default {
 }
 .project--image {
     img {
-        @media screen and (max-width: 991px ){
+        @include breakpoint(md-down) {
             margin-top: $space-semi;
             padding: {
                 left: $space-standard;
