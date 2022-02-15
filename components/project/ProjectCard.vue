@@ -1,6 +1,6 @@
 <template>
     <a :class="['project-card', 'd-flex', 'align-items-end', setGridClass]" :href="projectUrl">
-        <span class="project-card-background absolute" :style="`background-image: url(${heroUrl})`"></span>
+        <span class="project-card-background absolute" :style="`background-image: url(${imageUrl})`"></span>
         <div class="project-details d-flex justify-content-between">
             <h3 class="project-title font-weight-bold">{{title}}</h3>
             <ul class="project-tags mb-2">

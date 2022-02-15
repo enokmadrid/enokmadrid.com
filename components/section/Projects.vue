@@ -9,7 +9,7 @@
                 v-for="(project, index) in projects"
                 :index="index"
                 :key="project.id"
-                :image-url="project.imageScreen.url"
+                :image-url="project.imageCard.url"
                 :hero-url="project.imageHero.url"
                 :title="project.title"
                 :description="project.clientDescription"

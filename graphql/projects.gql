@@ -10,6 +10,9 @@ query getProjects {
     roles {
       title
     }
+    imageCard {
+      url
+    },
     imageHero {
       url
     },
