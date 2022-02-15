@@ -1,6 +1,6 @@
 <template>
     <section v-if="!loading" id="projects" class="section-space">
-        <div class="grid container">
+        <!-- <div class="grid container">
             <div class="item-first">
                 <span class="text-left display-1 text-decoration d-block">Recent Work</span>
                 <img src="~/assets/images/svg/robot-animated.svg" width="360" alt="robot-animation" class="float-right d-block">
@@ -22,8 +22,8 @@
                 <span class="text-left display-1 text-decoration">Enjoying These?</span>
                 <NuxtLink to="/process" class="btn btn-primary btn-lg rounded-pill brand-gradient hasArrow __right">See All my Projects</NuxtLink>
             </div>
-        </div>
-        <!-- <section v-for="project in projects" 
+        </div> -->
+        <section v-for="project in projects" 
         :key="project.id" 
         :style="`background-image: url(${project.imageHero.url})`"
         class="container-fluid dark project--fullwidth" >
@@ -51,7 +51,7 @@
                     </aside>
                 </div>
             </article>
-        </section> -->
+        </section>
     </section>
 </template>
 
