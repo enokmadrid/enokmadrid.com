@@ -20,7 +20,7 @@ export default {
         "description",
         "color",
         "index",
-        "roles"
+        "roles",
     ],
     computed: {
         setGridClass() {
@@ -60,16 +60,24 @@ export default {
         text-decoration: none;
     }
 }
+
+@include breakpoint(lg) {
+    .project-card {
+        height: 700px;
+        .project-card-background {
+            height: 643px;
+        }
+    }
+}
 .card-img-top {
     margin-bottom: $space-large;
 }
-.project--image {
-    img {
-        
-    }
-}
+
 .project-details {
     width: 100%;
+    .project-title {
+        white-space: nowrap;
+    }
 }
 
 .project-tags {

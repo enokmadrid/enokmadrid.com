@@ -59,12 +59,19 @@
         </section>
 
         <div class="flexbox-container content--menu">
-            <a href="#" class="flex-link btn btn-link hasArrow __left">
-                <span>Previous Step</span>
-            </a>
-            <a href="#" class="flex-link btn btn-link hasArrow __right">
-                <span>Next Step</span>
-            </a>
+            <nuxt-link 
+            v-if="prev" 
+            :to="{ name: 'project-slug', params: { slug: prev.slug } }" 
+            class="flex-link btn btn-link hasArrow __left">
+                <span>Previous Project</span>
+            </nuxt-link>
+            <nuxt-link 
+            v-if="next" 
+            :to="{ name: 'project-slug', params: { slug: next.slug } }" 
+            class="flex-link btn btn-link hasArrow __right"
+            >
+                <span>{{next.title}}</span>
+            </nuxt-link>
         </div>
     </main>
 </template>
@@ -75,8 +82,20 @@ export default {
     data: () => ({
         loading: 0,
         project: {},
-        slug: ''
+        slug: '',
+        projectPrevious: '',
+        projectNext: '',
     }),
+    props: {
+      prev: {
+        type: Object,
+        default: () => null,
+      },
+      next: {
+        type: Object,
+        default: () => null,
+      },
+    },
     apollo: {
         $loadingKey: 'loading',
         project: {
