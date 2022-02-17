@@ -1,8 +1,8 @@
 <template>
     <section class="container-fluid background-gradient section-space mb-5">
         <SectionTitle 
-            :title="`What I do`"
-            :subtitle="`I Design Interfaces for Digital Product Experiences`"
+            :title="`Design & Code`"
+            :subtitle="`I can help you with designing and building experiences with simple content structure, clean UI patterns with a slight touch of wow.`"
         />
         
         <div class="container page-box">

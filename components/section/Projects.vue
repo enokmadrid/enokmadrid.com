@@ -53,7 +53,7 @@ export default {
 @import '~/assets/scss/_mixins.scss';
 
 .grid {
-    @include breakpoint(md-down) {
+    @include breakpoint(sm-down) {
         display: flex;
         flex-direction: column;
     }

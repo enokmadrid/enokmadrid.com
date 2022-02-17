@@ -13,3 +13,12 @@ export default {
     ]
 }
 </script>
+
+
+<style lang="scss" scoped>
+@import '~/assets/scss/_mixins.scss';
+.section-subtitle {
+    max-width: 600px;
+    margin: 0 auto;
+}
+</style>
