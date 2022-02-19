@@ -232,3 +232,9 @@ $xl-min: 1200px;
   background: linear-gradient(to bottom, #f9f9f9 10%,#ffffff 47%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f9f9f9', endColorstr='#ffffff',GradientType=0 );
 }
+
+@mixin heading-font {
+  font-family: trumpgothicpro, sans-serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}

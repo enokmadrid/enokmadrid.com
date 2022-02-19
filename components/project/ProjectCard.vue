@@ -1,6 +1,7 @@
 <template>
     <a :class="['project-card', 'd-flex', 'align-items-end', setGridClass]" :href="projectUrl">
-        <span class="project-card-background absolute" :style="`background-image: url(${imageUrl})`"></span>
+        <span class="project-counter">0{{this.index + 1}}</span>
+        <picture class="project-card-background absolute" :style="`background-image: url(${imageUrl})`"></picture>
         <div class="project-details">
             <div class="d-flex justify-content-between">
                 <h3 class="project-title font-weight-bold">{{title}}</h3>
@@ -9,6 +10,7 @@
                 </ul>
             </div>
             <p class="project-description">{{ description }}</p>
+            <span class="project-cta"><fa :icon="['fas', 'arrow-right']"/></span>
         </div>
     </a>
 </template>
@@ -58,12 +60,12 @@ export default {
     transition: transform $speed-150 $ease-accelerate;
     &::after {
         content: "";
-        background: linear-gradient(0deg, rgba(82,85,151,0.9) 0%, rgba(0,0,0,1) 100%);
+        background: linear-gradient(0deg, rgba(82,85,151,0.9), rgba(0,0,0,0.9));
         height: inherit;
         width: inherit;
         display: block;
         opacity: 0;
-        transition: opacity $speed-150 $ease-accelerate;
+        transition: all $speed-150 $ease-accelerate;
     }
 }
 .project-card {
@@ -123,9 +125,10 @@ export default {
 .project-details {
     width: 100%;
     transition: all 250ms $ease-accelerate;
-    transition-delay: 150ms;
     .project-title {
         white-space: nowrap;
+        transform-origin: bottom left;
+        transition: all $speed-150 $ease-accelerate;
     }
     .project-description {
         opacity: 0;
@@ -134,7 +137,51 @@ export default {
         width: 376px;
         transition: all 150ms $ease-accelerate;
         transition-delay: none;
+        @include breakpoint(lg) {
+            max-width: 330px;
+        }
+        @include breakpoint(md-down) {
+            font-size: 14px;
+            width: 100%;
+        }
     }
+    .project-cta {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        border-radius: 50%;
+        height: 100px;
+        width: 100px;
+        color: $primary;
+        box-shadow: $shadow-large;
+        position: absolute;
+        right: 20px;
+        bottom: -60px;
+        opacity: 0;
+        transform-origin: bottom right;
+        transform: translateX(-10px);
+        transition: all 200ms $ease-decelerate;
+        @include breakpoint(lg-down) {
+            height: 70px;
+            width: 70px;
+        }
+        @include breakpoint(md-down) {
+            display: none;
+        }
+    }
+}
+
+.project-counter {
+    @include heading-font;
+    color: $brand-secondary;
+    font-size: 160px;
+    text-align: right;
+    position: absolute;
+    right: -8px;
+    top: -36px;
+    opacity: 0;
+    transition: all 150ms $ease-accelerate;
 }
 
 .project-tags {
@@ -170,11 +217,14 @@ export default {
         transform: scale(1.03);
     }
     .project-details {
-        transform: translateY(-48px);
+        transform: translateY(-140px);
         padding: 0 16px;
-        transition: all $speed-150 $ease-accelerate;
+        transition: all $speed-150 $ease-decelerate;
         .project-title {
             color: white;
+            transform-origin: bottom left;
+            transform: scale(1.5);
+            transition: all $speed-150 $ease-decelerate;
         }
         .tag {
             opacity: 0;
@@ -183,13 +233,26 @@ export default {
         .project-description {
             color: white;
             opacity: 1;
-            height: 90px;
-            transition: all $speed-250 $ease-accelerate;
+            transform: scaleY(1);
+            transition: all $speed-150 $ease-decelerate;
+            transition-delay: 200ms;
+        }
+        .project-cta {
+            opacity: 1;
+            transform: translateX(0px);
+            transition-delay: 350ms;
         }
     }
 
     .project-card-background::after {
         opacity: 1;
+        backdrop-filter: blur(6px);
+    }
+
+    .project-counter {
+        opacity: 1;
+        transform: translateY(-20px);
+        transition: all 350ms $ease-decelerate;
     }
 }
 </style>
