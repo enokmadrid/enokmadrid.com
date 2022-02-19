@@ -11,8 +11,8 @@
             </div>
 
             <div class="mt-4 mb-1">
-                <a href="#what-i-do" class="btn btn-lg btn-primary brand-gradient rounded-pill" role="button">Learn How I Can Help</a>
-                <a href="#featured-work" class="btn btn-lg btn-light rounded-pill" role="button">View My Portfolio</a>
+                <a href="#solutions" class="btn btn-lg btn-primary brand-gradient rounded-pill" role="button">Learn How I Can Help</a>
+                <a href="#projects" class="btn btn-lg btn-light rounded-pill" role="button">View My Portfolio</a>
             </div>
         </div>
         <div class="overflow-hidden d-none d-lg-block">

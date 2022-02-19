@@ -1,5 +1,5 @@
 <template>
-    <section v-if="!loading" id="projects" class="section-space">
+    <section v-if="!loading" id="projects" class="section-space mb-5">
         <div class="grid container">
             <div class="item-first">
                 <span class="text-left display-1 text-decoration d-block">Recent Work</span>
@@ -63,7 +63,7 @@ export default {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: repeat(22, 1fr); 
     gap: 0 $space-standard; 
-  grid-template-areas: 
+    grid-template-areas: 
     "item-1 ."
     "item-1 item-first"
     "item-1 item-first"

@@ -1,6 +1,6 @@
 <template>
-    <section class="container-fluid background-gradient section-space mb-5">
-        <SectionTitle 
+    <section id="solutions" class="container-fluid background-gradient section-space mb-5">
+        <SectionTitle class="mb-4"
             :title="`Design & Code`"
             :subtitle="`I can help you with designing and building experiences with simple content structure, clean UI patterns with a slight touch of wow.`"
         />
