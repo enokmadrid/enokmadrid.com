@@ -4,6 +4,10 @@
 @import "typography";
 @import "buttons";
 
+html {
+  scroll-behavior: smooth;
+}
+
 .jumbotron-fluid {
   margin:0;
 
