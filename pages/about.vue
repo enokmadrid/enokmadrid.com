@@ -40,6 +40,23 @@
   }
 </script>
 
-<style>
+<style lang="scss" scoped>
+// ********* About *********
+#about {
+  background: #f7f7f9;
+  padding: 100px 0;
+
+  .copy-intro {
+    margin-top: 10px;
+
+    .c-primary {
+      color: $brand-primary;
+    }
+  }
+
+  .copy-about {
+    margin-top: 40px;
+  }
+}
 
 </style>

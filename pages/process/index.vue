@@ -33,18 +33,26 @@ export default {
 @import '~/assets/scss/_mixins.scss';
 
 .process-card {
+    text-align: center;
     color: unset;
     .icon {
         color: $brand-action-primary;
+        margin: 30px auto;
+        &::before {
+            font-size: 60px;
+        }
     }
     .card {
-        box-shadow: $shadow-medium;
-        transition: box-shadow $speed-150 $ease-standard;
+        box-shadow: $shadow-small;
+        transition: box-shadow $speed-350 $ease-standard;
+        padding: $space-large 0;
+        border: none;
     }
     &:hover {
         text-decoration: none;
         .card {
             box-shadow: $shadow-large;
+            transition: box-shadow $speed-150 $ease-standard;
         }
     }
 }

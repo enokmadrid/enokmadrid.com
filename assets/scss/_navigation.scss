@@ -302,7 +302,8 @@
 
 // LOGO CONTAINER
 .navbar-split .navbar-brand {
-  &:hover {
+  &:hover,
+  &:focus {
     color: $brand-text;
   }
   color: $brand-text;

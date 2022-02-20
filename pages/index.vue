@@ -4,7 +4,6 @@
     <!-- <SectionSubdivision :section-title="`Featured Projects`"/> -->
     <SectionProjects />
     <SectionPageBox />
-    <SectionProcessCTA />
   </div>
 </template>
 

@@ -6,3 +6,10 @@
         </div>
     </div>
 </template>
+
+<style lang="scss" scoped>
+@import '~/assets/scss/_mixins.scss';
+.hero-small-title {
+    margin-top: 3rem;
+}
+</style>

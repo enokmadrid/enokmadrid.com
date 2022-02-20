@@ -17,7 +17,7 @@
         </div>
         <div class="overflow-hidden d-none d-lg-block">
             <div class="angle-split">
-                <div class="pattern-bg"></div>
+                <div class="brand-pattern-bg"></div>
             </div>
         </div>
     </div>
@@ -29,5 +29,100 @@
     .text-hero-description {
         padding-right: 30%;
     }
+}
+
+.jumbotron-fluid {
+  &.shift-up {
+    @include breakpoint(sm-up) {
+      padding: 120px 0;
+    }
+    @include breakpoint(md-up) {
+      padding: 250px 0 60px;
+      margin-top: -88px;
+    }
+  }
+
+  &.hero {
+    @include breakpoint(xs) {
+      text-align: center;
+      height:100vh;
+      
+      .container {
+        position: absolute;
+        top: 40%;
+      }
+    }
+  }
+
+  .copy-hero {
+    @include breakpoint(md-down) {
+      width: 100%;
+    }
+    @include breakpoint(md-up) {
+      width: 70%;
+    }
+    @include breakpoint(lg-up) {
+      width: 54%;
+    }
+  }
+
+  .scroll {
+    margin-top: 0 !important;
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 5%;
+    text-align: center;
+
+    i {
+      font-size: 36px;
+      color: white;
+      opacity: 0.3;
+    }
+  }
+
+  &.hero {
+    background-color: white;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+
+.overflow-hidden {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  z-index: 0;
+  display: block;
+  overflow: hidden;
+}
+
+
+.angle-split {
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  right: 0%;
+  bottom: 0%;
+  overflow: hidden;
+  height: 700px;
+  margin-right: -40%;
+  margin-left: 60%;
+  border-left: 7px solid #e21955;
+  background-color: #070710;
+  -webkit-transform: skew(45deg, 0deg);
+  -ms-transform: skew(45deg, 0deg);
+  transform: skew(45deg, 0deg);
+}
+
+
+.brand-pattern-bg {
+  left: -49%;
+  top: 0%;
+  bottom: auto;
+  border-bottom: 5px solid #e21955;
 }
 </style>
