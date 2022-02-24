@@ -62,7 +62,7 @@ $section-height: 1150px;
   overflow: hidden;
   height: $section-height;
   margin-left: -80%;
-  margin-right: 60%;
+  margin-right: 47%;
   border-right: 7px solid #e21955;
   background-color: #070710;
   -webkit-transform: skew(45deg, 0deg);
@@ -70,9 +70,7 @@ $section-height: 1150px;
   transform: skew(45deg, 0deg);
 }
 .brand-pattern-bg {
-    left: 0;
-    right: -350px;
-    bottom: auto;
+    left: 730px;
     border-top: 5px solid $primary;
 }
 </style>
