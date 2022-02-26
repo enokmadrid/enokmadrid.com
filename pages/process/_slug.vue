@@ -25,26 +25,35 @@
                 </div>
             </div>
         </section> <!-- /container -->
-
-
-        <div class="flexbox-container content--menu">
-            <a href="#" class="flex-link btn btn-link hasArrow __left">
-                <span>Previous Step</span>
-            </a>
-            <a href="#" class="flex-link btn btn-link hasArrow __right">
-                <span>Next Step</span>
-            </a>
-        </div>
+        <SectionPrevNext :prev="prev" :next="next"/>
     </main>
 </template>
 
 <script>
 export default {
     data: () => ({
-        step: {}
+        step: {},
+        prev: {},
+        next: {}
     }),
     async created() {
         this.step = await this.$content(`steps/${this.$route.params.slug}`).fetch();
+
+        // assign the first two objects in returned array to prev & next constant variables
+        const [prev, next] = await this.$content('steps')
+        // fetch only the title and slug from the articles
+        .only(['title', 'slug', 'path', 'id'])
+        // sortby time updated, in ascending order
+        .sortBy('id', 'asc')
+        // get the correct slug
+        .surround(this.step.slug)
+        // fetch data
+        .fetch()
+
+        console.log([this.step.slug, prev, next]);
+
+        this.prev = prev;
+        this.next = next;
     }
 }
 </script>

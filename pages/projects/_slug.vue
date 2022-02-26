@@ -57,22 +57,7 @@
                 </div>
             </div>
         </section>
-
-        <div class="flexbox-container content--menu">
-            <nuxt-link 
-            v-if="prev" 
-            :to="{ name: 'project-slug', params: { slug: prev.slug } }" 
-            class="flex-link btn btn-link hasArrow __left">
-                <span>Previous Project</span>
-            </nuxt-link>
-            <nuxt-link 
-            v-if="next" 
-            :to="{ name: 'project-slug', params: { slug: next.slug } }" 
-            class="flex-link btn btn-link hasArrow __right"
-            >
-                <span>{{next.title}}</span>
-            </nuxt-link>
-        </div>
+        <SectionPrevNext/>
     </main>
 </template>
 
