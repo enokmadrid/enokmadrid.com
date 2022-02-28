@@ -1,7 +1,6 @@
 <template>
   <div>
     <SectionHero />
-    <!-- <SectionSubdivision :section-title="`Featured Projects`"/> -->
     <SectionProjects />
     <SectionPageBox />
   </div>

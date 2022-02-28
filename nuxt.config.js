@@ -59,6 +59,10 @@ export default {
   ],
   // Apollo Options: 
   apollo: {
+    tokenName: "nuxt-apollo",
+    cookieAttributes: {
+      expires: 7
+    },
     clientConfigs: {
       default: {
         httpEndpoint: process.env.GRAPHCMS_ENDPOINT

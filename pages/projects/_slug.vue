@@ -71,16 +71,6 @@ export default {
         projectPrevious: '',
         projectNext: '',
     }),
-    props: {
-      prev: {
-        type: Object,
-        default: () => null,
-      },
-      next: {
-        type: Object,
-        default: () => null,
-      },
-    },
     apollo: {
         $loadingKey: 'loading',
         project: {

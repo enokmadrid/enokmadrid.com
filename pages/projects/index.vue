@@ -33,23 +33,16 @@
 </template>
 
 <script>
-import projectsQuery from '~/graphql/projects.gql'
 export default {
 
     data: () => ({
         loading: 0,
-        projects: [],
         projectNext: '',
         projectPrevious: ''
     }),
-    apollo: {
-        $loadingKey: 'loading',
-        projects: {
-            prefetch: true,
-            query: projectsQuery,
-            variables() {
-             return { slug: this.$route.params.slug }
-            }
+    computed: {
+        projects() {
+            return this.$store.state.projects
         }
     }
 }
