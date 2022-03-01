@@ -1,9 +1,6 @@
 <template>
-    <div v-if="loading" class="loader-wrapper">
-        <span class="loader"><span></span><span></span></span>
-        <b>Loading...</b>
-    </div>
-    <main v-else>
+    <main>
+        {{initProject}}
         <div class="jumbotron jumbotron-fluid dark shift-up has-overlay" :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${project.imageHero.url});`">
             <div class="container text-center">
                 <h1 class="display-3">{{project.title}}</h1>
@@ -62,37 +59,18 @@
 </template>
 
 <script>
-import projectQuery from '~/graphql/project.gql';
-import mapState from 'vuex';
-
 export default {
     data: () => ({
         loading: 0,
         project: {},
-        slug: '',
         projectPrevious: '',
         projectNext: '',
     }),
-    apollo: {
-        $loadingKey: 'loading',
-        project: {
-            prefetch: true,
-            query: projectQuery,
-            variables() {
-                return {
-                    slug: this.$route.params.slug
-                }
-            }
-        }
-    },
-    /*
     computed: {
-        ...mapState(['activeProject'])
-    },
-    beforeCreate() {
-        this.$store.dispatch('fetchProject', 'invalog');
+        initProject() {
+            this.project = this.$store.getters.getProjectBySlug(this.$route.params.slug);
+        }
     }
-    */
 }
 </script>
 

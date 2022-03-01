@@ -4,7 +4,7 @@ import projectQuery from '~/graphql/project.gql'
 
 const state = () => ({
     projects:  [],
-    activeProject: {}
+    activeProject: null
 })
 
 const actions = {
@@ -12,14 +12,12 @@ const actions = {
         const response = await this.app.apolloProvider.defaultClient
         .query({ query: projectsQuery })
         commit("set_projects", response.data.projects);
-    },
-    async fetchProject({ commit }, slug) {
-        const response = await this.app.apolloProvider.defaultClient
-        .query({ 
-            query: projectQuery,
-            variables: { slug: slug }
-        })
-        commit("set_activeProject", response.data.project);
+    }
+}
+
+const getters = {
+    getProjectBySlug: state => (slug) => {
+        return state.projects.find(project => project.slug === slug)
     }
 }
 
@@ -37,5 +35,6 @@ const mutations = {
 export default {
     state,
     actions,
+    getters,
     mutations
 }
