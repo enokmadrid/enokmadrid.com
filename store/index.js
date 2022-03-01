@@ -3,29 +3,32 @@ import projectsQuery from '~/graphql/projects.gql'
 import projectQuery from '~/graphql/project.gql'
 
 const state = () => ({
-    projects:  []
+    projects:  [],
+    activeProject: {}
 })
 
 const actions = {
-    nuxtServerInit({ commit }) {
-        const apollo = this.app.apolloProvider.defaultClient;
-        return new Promise((resolve, reject) => {
-            apollo
-            .query({ query: projectsQuery })
-            .then(resp => {
-                commit("set_projects", resp.data.projects);
-                resolve(resp);
-            })
-            .catch(err => {
-                resolve(err);
-            });
-        });
+    async nuxtServerInit({ commit }) {
+        const response = await this.app.apolloProvider.defaultClient
+        .query({ query: projectsQuery })
+        commit("set_projects", response.data.projects);
+    },
+    async fetchProject({ commit }, slug) {
+        const response = await this.app.apolloProvider.defaultClient
+        .query({ 
+            query: projectQuery,
+            variables: { slug: slug }
+        })
+        commit("set_activeProject", response.data.project);
     }
 }
 
 const mutations = {
-    set_projects(state, allProjects) {
-        state.projects = allProjects;
+    set_projects(state, payload) {
+        state.projects = payload;
+    },
+    set_activeProject(state, payload) {
+        state.activeProject = payload;
     }
 }
 

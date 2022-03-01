@@ -4,7 +4,7 @@
             <div class="d-flex">
                 <div class="copy-hero">
                     <span class="display-1 mb-4  text-decoration">Hi, I'm Enok!</span>
-                    <h1 class="display-2 text-hero-title">UX Designer + <br> UI Engineer</h1>
+                    <h1 class="display-2 text-hero-title">Design Engineer</h1>
                     <p class="mt-4 text-hero-description">I <a href="https://www.youtube.com/enokmadrid" target="blank">create UX content</a> and help tech startups make profits by leading them into delighting their customers.</p>
                 </div>
                 <span class="align-self-center gravatar large"></span>

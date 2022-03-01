@@ -62,7 +62,9 @@
 </template>
 
 <script>
-import projectQuery from '~/graphql/project.gql'
+import projectQuery from '~/graphql/project.gql';
+import mapState from 'vuex';
+
 export default {
     data: () => ({
         loading: 0,
@@ -82,7 +84,15 @@ export default {
                 }
             }
         }
+    },
+    /*
+    computed: {
+        ...mapState(['activeProject'])
+    },
+    beforeCreate() {
+        this.$store.dispatch('fetchProject', 'invalog');
     }
+    */
 }
 </script>
 
