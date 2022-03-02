@@ -3,7 +3,7 @@
         <div class="grid container">
             <div class="item-first">
                 <span class="text-left display-1 text-decoration d-block">Recent Work</span>
-                <img src="~/assets/images/svg/robot-animated.svg" width="360" alt="robot-animation" class="float-right d-block">
+                <img src="~/assets/images/svg/robot-animated.svg" width="360" height="281" alt="robot-animation" class="float-right d-none d-md-block">
             </div>
             <project-card
                 v-for="(project, index) in projects"
