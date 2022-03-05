@@ -1,9 +1,6 @@
 <template>
     <nav class="navbar navbar-expand-lg py-3 z-10 fixed-top" 
-        :class="[
-            isLight ? 'navbar-light' : 'navbar-dark',
-            isSplit ? 'navbar-split' : ''
-        ]">
+        :class="`${this.$store.getters.getNavClass}`">
         <div class="container">
             <NuxtLink class="navbar-brand text-uppercase" to="/">
                 <img class="logo" src="~/assets/images/enok-logo.svg" alt="Enok Madrid Logo">
@@ -38,10 +35,6 @@
 
 <script>
 export default {
-    data: () => ({
-        isLight: false,
-        isSplit: true
-    }),
     mounted: () => {
         let scrollPos = 0;
         let nav = document.querySelector('.navbar.fixed-top');
@@ -66,20 +59,38 @@ export default {
                 }
                 scrollPos = (document.body.getBoundingClientRect()).top
             });
+        } else if (nav.classList.contains("navbar-light")) {
+            // hide and show navbar on scroll
+            window.addEventListener('scroll', () => {
+                if ((document.body.getBoundingClientRect()).top > scrollPos) {
+                    nav.classList.remove("navbar-offset");
+                } else {
+                    nav.classList.add("navbar-offset");
+                }
+                scrollPos = (document.body.getBoundingClientRect()).top
+            });
         }
+    },
+    created () {
+        this.$store.commit('set_currentPage', this.$route.path);
+        this.$store.dispatch('changeNavClass');
     },
     watch: {
         '$route' () {
-            if (this.$route.path === '/') {
-                this. isLight = false;
-                this. isSplit = true;
-            } else if (this.$route.path === '/about'){
-                this. isLight = true;
-                this. isSplit = false;
-            } else {
-                this. isLight = false;
-                this. isSplit = false;
-            }
+            this.$store.commit('set_currentPage', this.$route.path);
+            this.$store.dispatch('changeNavClass');
+        }
+    },
+    methods: {
+        offsetNavbar() {
+            window.addEventListener('scroll', () => {
+                if ((document.body.getBoundingClientRect()).top > scrollPos) {
+                    nav.classList.remove("navbar-offset");
+                } else {
+                    nav.classList.add("navbar-offset");
+                }
+                scrollPos = (document.body.getBoundingClientRect()).top
+            });
         }
     }
 }
