@@ -80,18 +80,6 @@ export default {
             this.$store.commit('set_currentPage', this.$route.path);
             this.$store.dispatch('changeNavClass');
         }
-    },
-    methods: {
-        offsetNavbar() {
-            window.addEventListener('scroll', () => {
-                if ((document.body.getBoundingClientRect()).top > scrollPos) {
-                    nav.classList.remove("navbar-offset");
-                } else {
-                    nav.classList.add("navbar-offset");
-                }
-                scrollPos = (document.body.getBoundingClientRect()).top
-            });
-        }
     }
 }
 </script>
