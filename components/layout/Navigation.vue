@@ -37,38 +37,31 @@
 export default {
     mounted: () => {
         let scrollPos = 0;
-        let nav = document.querySelector('.navbar.fixed-top');
+        const nav = document.querySelector('.navbar.fixed-top');
         
         // Switch between dark and light navbar on scroll
         if (nav.classList.contains("navbar-dark")) {
-            let height = nav.clientHeight;
+            const height = nav.clientHeight;
             window.addEventListener('scroll', () => {
                 if (window.scrollY > height) {
                     nav.classList.remove("navbar-dark");
                     nav.classList.add("navbar-light");
-                } 
-                if (window.scrollY < height)  {
+                } else {
                     nav.classList.remove("navbar-light");
                     nav.classList.add("navbar-dark");
                 }
-                // hide and show navbar on scroll
-                if ((document.body.getBoundingClientRect()).top > scrollPos) {
-                    nav.classList.remove("navbar-offset");
-                } else {
-                    nav.classList.add("navbar-offset");
-                }
-                scrollPos = (document.body.getBoundingClientRect()).top
+                offsetNav((document.body.getBoundingClientRect()).top);
+                scrollPos = (document.body.getBoundingClientRect()).top;
             });
         } else if (nav.classList.contains("navbar-light")) {
-            // hide and show navbar on scroll
             window.addEventListener('scroll', () => {
-                if ((document.body.getBoundingClientRect()).top > scrollPos) {
-                    nav.classList.remove("navbar-offset");
-                } else {
-                    nav.classList.add("navbar-offset");
-                }
-                scrollPos = (document.body.getBoundingClientRect()).top
+                offsetNav((document.body.getBoundingClientRect()).top);
+                scrollPos = (document.body.getBoundingClientRect()).top;
             });
+        }
+        // hide and show navbar on scroll
+        function offsetNav(currentScrollPos) {
+            (currentScrollPos > scrollPos) ? nav.classList.remove("offset") : nav.classList.add("offset");
         }
     },
     created () {
