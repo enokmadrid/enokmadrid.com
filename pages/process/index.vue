@@ -5,7 +5,7 @@
                 <div class="container content--container">
                     <div class="row">
                         <div v-for="step in steps" :key="step.id" class="col-md-4 col-sm-6 col-xs-12">
-                            <NuxtLink :to="`/process/${step.slug}`" class="process-card">
+                            <NuxtLink :to="`${step.path}`" class="process-card">
                                 <div class="card mb-3">
                                     <i :class="['icon', step.navIcon]"></i>
                                     <b class="card-subtitle"> {{step.title}}</b>
@@ -24,7 +24,7 @@ export default {
         steps: []
     }),
     async created() {
-        this.steps = await this.$content('steps').sortBy('id').fetch();
+        this.steps = await this.$content('process').sortBy('id').fetch();
     }
 }
 </script>

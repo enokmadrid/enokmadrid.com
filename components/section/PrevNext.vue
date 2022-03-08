@@ -2,13 +2,13 @@
     <div class="flexbox-container content--menu">
         <nuxt-link 
             v-if="prev" 
-            :to="{ params: { slug: prev.slug }}" 
+            :to="`${prev.path}`" 
             class="flex-link btn btn-link hasArrow __left">
                 <span>{{prev.title}}</span>
         </nuxt-link>
         <nuxt-link 
             v-if="next" 
-            :to="{ params: { slug: next.slug }}" 
+            :to="`${next.path}`" 
             class="flex-link btn btn-link hasArrow __right"
             >
             <span>{{next.title}}</span>
@@ -19,14 +19,8 @@
 <script>
 export default {
     props: {
-        prev: {
-            type: Object,
-            default: () => null,
-        },
-        next: {
-            type: Object,
-            default: () => null
-        }
+        prev: {},
+        next: {}
     }
 }
 </script>

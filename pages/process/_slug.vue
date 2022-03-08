@@ -33,24 +33,23 @@
 export default {
     data: () => ({
         step: {},
+        slug: {},
         prev: {},
         next: {}
     }),
     async created() {
-        this.step = await this.$content(`steps/${this.$route.params.slug}`).fetch();
+        this.step = await this.$content(`process/${this.$route.params.slug}`).fetch();
 
         // assign the first two objects in returned array to prev & next constant variables
-        const [prev, next] = await this.$content('steps')
-        // fetch only the title and slug from the articles
+        const [prev, next] = await this.$content('process')
+        // fetch only the title and slug from the steps
         .only(['title', 'slug', 'path', 'id'])
-        // sortby time updated, in ascending order
+        // sortby id, in ascending order
         .sortBy('id', 'asc')
         // get the correct slug
-        .surround(this.step.slug)
+        .surround(this.step['slug'])
         // fetch data
         .fetch()
-
-        console.log([this.step.slug, prev, next]);
 
         this.prev = prev;
         this.next = next;

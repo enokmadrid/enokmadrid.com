@@ -14,7 +14,7 @@ export default {
         steps: []
     }),
     async created() {
-        this.steps = await this.$content('steps').sortBy('id').fetch();
+        this.steps = await this.$content('process').sortBy('id').fetch();
     }
 }
 </script>
