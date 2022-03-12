@@ -2,11 +2,20 @@
     <section id="solutions" class="container-fluid background-gradient section-height">
         <div class="p-relative z-5">
             <SectionTitle class="py-5"
+                data-aos="fade-up" 
+                data-aos-duration="500"
+                data-aos-easing="ease-in-out-cubic"
                 :title="`Design & Code`"
                 :subtitle="`I can help you with designing and building experiences with simple content structure, clean UI patterns with a slight touch of wow.`"
             />
-            <div class="container">
-                <ul class="page-box row text-xs-center no-gutters pl-0">
+            <div class="container"
+                data-aos="fade-up" 
+                data-aos-duration="500"
+                data-aos-easing="ease-in-out-cubic">
+                <ul class="page-box row text-xs-center no-gutters pl-0"
+                    data-aos="fade-up" 
+                    data-aos-duration="500"
+                    data-aos-easing="ease-in-out-cubic">
                     <sectionIconCard v-for="card in cards" :key="card.id"
                         :icon="require(`~/assets/images/svg/illustration-icons/${card.icon}`)"
                         :title="card.title"
@@ -14,7 +23,10 @@
                     />
                 </ul>
             </div>
-            <SectionListIcons/>
+            <SectionListIcons
+                data-aos="fade-up" 
+                data-aos-duration="500"
+                data-aos-easing="ease-in-out-cubic"/>
             <SectionProcessCTA class="mt-5"/>
         </div>
 
@@ -28,6 +40,7 @@
 </template>
 
 <script>
+import aosMixin from '~/mixins/aos'
 export default {
     data: () => ({
         cards: []
@@ -37,7 +50,8 @@ export default {
         .sortBy('id')
         .limit(3)
         .fetch();
-    }
+    },
+    mixins: [aosMixin]
 }
 </script>
 

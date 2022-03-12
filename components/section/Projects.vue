@@ -16,6 +16,9 @@
                 :roles="project.roles"
                 :project-url="`/projects/${project.slug}`"
                 :color="project.color.hex"
+                data-aos="zoom-in-up" 
+                data-aos-duration="500"
+                data-aos-easing="ease-in-out-cubic"
                 >
             </project-card>
             <div class="item-last">
@@ -27,6 +30,7 @@
 </template>
 
 <script>
+import aosMixin from '~/mixins/aos'
 export default {
 
     data: () => ({
@@ -38,7 +42,8 @@ export default {
         projects() {
             return this.$store.state.projects
         }
-    }
+    },
+    mixins: [aosMixin]
 }
 </script>
 

@@ -3,16 +3,42 @@
         <div class="container position-relative z-5">
             <div class="d-flex">
                 <div class="copy-hero">
-                    <span class="display-1 mb-4  text-decoration">Hi, I'm Enok!</span>
-                    <h1 class="display-2 text-hero-title">Design Engineer</h1>
-                    <p class="mt-4 text-hero-description">I <a href="https://www.youtube.com/enokmadrid" target="blank">create UX content</a> and help tech startups make profits by leading them into delighting their customers.</p>
+                    <span class="display-1 mb-4  text-decoration"
+                          data-aos="fade-up" 
+                          data-aos-duration="500"
+                          data-aos-easing="ease-in-out-cubic"
+                    >Hi, I'm Enok!</span>
+                    <h1 class="display-2 text-hero-title"
+                        data-aos="fade-up" 
+                        data-aos-duration="500"
+                        data-aos-easing="ease-in-out-cubic"
+                    >Design Engineer</h1>
+                    <p class="mt-4 text-hero-description"
+                      data-aos="fade-up" 
+                      data-aos-duration="500"
+                      data-aos-easing="ease-in-out-cubic"
+                    >I <a href="https://www.youtube.com/enokmadrid" target="blank">create UX content</a> and help tech startups make profits by leading them into delighting their customers.</p>
                 </div>
-                <span class="align-self-center gravatar large"></span>
+                <span class="align-self-center gravatar large"
+                      data-aos="fade-up-left" 
+                      data-aos-duration="500"
+                      data-aos-easing="ease-in-out-cubic"
+                ></span>
             </div>
 
             <div class="mt-4 mb-1">
-                <a href="#solutions" class="btn btn-lg btn-primary brand-gradient rounded-pill" role="button">Learn How I Can Help</a>
-                <a href="#projects" class="btn btn-lg btn-light rounded-pill" role="button">View My Portfolio</a>
+                <a href="#solutions" class="btn btn-lg btn-primary brand-gradient rounded-pill" 
+                  data-aos="fade-right" 
+                  data-aos-duration="500"
+                  data-aos-easing="ease-in-out-cubic"
+                  role="button"
+                >Learn How I Can Help</a>
+                <a href="#projects" class="btn btn-lg btn-light rounded-pill" 
+                  data-aos="fade-right" 
+                  data-aos-duration="500"
+                  data-aos-easing="ease-in-out-cubic"
+                  role="button"
+                >View My Portfolio</a>
             </div>
         </div>
         <div class="overflow-hidden d-none d-lg-block">
@@ -22,6 +48,13 @@
         </div>
     </div>
 </template>
+
+<script>
+import aosMixin from '~/mixins/aos'
+export default {
+    mixins: [aosMixin]
+}
+</script>
 
 <style lang="scss" scoped>
 @import '~/assets/scss/_mixins.scss';
