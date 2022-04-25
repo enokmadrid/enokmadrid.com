@@ -14,7 +14,7 @@
                 <span>Process</span>
             </NuxtLink>
             <NuxtLink to="/learn" class="flex-link">
-                <fa :icon="['fas', 'backpack']" class="icon"/>
+                <fa :icon="['fas', 'chalkboard-teacher']" class="icon"/>
                 <span>Training</span>
             </NuxtLink>
             <a href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank" class="flex-link">

@@ -1,9 +1,9 @@
 <template>
   <div>
         <div class="jumbotron jumbotron-fluid dark shift-up">
-            <div class="container text-xs-center">
-                <h1 class="display-3">Online UI/UX Course</h1>
-                <p class="lead hidden-xs-down">Learn the fundamentals and everything you need to know about Interface Design</p>
+            <div class="container text-xs-center mt-5">
+                <h1 class="display-4">Online UI/UX Course</h1>
+                <p class="hidden-xs-down">Learn the fundamentals and everything you need to know about Interface Design</p>
                 <div class="embed-responsive embed-responsive-16by9">
                         <iframe width="560" height="315" src="https://www.youtube.com/embed/v7725FiV0Uo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                         </div>
