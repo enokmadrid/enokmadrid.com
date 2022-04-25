@@ -57,11 +57,17 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/scss/_mixins.scss';
-$section-height: 1150px;
 .section-height {
-    height: $section-height;
+    height: auto;
     overflow: hidden;
 }
+$section-height: 1150px;
+@include breakpoint(lg-up) {
+    .section-height {
+        height: $section-height;
+    }
+}
+
 .p-absolute {
     position: absolute;
 }
