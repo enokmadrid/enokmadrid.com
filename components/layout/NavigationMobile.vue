@@ -2,90 +2,64 @@
     <nav class="sticky-header fixed-bottom">
         <div class="flexbox-container flex-menu d-flex d-lg-none">
             <NuxtLink to="/" exact class="flex-link">
-                <i class="icon icon-toolbox">
-                    <span>Work</span>
-                </i>
+                <fa :icon="['fas', 'suitcase']" class="icon"/>
+                <span>Work</span>
             </NuxtLink>
             <NuxtLink to="/about" class="flex-link">
-                <i class="icon icon-person">
-                    <span>About</span>
-                </i>
+                <fa :icon="['fas', 'user']" class="icon"/>
+                <span>About</span>
             </NuxtLink>
             <NuxtLink to="/process" class="flex-link">
-                <i class="icon icon-process">
-                    <span>Process</span>
-                </i>
+                <fa :icon="['fas', 'sitemap']" class="icon"/>
+                <span>Process</span>
+            </NuxtLink>
+            <NuxtLink to="/learn" class="flex-link">
+                <fa :icon="['fas', 'backpack']" class="icon"/>
+                <span>Training</span>
             </NuxtLink>
             <a href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank" class="flex-link">
-                <i class="icon icon-email-send-1">
-                    <span>Contact</span>
-                </i>
+                <fa :icon="['fas', 'paper-plane']" class="icon"/>
+                <span>Contact</span>
             </a>
         </div>
     </nav>
 </template>
 
-<script>
-
-</script>
+<script></script>
 
 <style lang="scss" scoped>
+@import '~/assets/scss/_mixins.scss';
 .flex-menu {
-    height: 150px;
-
-    &.process {
-        overflow: auto;
-        justify-content: space-between;
-        width:100%;
-
-        -webkit-flex-wrap: nowrap;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
-
-        .flex-link {
-        padding: 0 5px;
-
-        i {
-            padding:0 25px;
-            white-space: nowrap;
-        }
-        }
-    }
-
+    background: $brand-black-light;
+    height: 60px;
     .flex-link {
-        background: $brand-black-light;
         color: #8787A0;
         height: inherit;
-
-        &:hover {
-        background: $brand-black;
-        text-decoration: none;
-
-        i {
-            color: $secondary;
-        }
-        }
+        flex-direction: column;
 
         &.nuxt-link-active {
-        background: $brand-black;
-        border-bottom: solid 6px $secondary;
-        color: $secondary;
+            background: rgba(0,0,0,0.2);
+            border-bottom: solid 4px $secondary;
+            color: $secondary;
+            @extend %transition-fade-in;
+            .icon {
+                margin-top: 4px;
+                @extend %transition-fade-in;
+            }
+            span {
+                opacity: 1;
+            }
         }
     }
-
-    i {
-        -webkit-transition: all 0.5s ease;
-        transition: all 0.5s ease;
-        font-size: 28px;
-
-        span {
+    
+    span {
         display: block;
         font-family: $font-family-sans-serif;
-        font-size: 12px;
+        font-size: 11px;
         font-weight: 600;
-        padding-top: 13px;
-        color: #fff;
-        }
+        padding-top: 2px;
+        color: white;
+        opacity: 0.6;
     }
 }
 

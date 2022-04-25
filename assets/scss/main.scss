@@ -221,12 +221,10 @@ html {
     -ms-flex:1;
     flex:1;
 
-    -webkit-transition: all 0.5s ease;
-    transition: all 0.5s ease;
+    @extend %transition-fade-in;
 
     &:hover {
-      -webkit-transition: all 0.5s ease;
-      transition: all 0.5s ease;
+      @extend %transition-fade-in;
     }
 
     &.flex-text-left {
@@ -257,11 +255,12 @@ html {
         background: #f2f2f2;
         text-decoration: none;
         color: $brand-action-secondary;
+        @extend %transition-fade-in;
       }
       &.nuxt-link-active {
-        background: $brand-black;
         border-bottom: solid 6px $secondary;
         color: $secondary;
+        @extend %transition-fade-in;
       }
 
       &.hasArrow {

@@ -22,26 +22,32 @@ export default {
 <style lang="scss" scoped>
 @import '~/assets/scss/_mixins.scss';
 .flex-menu {
+    background: $brand-black-light;
     height: 150px;
 
+    // Hide Scrollbar
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+    &::-webkit-scrollbar { 
+        display: none;  /* Safari and Chrome */
+    }
+
     .flex-link {
-        background: $brand-black-light;
         color: #8787A0;
         height: inherit;
 
         &:hover {
-        background: $brand-black;
-        text-decoration: none;
-
-        i {
-            color: $secondary;
-        }
+            background: rgba(0,0,0,0.2);
+            text-decoration: none;
+            i {
+                color: $secondary;
+            }
         }
 
         &.nuxt-link-active {
-        background: $brand-black;
-        border-bottom: solid 6px $secondary;
-        color: $secondary;
+            background: rgba(0,0,0,0.2);
+            border-bottom: solid 6px $secondary;
+            color: $secondary;
         }
     }
 
@@ -71,12 +77,12 @@ export default {
     flex-wrap: nowrap;
 
     .flex-link {
-    padding: 0 5px;
+        padding: 0 5px;
 
-    i {
-        padding:0 25px;
-        white-space: nowrap;
-    }
+        i {
+            padding:0 25px;
+            white-space: nowrap;
+        }
     }
 }
 </style>
