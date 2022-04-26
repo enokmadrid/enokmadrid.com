@@ -4,9 +4,6 @@
         :to="to"
         :href="href"
         @click="$emit('click')"
-        data-aos="fade-right" 
-        data-aos-duration="500"
-        data-aos-easing="ease-in-out-cubic"
         role="button"
     >
         <slot></slot>
