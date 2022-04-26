@@ -1,16 +1,16 @@
 <template>
   <div>
-    <SectionHero 
+    <HomeHero 
       data-aos="fade-left" 
       data-aos-duration="500"
       data-aos-easing="ease-in-out-cubic"
     />
-    <SectionProjects 
+    <Projects 
       data-aos="fade-up" 
       data-aos-duration="500"
       data-aos-easing="ease-in-out-cubic"
     />
-    <SectionPageBox 
+    <HomePageBox 
       data-aos="fade-right" 
       data-aos-duration="500"
       data-aos-easing="ease-in-out-cubic"

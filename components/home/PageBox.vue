@@ -1,7 +1,7 @@
 <template>
     <section id="solutions" class="container-fluid background-gradient section-height">
         <div class="p-relative z-5">
-            <SectionTitle class="py-5"
+            <Title class="py-5"
                 data-aos="fade-up" 
                 data-aos-duration="500"
                 data-aos-easing="ease-in-out-cubic"
@@ -16,18 +16,18 @@
                     data-aos="fade-up" 
                     data-aos-duration="500"
                     data-aos-easing="ease-in-out-cubic">
-                    <sectionIconCard v-for="card in cards" :key="card.id"
+                    <HomeIconCard v-for="card in cards" :key="card.id"
                         :icon="require(`~/assets/images/svg/illustration-icons/${card.icon}`)"
                         :title="card.title"
                         :description="card.description"
                     />
                 </ul>
             </div>
-            <SectionListIcons
+            <HomeListIcons
                 data-aos="fade-up" 
                 data-aos-duration="500"
                 data-aos-easing="ease-in-out-cubic"/>
-            <SectionProcessCTA class="mt-5"/>
+            <HomeProcessCTA class="mt-5"/>
         </div>
 
         <div class="angle-bg d-none d-lg-block p-relative">

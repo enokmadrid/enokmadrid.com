@@ -34,31 +34,7 @@ html {
   transform: skew(-45deg, 0deg);
 }
 
-.gravatar {
-  border-radius: 50%;
-  height:140px;
-  width:140px;
-  margin-top: 10px;
-  display: block;
-  background: url('https://s.gravatar.com/avatar/e19387847005ca3f652b3176c370b4d1?s=280') no-repeat center center;
-  background-size: 100%;
-  transition: transform 250ms ease-in-out;
-  transform: scale(.95);
 
-  &:hover {
-    transform: scale(1);
-  }
-}
-.gravatar.large {
-  width: 200px;
-  height: 200px;
-  padding: 100px;
-  box-shadow: 0 0 0 5px $primary;
-  @include media-breakpoint-down(xs) {
-    width: 100px;
-    height: 100px;
-  }
-}
 
 // ********* My Process *********
 #my-process {

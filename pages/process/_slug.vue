@@ -25,7 +25,7 @@
                 </div>
             </div>
         </section> <!-- /container -->
-        <SectionPrevNext :prev="prev" :next="next"/>
+        <PrevNext :prev="prev" :next="next"/>
     </main>
 </template>
 

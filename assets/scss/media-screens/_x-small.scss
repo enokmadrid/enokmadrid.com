@@ -1,5 +1,5 @@
 // Extra small devices (portrait phones, less than 544px)
-@include media-breakpoint-down(xs) {
+@include breakpoint(xs) {
   // mobile menu with smaller icons
   .flexbox-container.mobile-menu {
     &.process {
@@ -25,7 +25,7 @@
     .icon { font-size: 1rem; }
   }
 
-  // display text
+//  display text
   .display-2,
   .display-3,
   .display-4 {
@@ -51,13 +51,6 @@
         animation-iteration-count: infinite;
       }
 
-  }
-
-  #about {
-    .gravatar {
-      height: 100px;
-      width: 100px;
-    }
   }
 
   p {

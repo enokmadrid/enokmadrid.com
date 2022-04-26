@@ -19,11 +19,11 @@
                       data-aos-easing="ease-in-out-cubic"
                     >I <a href="https://www.youtube.com/enokmadrid" target="blank">create UX content</a> and help tech startups make profits by leading them into delighting their customers.</p>
                 </div>
-                <span class="align-self-center gravatar large"
+                <Gravatar
+                      class="align-self-center large"
                       data-aos="fade-up-left" 
                       data-aos-duration="500"
-                      data-aos-easing="ease-in-out-cubic"
-                ></span>
+                      data-aos-easing="ease-in-out-cubic"/>
             </div>
 
             <div class="mt-4 mb-1 ctas">
@@ -99,7 +99,7 @@ export default {
       width: 70%;
     }
     @include breakpoint(lg-up) {
-      width: 54%;
+      width: 60%;
     }
   }
 
@@ -161,13 +161,6 @@ export default {
   top: 0%;
   bottom: auto;
   border-bottom: 5px solid #e21955;
-}
-
-.gravatar.large {
-  @include breakpoint(xs) {
-    padding: $space-xlarge;
-    margin-bottom: $space-small;
-  }
 }
 
 .ctas {
