@@ -23,7 +23,7 @@
             </project-card>
             <div class="item-last">
                 <span class="text-left display-1 text-decoration">Enjoying These?</span>
-                <NuxtLink to="/projects" class="btn btn-primary btn-lg rounded-pill brand-gradient hasArrow __right">See All my Projects</NuxtLink>
+                <Button class="btn btn-primary btn-lg rounded-pill brand-gradient has-arrow __right" to="/projects">See All my Projects</Button>
             </div>
         </div>
     </section>

@@ -25,20 +25,9 @@
                       data-aos-duration="500"
                       data-aos-easing="ease-in-out-cubic"/>
             </div>
-
             <div class="mt-4 mb-1 ctas">
-                <a href="#solutions" class="btn btn-lg btn-primary brand-gradient rounded-pill" 
-                  data-aos="fade-right" 
-                  data-aos-duration="500"
-                  data-aos-easing="ease-in-out-cubic"
-                  role="button"
-                >Learn How I Can Help</a>
-                <a href="#projects" class="btn btn-lg btn-light rounded-pill" 
-                  data-aos="fade-right" 
-                  data-aos-duration="500"
-                  data-aos-easing="ease-in-out-cubic"
-                  role="button"
-                >View My Portfolio</a>
+              <Button class="btn rounded-pill btn-lg btn-primary brand-gradient has-arrow __right" href="#solutions">Learn How I Can Help</Button>
+              <Button class="btn rounded-pill btn-lg btn-light" href="#projects">View My Portfolio</Button>
             </div>
         </div>
         <div class="overflow-hidden d-none d-lg-block">

@@ -30,7 +30,7 @@
                         <a target="_blank" href="http://www.airbrushlasvegas.com/enok-madrid">airbrush paintings</a> or simply plan for my next
                         <a target="_blank" href="http://www.enok-one.com">graffiti mural</a>. I’m always into something.
                     </p>
-                    <a class="btn btn-lg btn-outline-primary rounded-pill hasArrow __right" href="https://www.linkedin.com/in/enokmadrid" target="_blank" role="button">View Resume</a>
+                    <Button class="btn btn-lg btn-outline-primary rounded-pill has-arrow __right" href="https://www.linkedin.com/in/enokmadrid" target="_blank">View Resume</Button>
                 </div>
             </div>
         </div>

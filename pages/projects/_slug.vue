@@ -31,9 +31,12 @@
                                 </div>
 
                                 <div class="col-md-12 mt-3">
-                                    <a :href="`${project.url}`" target="_blank" class="btn btn-sm btn-primary rounded-pill btn-space">
-                                        Launch Project
-                                    </a>
+                                    <Button 
+                                        class="btn btn-sm btn-primary rounded-pill btn-space"
+                                        :href="`${project.url}`" 
+                                        target="_blank"
+                                    >Launch Project</Button>
+
                                 </div>
                             </div>
                         </div>

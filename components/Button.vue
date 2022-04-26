@@ -1,3 +1,29 @@
+<template>
+    <component
+        :is="to ? 'nuxt-link' : href ? 'a' : 'button'"
+        :to="to"
+        :href="href"
+        @click="$emit('click')"
+        data-aos="fade-right" 
+        data-aos-duration="500"
+        data-aos-easing="ease-in-out-cubic"
+        role="button"
+    >
+        <slot></slot>
+    </component>
+</template>
+<script>
+export default {
+    props: [
+        "to",
+        "href",
+        "label",
+    ]
+}
+</script>
+
+<style lang="scss" scoped>
+@import '~/assets/scss/_mixins.scss';
 
 .c-primary {
   color: $brand-primary;
@@ -12,27 +38,7 @@
   }
 }
 
-// .btn-primary:hover,
-// .btn-primary:active,
-// .btn-primary:focus {
-//   background-color: $brand-primary;
-//   border-color: $brand-primary;
-// }
-
-// .btn-secondary {
-//   color: $brand-black;
-//   border: none;
-// }
-
-// .btn-secondary,
-// .btn-secondary-outline {
-//   &:hover, &:active, &:focus {
-//     background: white;
-//     color: $brand-secondary;
-//   }
-// }
-
-.hasArrow {
+.has-arrow {
   &.__right::after, 
   &.__left::before {
     font-family: "streamline-icons-font" !important;
@@ -78,3 +84,10 @@
   margin-bottom: 6px;
   display: inline-block;
 }
+
+@include breakpoint(sm) {
+    .btn {
+        width: 100%;
+    }
+}
+</style>

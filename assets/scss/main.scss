@@ -2,7 +2,6 @@
 @import 'mixins.scss';
 @import "navigation";
 @import "typography";
-@import "buttons";
 
 html {
   scroll-behavior: smooth;
@@ -240,7 +239,7 @@ html {
         @extend %transition-fade-in;
       }
 
-      &.hasArrow {
+      &.has-arrow {
         &.__right::after, 
         &.__left::before {
           font-size: 22px;

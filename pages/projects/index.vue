@@ -18,14 +18,13 @@
                         <p class="project-text">
                             {{project.clientDescription}}
                         </p>
-                        <NuxtLink 
+                        <Button
                             :to="`/projects/${project.slug}`"
                             :key="project.slug"
                             class="btn btn-lg btn-light rounded-pill" 
-                            target="blank"
-                            >
+                            target="blank">
                             View Case Study
-                        </NuxtLink>
+                        </Button>
                     </header>
                     <aside class="col-lg-8 col-lg-push-1 no-gutter project--image">
                         <ProjectImage :src="`${project.imageScreen.url}`" class="img-fluid" />

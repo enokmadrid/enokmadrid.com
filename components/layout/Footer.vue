@@ -3,7 +3,7 @@
         <div class="container">
             <h5 class="display-1  text-decoration mb-4">Let's Work Together!</h5>
             <p>Talk to me about what I can do for your business.</p>
-            <a href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank" class="btn btn-primary btn-lg rounded-pill brand-gradient hasArrow __right" role="button">Let's Connect</a>
+            <Button class="btn btn-primary btn-lg rounded-pill brand-gradient has-arrow __right" href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank">Let's Connect</Button>
         </div>
         <div class="footer--row">
             <div class="container d-none d-sm-flex justify-content-between align-items-center py-3">

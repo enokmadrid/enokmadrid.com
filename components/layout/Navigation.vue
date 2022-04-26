@@ -82,8 +82,11 @@ export default {
 /*
 *** NAVIGATION FLEXBOX ***
 */
-.flexbox-container {
+@include breakpoint(xs) {
+  
+}
 
+.flexbox-container {
   // Theme for Dark Backgrounds
   &.dark {
     .logo a {
