@@ -85,7 +85,7 @@ export default {
   display: inline-block;
 }
 
-@include breakpoint(sm) {
+@include breakpoint(xs) {
     .btn {
         width: 100%;
     }
