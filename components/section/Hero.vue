@@ -1,7 +1,7 @@
 <template>
     <div class="jumbotron jumbotron-fluid shift-up hero fullscreen">
         <div class="container position-relative z-5">
-            <div class="d-flex">
+            <div class="d-flex flex-column-reverse flex-sm-row">
                 <div class="copy-hero">
                     <span class="display-1 mb-4  text-decoration"
                           data-aos="fade-up" 
@@ -26,7 +26,7 @@
                 ></span>
             </div>
 
-            <div class="mt-4 mb-1">
+            <div class="mt-4 mb-1 ctas">
                 <a href="#solutions" class="btn btn-lg btn-primary brand-gradient rounded-pill" 
                   data-aos="fade-right" 
                   data-aos-duration="500"
@@ -76,15 +76,19 @@ export default {
   }
 
   &.hero {
+    .container {
+      top: 40%;
+    }
     @include breakpoint(xs) {
       text-align: center;
       height:100vh;
       
       .container {
         position: absolute;
-        top: 40%;
+        top: 15%;
       }
     }
+
   }
 
   .copy-hero {
@@ -157,5 +161,22 @@ export default {
   top: 0%;
   bottom: auto;
   border-bottom: 5px solid #e21955;
+}
+
+.gravatar.large {
+  @include breakpoint(xs) {
+    padding: $space-xlarge;
+    margin-bottom: $space-small;
+  }
+}
+
+.ctas {
+  @include breakpoint(xs) {
+    .btn {
+      margin-top: 0;
+      margin-bottom: 8px;
+      width: 100%;
+    }
+  }
 }
 </style>

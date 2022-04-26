@@ -22,10 +22,15 @@
 
 
 <style lang="scss" scoped>
+@import '~/assets/scss/_mixins.scss';
+
 //********* Footer *********
 .footer-page {
+
+  @include breakpoint(lg-up) {
+    padding: 150px 0 0;
+  }
   margin:0;
-  padding: 150px 0 0;
 
   &.dark {
     background: $brand-black;

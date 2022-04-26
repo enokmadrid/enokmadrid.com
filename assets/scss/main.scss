@@ -55,7 +55,8 @@ html {
   padding: 100px;
   box-shadow: 0 0 0 5px $primary;
   @include media-breakpoint-down(xs) {
-    display: none;
+    width: 100px;
+    height: 100px;
   }
 }
 
