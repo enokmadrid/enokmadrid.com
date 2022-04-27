@@ -24,9 +24,9 @@
             </ul>
             
             <div class="my-2 my-md-0">
-                <a href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank" class="btn btn-primary rounded-pill btn-sm">
-                    <fa :icon="['fas', 'phone']"/> Contact me
-                </a>
+                <Button href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank" class="btn btn-primary rounded-pill btn-sm">
+                  <fa :icon="['fas', 'phone']"/> Contact me
+                </Button>
             </div>
             </div>
         </div>
@@ -46,7 +46,8 @@ export default {
                 if (window.scrollY > height) {
                     nav.classList.remove("navbar-dark");
                     nav.classList.add("navbar-light");
-                } else {
+                }
+                else {
                     nav.classList.remove("navbar-light");
                     nav.classList.add("navbar-dark");
                 }
@@ -64,7 +65,7 @@ export default {
             (currentScrollPos > scrollPos) ? nav.classList.remove("offset") : nav.classList.add("offset");
         }
     },
-    created () {
+    created() {
         this.$store.commit('set_currentPage', this.$route.path);
         this.$store.dispatch('changeNavClass');
     },
