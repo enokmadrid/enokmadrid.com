@@ -38,24 +38,49 @@ export default {
     mounted: () => {
         let scrollPos = 0;
         const nav = document.querySelector('.navbar.fixed-top');
-        
+
         // Switch between dark and light navbar on scroll
-        if (nav.classList.contains("navbar-dark")) {
+        if (nav.classList.contains("navbar-split")) {
             const height = nav.clientHeight;
             window.addEventListener('scroll', () => {
                 if (window.scrollY > height) {
-                    nav.classList.remove("navbar-dark");
-                    nav.classList.add("navbar-light");
+                    nav.classList.remove("navbar-split");
+                    nav.classList.add("shadow", "navbar-light");
                 }
                 else {
-                    nav.classList.remove("navbar-light");
-                    nav.classList.add("navbar-dark");
+                    nav.classList.remove("shadow", "navbar-light", "navbar-dark", "navbar-transparent");
+                    nav.classList.add("navbar-split");
                 }
                 offsetNav((document.body.getBoundingClientRect()).top);
                 scrollPos = (document.body.getBoundingClientRect()).top;
             });
-        } else if (nav.classList.contains("navbar-light")) {
+        } 
+        else if (nav.classList.contains("navbar-transparent")) {
+            const height = nav.clientHeight;
             window.addEventListener('scroll', () => {
+                if (window.scrollY > height) {
+                    nav.classList.remove("navbar-transparent");
+                    nav.classList.add("shadow", "navbar-light");
+                }
+                else {
+                    nav.classList.remove("shadow", "navbar-light", "navbar-split", "navbar-dark");
+                    nav.classList.add("navbar-transparent");
+                }
+                offsetNav((document.body.getBoundingClientRect()).top);
+                scrollPos = (document.body.getBoundingClientRect()).top;
+            });
+        }
+        else if (nav.classList.contains("navbar-dark")) {
+            const height = nav.clientHeight;
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > height) {
+                    nav.classList.remove("navbar-dark");
+                    nav.classList.add("shadow", "navbar-light");
+                }
+                else {
+                    nav.classList.remove("shadow", "navbar-light", "navbar-split", "navbar-transparent");
+                    nav.classList.add("navbar-dark");
+                }
                 offsetNav((document.body.getBoundingClientRect()).top);
                 scrollPos = (document.body.getBoundingClientRect()).top;
             });
@@ -97,40 +122,79 @@ export default {
 }
 
 // Navbar
-.navbar-transparent {
-  	background-color: transparent !important;
-}
-.navbar-light {
-	background: white;
-	box-shadow: $shadow-medium;
-}
 .navbar {
+    .nav-link {
+        font-family: "proxima-nova";
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        transition: color 250ms ease-in-out;
+    }
+    .nav-link {
+        color: $brand-text-light;
+        &:hover, 
+        &:focus,
+        &.nuxt-link-active,
+		&.nuxt-link-exact-active { 
+            color: $brand-text;
+        }
+    }
+    .navbar-brand {
+        color: $brand-text;
+        &:hover, &:focus {
+            color: $brand-text;
+        }
+    }
 	transition: all 350ms ease-in-out;
 	transition-delay: 250ms;
 	transition-property: transform;
 }
-.offset {
-  	transform: translateY(-74px);
-}
-
-.navbar-dark {
-	.nav-link {
-		&.nuxt-link-active,
+.navbar-split {
+    .nav-link {
+        color: rgba(white, 0.8);
+		&:hover, 
+        &:focus,
+        &.nuxt-link-active,
 		&.nuxt-link-exact-active { 
 			color: white; 
 		}
 	}
 }
+.navbar-dark {
+	.nav-link {
+        color: rgba(white, 0.8);
+        &:hover, 
+        &:focus,
+        &.nuxt-link-active,
+		&.nuxt-link-exact-active { 
+            color: white;
+        }
+    }
+    .navbar-brand {
+        color: white;
+        &:hover, &:focus {
+            color: white;
+        }
+    }
+}
+
+.navbar-light {
+	background: white;
+}
+.shadow {
+    box-shadow: $shadow-medium;
+    @extend %transition-fade-in;
+}
+
+.offset {
+  	transform: translateY(-74px);
+}
+
+
 
 // LOGO CONTAINER
-.navbar-split .navbar-brand {
-	&:hover, &:focus {
-		color: $brand-text;
-	}
-	color: $brand-text;
-}
 .navbar-brand {
-	color: $brand-text;
 	font-weight: 600;
 	font-family: trumpgothicpro, sans-serif;
 	&:hover, &:focus, &:active {
@@ -142,12 +206,4 @@ export default {
 	}
 }
 
-.nav-link {
-	font-family: "proxima-nova";
-	font-size: 0.75rem;
-	font-weight: 600;
-	letter-spacing: 1px;
-	text-transform: uppercase;
-	transition: color 250ms ease-in-out;
-}
 </style>

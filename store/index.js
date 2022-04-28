@@ -19,9 +19,9 @@ const actions = {
     changeNavClass({commit}) {
         let classname;
         if (this.state.currentPage === '/') {
-            classname = 'navbar-split navbar-dark';
+            classname = 'navbar-split';
         } else if (this.state.currentPage === '/about') {
-            classname = 'navbar-light'
+            classname = 'navbar-transparent'
         } else {
             classname = 'navbar-dark'
         }

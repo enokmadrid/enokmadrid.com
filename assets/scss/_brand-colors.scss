@@ -7,6 +7,7 @@ $brand-black:               #101018 !default;
 $brand-black-light:         lighten($brand-black, 10%)  !default;
 $brand-black-lighter:       #2E2E36 !default;
 $brand-text:                #484b89 !default;
+$brand-text-light:          lighten($brand-text, 20%)  !default;
 
 // Bootstrap 4.4.1 Variables map
 $primary:                   $brand-action-primary !default;
