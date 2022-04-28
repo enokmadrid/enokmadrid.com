@@ -55,30 +55,23 @@ export default {
 	}
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(22, 1fr); 
+	grid-template-rows: repeat(15, 1fr); 
 	gap: 0 $space-standard; 
 	grid-template-areas: 
-	"item-1 ."
-	"item-1 item-first"
 	"item-1 item-first"
 	"item-1 item-first"
 	"item-1 item-2"
 	"item-1 item-2"
-	". item-2"
-	". item-2"
+	"item-1 item-2"
 	"item-3 item-2"
 	"item-3 item-2"
-	"item-3 ."
-	"item-3 ."
 	"item-3 item-4"
 	"item-3 item-4"
-	". item-4"
-	". item-4"
+	"item-3 item-4"
 	"item-5 item-4"
 	"item-5 item-4"
 	"item-5 ."
 	"item-5 ."
-	"item-5 item-last"
 	"item-5 item-last";
 
 	.item-first { 

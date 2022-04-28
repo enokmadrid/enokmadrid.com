@@ -58,7 +58,6 @@ export default {
                     else {
                         nav.classList.remove("navbar-scroll-down-revealed", "navbar-dark", "navbar-transparent");
                         nav.classList.add("navbar-split");
-                        console.log(nav);
                     }
                     offsetNav((document.body.getBoundingClientRect()).top);
                     scrollPos = (document.body.getBoundingClientRect()).top;
@@ -73,7 +72,6 @@ export default {
                     else {
                         nav.classList.remove("navbar-scroll-down-revealed", "navbar-split", "navbar-dark");
                         nav.classList.add("navbar-transparent");
-                        console.log(nav);
                     }
                     offsetNav((document.body.getBoundingClientRect()).top);
                     scrollPos = (document.body.getBoundingClientRect()).top;
@@ -88,7 +86,6 @@ export default {
                     else {
                         nav.classList.remove("navbar-scroll-down-revealed", "navbar-split", "navbar-transparent");
                         nav.classList.add("navbar-dark");
-                        console.log(nav);
                     }
                     offsetNav((document.body.getBoundingClientRect()).top);
                     scrollPos = (document.body.getBoundingClientRect()).top;
