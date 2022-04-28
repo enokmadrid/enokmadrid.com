@@ -80,84 +80,74 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/scss/_mixins.scss';
-/*
-*** NAVIGATION FLEXBOX ***
-*/
-@include breakpoint(xs) {
-  
-}
-
 .flexbox-container {
-  // Theme for Dark Backgrounds
-  &.dark {
-    .logo a {
-      color: #FFFFFF;
-    }
+	// Theme for Dark Backgrounds
+	&.dark {
+		.logo a {
+			color: #FFFFFF;
+		}
 
-    .navigation a {
-      color: #FFFFFF;
-      &:hover {
-        color: $brand-primary;
-      }
-    }
-  }
+		.navigation a {
+			color: #FFFFFF;
+			&:hover {
+				color: $brand-primary;
+			}
+		}
+	}
 }
 
 // Navbar
 .navbar-transparent {
-  background-color: transparent !important;
+  	background-color: transparent !important;
 }
 .navbar-light {
-  background: white;
-  box-shadow: $shadow-medium;
+	background: white;
+	box-shadow: $shadow-medium;
 }
 .navbar {
-  transition: all 350ms ease-in-out;
-  transition-delay: 250ms;
-  transition-property: transform;
+	transition: all 350ms ease-in-out;
+	transition-delay: 250ms;
+	transition-property: transform;
 }
 .offset {
-  transform: translateY(-74px);
+  	transform: translateY(-74px);
 }
 
 .navbar-dark {
-  .nav-link {
-    &.nuxt-link-active,
-    &.nuxt-link-exact-active { 
-      color: white; 
-    }
-  }
-  
+	.nav-link {
+		&.nuxt-link-active,
+		&.nuxt-link-exact-active { 
+			color: white; 
+		}
+	}
 }
 
 // LOGO CONTAINER
 .navbar-split .navbar-brand {
-  &:hover,
-  &:focus {
-    color: $brand-text;
-  }
-  color: $brand-text;
+	&:hover, &:focus {
+		color: $brand-text;
+	}
+	color: $brand-text;
 }
 .navbar-brand {
-  color: $brand-text;
-  font-weight: 600;
-  font-family: trumpgothicpro, sans-serif;
-
-  &:hover, &:focus, &:active {
-    text-decoration: none;
-  }
-  .logo {
-    width: 30px;
-    margin-right: 5px;
-  }
+	color: $brand-text;
+	font-weight: 600;
+	font-family: trumpgothicpro, sans-serif;
+	&:hover, &:focus, &:active {
+		text-decoration: none;
+	}
+	.logo {
+		width: 30px;
+		margin-right: 5px;
+	}
 }
 
 .nav-link {
-  font-family: "proxima-nova";
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  transition: color 250ms ease-in-out;
+	font-family: "proxima-nova";
+	font-size: 0.75rem;
+	font-weight: 600;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	transition: color 250ms ease-in-out;
 }
 </style>

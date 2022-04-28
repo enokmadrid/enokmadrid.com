@@ -1,16 +1,16 @@
 <template>
-    <section class="container-fluid bg--gray">
-        <div class="container section-subdivision text-center text-md-left">
-            <h4 class="display-4">{{ title }}</h4>
-        </div>
-    </section>
+	<section class="container-fluid bg--gray">
+		<div class="container section-subdivision text-center text-md-left">
+			<h4 class="display-4">{{ title }}</h4>
+		</div>
+	</section>
 </template>
 
 <script>
 export default {
-    props: [
-        "title"
-    ]
+	props: [
+		"title"
+	]
 }
 </script>
 
@@ -19,7 +19,7 @@ export default {
 @import '~/assets/scss/_mixins.scss';
 
 .section-subdivision {
-  padding-top: $space-xlarge;
-  padding-bottom: $space-xlarge;
+	padding-top: $space-xlarge;
+	padding-bottom: $space-xlarge;
 }
 </style>

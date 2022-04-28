@@ -64,12 +64,6 @@
     </div>
 </template>
 
-<script>
-  export default {
-    // page properties go here
-  }
-</script>
-
 <style>
     #mc_embed_signup{background:#fff; clear:left; }
 </style>
