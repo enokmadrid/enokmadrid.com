@@ -35,69 +35,77 @@
 
 <script>
 export default {
-    mounted: () => {
-        let scrollPos = 0;
-        const nav = document.querySelector('.navbar.fixed-top');
-
-        // Switch between dark and light navbar on scroll
-        if (nav.classList.contains("navbar-split")) {
-            const height = nav.clientHeight;
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > height) {
-                    nav.classList.remove("navbar-split");
-                    nav.classList.add("shadow", "navbar-light");
-                }
-                else {
-                    nav.classList.remove("shadow", "navbar-light", "navbar-dark", "navbar-transparent");
-                    nav.classList.add("navbar-split");
-                }
-                offsetNav((document.body.getBoundingClientRect()).top);
-                scrollPos = (document.body.getBoundingClientRect()).top;
-            });
-        } 
-        else if (nav.classList.contains("navbar-transparent")) {
-            const height = nav.clientHeight;
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > height) {
-                    nav.classList.remove("navbar-transparent");
-                    nav.classList.add("shadow", "navbar-light");
-                }
-                else {
-                    nav.classList.remove("shadow", "navbar-light", "navbar-split", "navbar-dark");
-                    nav.classList.add("navbar-transparent");
-                }
-                offsetNav((document.body.getBoundingClientRect()).top);
-                scrollPos = (document.body.getBoundingClientRect()).top;
-            });
-        }
-        else if (nav.classList.contains("navbar-dark")) {
-            const height = nav.clientHeight;
-            window.addEventListener('scroll', () => {
-                if (window.scrollY > height) {
-                    nav.classList.remove("navbar-dark");
-                    nav.classList.add("shadow", "navbar-light");
-                }
-                else {
-                    nav.classList.remove("shadow", "navbar-light", "navbar-split", "navbar-transparent");
-                    nav.classList.add("navbar-dark");
-                }
-                offsetNav((document.body.getBoundingClientRect()).top);
-                scrollPos = (document.body.getBoundingClientRect()).top;
-            });
-        }
-        // hide and show navbar on scroll
-        function offsetNav(currentScrollPos) {
-            (currentScrollPos > scrollPos) ? nav.classList.remove("offset") : nav.classList.add("offset");
-        }
+    mounted() {
+        let nav = document.querySelector('.navbar.fixed-top');
+        this.navToggle(nav);
     },
     created() {
         this.$store.commit('set_currentPage', this.$route.path);
         this.$store.dispatch('changeNavClass');
     },
+    methods: {
+        navToggle (nav) {
+            let scrollPos = 0;
+            const height = nav.clientHeight;
+            
+            // Switch between dark and light navbar on scroll
+            if (nav.classList.contains("navbar-split")) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > height) {
+                        nav.classList.remove("navbar-split");
+                        nav.classList.add("navbar-scroll-down-revealed");
+                    }
+                    else {
+                        nav.classList.remove("navbar-scroll-down-revealed", "navbar-dark", "navbar-transparent");
+                        nav.classList.add("navbar-split");
+                        console.log(nav);
+                    }
+                    offsetNav((document.body.getBoundingClientRect()).top);
+                    scrollPos = (document.body.getBoundingClientRect()).top;
+                });
+            } 
+            else if (nav.classList.contains("navbar-transparent")) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > height) {
+                        nav.classList.remove("navbar-transparent");
+                        nav.classList.add("navbar-scroll-down-revealed");
+                    }
+                    else {
+                        nav.classList.remove("navbar-scroll-down-revealed", "navbar-split", "navbar-dark");
+                        nav.classList.add("navbar-transparent");
+                        console.log(nav);
+                    }
+                    offsetNav((document.body.getBoundingClientRect()).top);
+                    scrollPos = (document.body.getBoundingClientRect()).top;
+                });
+            }
+            else if (nav.classList.contains("navbar-dark")) {  
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > height) {
+                        nav.classList.remove("navbar-dark");
+                        nav.classList.add("navbar-scroll-down-revealed");
+                    }
+                    else {
+                        nav.classList.remove("navbar-scroll-down-revealed", "navbar-split", "navbar-transparent");
+                        nav.classList.add("navbar-dark");
+                        console.log(nav);
+                    }
+                    offsetNav((document.body.getBoundingClientRect()).top);
+                    scrollPos = (document.body.getBoundingClientRect()).top;
+                });
+            }
+            // hide and show navbar on scroll
+            function offsetNav(currentScrollPos) {
+                (currentScrollPos > scrollPos) ? nav.classList.remove("offset") : nav.classList.add("offset");
+            }
+        }
+    },
     watch: {
         '$route' () {
             this.$store.commit('set_currentPage', this.$route.path);
             this.$store.dispatch('changeNavClass');
+            let nav = document.querySelector('.navbar.fixed-top');
+            this.navToggle(nav);
         }
     }
 }
@@ -179,10 +187,8 @@ export default {
     }
 }
 
-.navbar-light {
+.navbar-scroll-down-revealed {
 	background: white;
-}
-.shadow {
     box-shadow: $shadow-medium;
     @extend %transition-fade-in;
 }
