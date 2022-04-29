@@ -3,7 +3,7 @@
 		<div class="grid container">
 			<div class="item-first">
 				<span class="text-left display-1 text-decoration d-block">Recent Work</span>
-				<img src="~/assets/images/svg/robot-animated.svg" width="360" height="281" alt="robot-animation" class="float-right d-none d-md-block">
+				<img src="~/assets/images/svg/robot-animated.svg" width="360" height="281" alt="robot-animation" class="float-right img-fluid">
 			</div>
 			<project-card
 				v-for="(project, index) in projects"
@@ -22,7 +22,7 @@
 				>
 			</project-card>
 			<div class="item-last">
-				<span class="text-left display-1 text-decoration">Enjoying These?</span>
+				<span class="d-block text-center display-1 text-decoration">Enjoying These?</span>
 				<Button class="btn btn-primary btn-lg rounded-pill brand-gradient has-arrow __right" to="/projects">See All my Projects</Button>
 			</div>
 		</div>
@@ -49,6 +49,7 @@ export default {
 <style lang="scss" scoped>
 @import '~/assets/scss/_mixins.scss';
 .grid {
+	margin-bottom: $space-xlarge;
 	@include breakpoint(sm-down) {
 		display: flex;
 		flex-direction: column;
@@ -70,8 +71,8 @@ export default {
 	"item-3 item-4"
 	"item-5 item-4"
 	"item-5 item-4"
-	"item-5 ."
-	"item-5 ."
+	"item-5 item-last"
+	"item-5 item-last"
 	"item-5 item-last";
 
 	.item-first { 
@@ -88,7 +89,13 @@ export default {
 	.item-3 { grid-area: item-3; }
 	.item-4 { grid-area: item-4; }
 	.item-5 { grid-area: item-5; }
-	.item-last { grid-area: item-last; }
+	.item-last { 
+		grid-area: item-last;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+	}
 }
 .project--image {
 	img {
