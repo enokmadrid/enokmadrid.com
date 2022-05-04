@@ -3,27 +3,11 @@
 		<div class="container position-relative z-5">
 			<div class="d-flex flex-column-reverse flex-sm-row">
 				<div class="copy-hero">
-					<span class="display-1 mb-4  text-decoration"
-						data-aos="fade-up" 
-						data-aos-duration="500"
-						data-aos-easing="ease-in-out-cubic"
-					>Hi, I'm Enok!</span>
-					<h1 class="display-2 text-hero-title"
-						data-aos="fade-up" 
-						data-aos-duration="500"
-						data-aos-easing="ease-in-out-cubic"
-					>Design Engineer</h1>
-					<p class="mt-4 text-hero-description"
-						data-aos="fade-up" 
-						data-aos-duration="500"
-						data-aos-easing="ease-in-out-cubic"
-					>I <a href="https://www.youtube.com/enokmadrid" target="blank">create UX content</a> and help tech startups make profits by leading them into delighting their customers.</p>
+					<span class="display-1 mb-4 text-decoration">Hi, I'm Enok!</span>
+					<h1 class="display-2 text-hero-title">Design Engineer</h1>
+					<p class="mt-4 text-hero-description">I <a href="https://www.youtube.com/enokmadrid" target="blank">create UX content</a> and help tech startups make profits by leading them into delighting their customers.</p>
 				</div>
-				<Gravatar
-					class="align-self-center large"
-					data-aos="fade-up-left" 
-					data-aos-duration="500"
-					data-aos-easing="ease-in-out-cubic"/>
+				<Gravatar class="align-self-center large"/>
 			</div>
 			<div class="mt-4 mb-1 ctas">
 				<Button class="btn rounded-pill btn-lg btn-primary brand-gradient has-arrow __right" href="#solutions">Learn How I Can Help</Button>

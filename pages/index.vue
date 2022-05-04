@@ -1,7 +1,7 @@
 <template>
   <div>
     <HomeHero 
-      data-aos="fade-left" 
+      data-aos="fade-in" 
       data-aos-duration="500"
       data-aos-easing="ease-in-out-cubic"
     />
@@ -11,7 +11,7 @@
       data-aos-easing="ease-in-out-cubic"
     />
     <HomePageBox 
-      data-aos="fade-right" 
+      data-aos="fade-up" 
       data-aos-duration="500"
       data-aos-easing="ease-in-out-cubic"
     />
