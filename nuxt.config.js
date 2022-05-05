@@ -43,7 +43,8 @@ export default {
     ['@nuxtjs/fontawesome', {
       component: 'fa',
       proIcons: {
-        solid: ['faHeart', 'faPhone', 'faArrowRight', 'faUser', 'faSuitcase', 'faSitemap', 'faPaperPlane', 'faBackpack', 'faChalkboardTeacher']
+        solid: ['faHeart', 'faPhone', 'faArrowRight', 'faUser', 'faSuitcase', 'faSitemap', 'faPaperPlane', 'faBackpack', 'faChalkboardTeacher'],
+        regular: ['faHeart', 'faPhone', 'faArrowRight', 'faUser', 'faSuitcase', 'faSitemap', 'faPaperPlane', 'faBackpack', 'faChalkboardTeacher']
       },
       icons: {
         brands: ['faGithub', 'faInstagram', 'faTwitter', 'faLinkedin', 'faDribbble']

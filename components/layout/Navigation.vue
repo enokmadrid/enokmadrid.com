@@ -185,7 +185,8 @@ export default {
 }
 
 .navbar-scroll-down-revealed {
-	background: white;
+	background: rgba(255,255,255, 0.85);
+    backdrop-filter: blur(8px);
     box-shadow: $shadow-medium;
     @extend %transition-fade-in;
 }

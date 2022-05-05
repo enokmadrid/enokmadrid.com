@@ -2,23 +2,27 @@
 	<nav class="sticky-header fixed-bottom">
 		<div class="flexbox-container flex-menu d-flex d-lg-none">
 			<NuxtLink to="/" exact class="flex-link">
-				<fa :icon="['fas', 'suitcase']" class="icon"/>
+				<fa v-if="this.$store.state.currentPage === '/'" :icon="['fas', 'suitcase']" class="icon"/>
+				<fa v-else :icon="['far', 'suitcase']" class="icon"/>
 				<span>Work</span>
 			</NuxtLink>
 			<NuxtLink to="/about" class="flex-link">
-				<fa :icon="['fas', 'user']" class="icon"/>
+				<fa v-if="this.$store.state.currentPage === '/about'" :icon="['fas', 'user']" class="icon"/>
+				<fa v-else :icon="['far', 'user']" class="icon"/>
 				<span>About</span>
 			</NuxtLink>
 			<NuxtLink to="/process" class="flex-link">
-				<fa :icon="['fas', 'sitemap']" class="icon"/>
+				<fa v-if="this.$store.state.currentPage === '/process'" :icon="['fas', 'sitemap']" class="icon"/>
+				<fa v-else :icon="['far', 'sitemap']" class="icon"/>
 				<span>Process</span>
 			</NuxtLink>
 			<NuxtLink to="/learn" class="flex-link">
-				<fa :icon="['fas', 'chalkboard-teacher']" class="icon"/>
+				<fa v-if="this.$store.state.currentPage === '/learn'" :icon="['fas', 'chalkboard-teacher']" class="icon"/>
+				<fa v-else :icon="['far', 'chalkboard-teacher']" class="icon"/>
 				<span>Training</span>
 			</NuxtLink>
 			<a href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank" class="flex-link">
-				<fa :icon="['fas', 'paper-plane']" class="icon"/>
+				<fa :icon="['far', 'paper-plane']" class="icon"/>
 				<span>Contact</span>
 			</a>
 		</div>
@@ -28,19 +32,25 @@
 <style lang="scss" scoped>
 @import '~/assets/scss/_mixins.scss';
 .flex-menu {
-	background: $brand-black-light;
+	background: rgba(255,255,255, 0.85);
+    backdrop-filter: blur(8px);
+	box-shadow: $shadow-medium-top;
 	height: 60px;
 	.flex-link {
-		color: #8787A0;
+		color: $brand-text;
 		height: inherit;
 		flex-direction: column;
+		.icon {
+			color: $brand-text;
+			opacity: 0.8;
+		}
 		&.nuxt-link-active {
-			background: rgba(0,0,0,0.2);
-			border-bottom: solid 4px $secondary;
-			color: $secondary;
+			border-bottom: solid 2px $primary;
+			color: $brand-text;
 			@extend %transition-fade-in;
 			.icon {
-				margin-top: 4px;
+				margin-top: 2px;
+				opacity: 1;
 				@extend %transition-fade-in;
 			}
 			span {
@@ -55,7 +65,7 @@
 		font-size: 11px;
 		font-weight: 600;
 		padding-top: 2px;
-		color: white;
+		color: $brand-text;
 		opacity: 0.6;
 	}
 }
