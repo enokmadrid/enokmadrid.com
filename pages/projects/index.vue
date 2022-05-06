@@ -21,8 +21,7 @@
 						<Button
 							:to="`/projects/${project.slug}`"
 							:key="project.slug"
-							class="btn btn-lg btn-light rounded-pill" 
-							target="blank">
+							class="btn btn-lg btn-light rounded-pill">
 							View Case Study
 						</Button>
 					</header>
