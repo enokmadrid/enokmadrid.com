@@ -96,5 +96,18 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+
+  // Loader bar per page transition
+  loading: {
+    color: '#8984FA',
+    height: '4px',
+    throttle: 0
+  },
+  ssr: false,
+  loadingIndicator: {
+    name: 'chasing-dots',
+    color: '#8984FA',
+    background: '#484b89'
   }
 }
