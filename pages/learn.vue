@@ -2,10 +2,10 @@
   <div>
         <div class="jumbotron jumbotron-fluid dark shift-up">
             <div class="container text-xs-center mt-5">
-                <h1 class="display-4">Online UI/UX Course</h1>
+                <h1 class="display-4">UX Design Tips</h1>
                 <p class="hidden-xs-down">Learn the fundamentals and everything you need to know about Interface Design</p>
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/v7725FiV0Uo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FJoJu--fNpM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
         </div>
@@ -15,7 +15,6 @@
             <div class="container content--container">
                 <div class="row">
                     <div class="col-12 text-center">
-                        <h2 class="content--step-title h4">Learn User Interface Design</h2>
                         <i class="icon icon-vector-pen content--icon"></i>
                         
                         
@@ -27,7 +26,7 @@
                                 <div class="p-5">
                                     <form action="https://enoklabs.us3.list-manage.com/subscribe/post?u=77a4ff173a69a15b408195513&amp;id=5cf500ea39" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
                                         <div id="mc_embed_signup_scroll">
-                                        <p class="lead font-weight-bold"> Yes. I want to be notified when the course is ready</p>
+                                        <p class="lead font-weight-bold"> Yes. I want to be notified when you release new content.</p>
                                     <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
                                     <div class="mc-field-group">
                                         <label for="mce-EMAIL">Email Address  <span class="asterisk">*</span>
