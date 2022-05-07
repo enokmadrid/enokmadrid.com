@@ -105,9 +105,5 @@ export default {
     throttle: 0
   },
   ssr: false,
-  loadingIndicator: {
-    name: 'chasing-dots',
-    color: '#8984FA',
-    background: '#484b89'
-  }
+  loadingIndicator: '~/components/Loader.vue'
 }
