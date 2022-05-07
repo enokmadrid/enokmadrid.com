@@ -104,6 +104,5 @@ export default {
     height: '4px',
     throttle: 0
   },
-  ssr: false,
   loadingIndicator: '~/components/Loader.vue'
 }
