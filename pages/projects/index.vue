@@ -1,12 +1,10 @@
 <template>
-<section v-if="!loading" id="projects">
+<section v-if="!loading" id="projects"
+	data-aos="fade-in"
+	data-aos-easing="ease-in-out-cubic">
 	<section v-for="project in projects" 
 		:key="project.id" 
 		:style="`background-image: url(${project.imageHero.url})`"
-		data-aos="fade-in" 
-		data-aos-duration="500"
-		data-aos-easing="ease-in-out-cubic"
-		data-aos-anchor-placement="top-center"
 		class="container-fluid dark project--fullwidth" >
 			<article class="container">
 				<div class="row">

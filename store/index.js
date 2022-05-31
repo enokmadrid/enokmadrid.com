@@ -14,7 +14,7 @@ const actions = {
     async nuxtServerInit({ commit }) {
         const response = await this.app.apolloProvider.defaultClient
         .query({ query: projectsQuery })
-        commit("set_projects", response.data.projects);
+        commit("set_projects", response.data.projects.reverse());
     },
     changeNavClass({commit}) {
         let classname;

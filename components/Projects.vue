@@ -35,11 +35,12 @@ export default {
 	data: () => ({
 		loading: 0,
 		projectNext: '',
-		projectPrevious: ''
+		projectPrevious: '',
+		limit: 5
 	}),
 	computed: {
 		projects() {
-			return this.$store.state.projects
+			return this.$store.state.projects.slice(0,this.limit);
 		}
 	},
 	mixins: [aosMixin]

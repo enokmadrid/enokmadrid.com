@@ -1,5 +1,5 @@
 query getProjects {
-  projects(first: 5) {
+  projects {
     id,
     title,
     slug,
