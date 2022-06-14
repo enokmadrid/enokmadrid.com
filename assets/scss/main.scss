@@ -62,58 +62,6 @@ html {
 }
 
 
-//*********** Featured Project ***********
-.project--fullwidth {
-  background: #333;
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
-  padding: 200px 0;
-
-  .project-title, li, p {
-    color: #fff;
-  }
-
-  .project-title {
-    font-weight: 800;
-    word-wrap: break-word;
-    -webkit-hyphens: auto;
-    -moz-hyphens: auto;
-    -ms-hyphens: auto;
-    -o-hyphens: auto;
-    hyphens: auto;
-  }
-
-  .project-tags {
-    list-style: none;
-    padding: 0;
-
-    li {
-      display: inline;
-      font-size: 10px;
-      font-weight: 600;
-      text-transform: uppercase;
-      opacity: 0.4;
-
-      &:not(:first-child) {
-        padding-left: 4px;
-
-        &::before {
-          padding-right: 8px;
-        }
-      }
-    }
-  }
-
-  .project-text {
-    margin-bottom: $space-semi;
-  }
-}
-
-
-
-
-
 // OTHER CSS FLOATING IMAGE
 .project--image-container {
   display: -webkit-box;

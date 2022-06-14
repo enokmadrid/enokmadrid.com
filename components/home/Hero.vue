@@ -11,7 +11,7 @@
 			</div>
 			<div class="mt-4 mb-1 ctas">
 				<Button class="btn rounded-pill btn-lg btn-primary brand-gradient has-arrow __right" href="#solutions">Learn How I Can Help</Button>
-				<Button class="btn rounded-pill btn-lg btn-light" href="#projects">View My Portfolio</Button>
+				<Button class="btn rounded-pill btn-lg btn-light" to="/projects">View My Portfolio</Button>
 			</div>
 		</div>
 		<div class="overflow-hidden d-none d-lg-block">
