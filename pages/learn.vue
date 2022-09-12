@@ -5,7 +5,7 @@
                 <h1 class="display-4">UX Design Tips</h1>
                 <p class="hidden-xs-down">Learn the fundamentals and everything you need to know about Interface Design</p>
                 <div class="embed-responsive embed-responsive-16by9">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/FJoJu--fNpM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/WZJN4EE4KpY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                 </div>
             </div>
         </div>

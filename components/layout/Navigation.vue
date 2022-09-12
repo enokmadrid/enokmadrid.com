@@ -19,7 +19,7 @@
                     <NuxtLink to="/process" class="nav-link">Process</NuxtLink>
                 </li>
                 <li class="nav-item">
-                    <NuxtLink to="/learn" class="nav-link">Training</NuxtLink>
+                    <NuxtLink to="/learn" class="nav-link">Learn</NuxtLink>
                 </li>
             </ul>
             
