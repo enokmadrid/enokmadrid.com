@@ -4,6 +4,7 @@ import projectsQuery from '~/graphql/projects.gql'
 // STATE is our single source of truth for the store state
 const state = () => ({
     projects:  [],
+    videos: [],
     activeProject: null,
     currentPage: null,
     navClass: ''
@@ -42,6 +43,9 @@ const mutations = {
     },
     set_navClass(state, classname) {
         state.navClass = classname;
+    },
+    set_videos(state, payload) {
+        state.videos = payload;
     }
 }
 
