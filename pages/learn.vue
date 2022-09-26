@@ -60,7 +60,6 @@
 </template>
 
 <script>
-import Wide from '~/components/card/wide.vue';
 export default {
     computed: {
         firstArticle() {
@@ -71,8 +70,7 @@ export default {
             articles.shift(); // get articles after the first
             return articles;
         }
-    },
-    components: { Wide }
+    }
 }
 </script>
 
