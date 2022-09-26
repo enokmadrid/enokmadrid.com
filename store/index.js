@@ -1,37 +1,31 @@
 // import dependency to handle HTTP request to our back end
 import projectsQuery from '~/graphql/projects.gql'
+import articlesQuery from '~/graphql/articles.gql'
 
 // STATE is our single source of truth for the store state
-const state = () => ({
+export const state = () => ({
     projects:  [],
-    videos: [],
+    articles: [],
     activeProject: null,
     currentPage: null,
     navClass: ''
 })
 
-// ACTIONS is where we fetch data, api etc... you can only commit (can be async)
-const actions = {
-    async nuxtServerInit({ commit }) {
-        const response = await this.app.apolloProvider.defaultClient
-        .query({ query: projectsQuery })
-        commit("set_projects", response.data.projects.reverse());
+// GETTERS is where you compute derived state based on the store state (it's Cached)
+export const getters = {
+    getNavClass: state => {
+        return state.navClass
     },
-    changeNavClass({commit}) {
-        let classname;
-        if (this.state.currentPage === '/') {
-            classname = 'navbar-split';
-        } else if (this.state.currentPage === '/about') {
-            classname = 'navbar-transparent'
-        } else {
-            classname = 'navbar-dark'
-        }
-        commit('set_navClass', classname);
+    getProjectBySlug: state => (slug) => {
+        return state.projects.find(project => project.slug === slug)
+    },
+    getArticlesBySlug: state => (slug) => {
+        return state.articles.find(article => article.slug === slug)
     }
 }
 
 // MUTAIONS is where we change the state, the only way to change state (Can ONLY be sync)
-const mutations = {
+export const mutations = {
     set_projects(state, payload) {
         state.projects = payload;
     },
@@ -44,25 +38,31 @@ const mutations = {
     set_navClass(state, classname) {
         state.navClass = classname;
     },
-    set_videos(state, payload) {
-        state.videos = payload;
+    set_articles(state, payload) {
+        state.articles = payload
     }
 }
 
-// GETTERS is where you compute derived state based on the store state (it's Cached)
-const getters = {
-    getProjectBySlug: state => (slug) => {
-        return state.projects.find(project => project.slug === slug)
+// ACTIONS is where we fetch data, api etc... you can only commit (can be async)
+export const actions = {
+    async nuxtServerInit({ commit }) {
+        const response = await this.app.apolloProvider.defaultClient
+        .query({ query: projectsQuery })
+        commit("set_projects", response.data.projects.reverse());
+
+        const response2 = await this.app.apolloProvider.defaultClient
+        .query({ query: articlesQuery })
+        commit("set_articles", response2.data.articles);
     },
-    getNavClass: state => {
-        return state.navClass
+    changeNavClass({commit}) {
+        let classname;
+        if (this.state.currentPage === '/') {
+            classname = 'navbar-split';
+        } else if (this.state.currentPage === '/about') {
+            classname = 'navbar-transparent'
+        } else {
+            classname = 'navbar-dark'
+        }
+        commit('set_navClass', classname);
     }
-}
-
-//export store module
-export default {
-    state,
-    actions,
-    mutations,
-    getters
 }

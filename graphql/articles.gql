@@ -1,0 +1,10 @@
+query getArticles {
+  articles {
+    slug,
+    headline,
+    description,
+    videoUrl,
+    content,
+    updatedAt
+  }
+}

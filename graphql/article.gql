@@ -1,0 +1,11 @@
+query getArticle($slug: String!) {
+  article(where: { slug: $slug }) {
+    id,
+    slug,
+    headline,
+    description,
+    videoUrl,
+    content,
+    updatedAt
+  }
+}
