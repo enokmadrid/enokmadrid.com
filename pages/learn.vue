@@ -29,31 +29,30 @@
                     <h1 class="display-4">The Writer's Bench</h1>
                     <p>Discover my stories, thinking, and exploration on many topics.</p>
                 </div>
-                
-                <div class="row mb-5">
-                    <div class="col-6">
-                        <img :src="firstArticle.coverImage.url" class="article-img img-fluid" alt="Responsive image">
-                    </div>
-                    <div class="col-6">
-                        <span>{{firstArticle.tags.title}}</span>
-                        <h3>{{firstArticle.headline}}</h3>
-                        <p>{{firstArticle.description}}</p>
-                        <time>{{firstArticle.updatedAt}}</time>
-                    </div>
-                </div>
+
+                <card-single-column
+                    :key="firstArticle.id"
+                    :articleUrl="`/blog/${firstArticle.slug}`"
+                    :imageUrl="firstArticle.coverImage.url"
+                    :tag="firstArticle.tags[0].title"
+                    :headline="firstArticle.headline"
+                    :description="firstArticle.description"
+                    :updatedAt="firstArticle.updatedAt"
+                >
+                </card-single-column>
 
                 <div class="row">
-                    <article class="card">
-                        <header>
-                            <img src="https://via.placeholder.com/360x205" alt="">
-                        </header>
-                        <div class="card-body">
-                            <span>Category Tag</span>
-                            <h5>Title</h5>
-                            <p>Descriptions</p>
-                            <time>Aug 16, 2022</time>
-                        </div>
-                    </article>
+                    <card-standard 
+                        v-for="article in articles"
+                        :key="article.id"
+                        :articleUrl="`/blog/${article.slug}`"
+                        :imageUrl="article.coverImage.url"
+                        :tag="article.tags[0].title"
+                        :headline="article.headline"
+                        :description="article.description"
+                        :updatedAt="article.updatedAt"
+                    >
+                    </card-standard>
                 </div>
             </div>
         </section>
@@ -61,15 +60,19 @@
 </template>
 
 <script>
+import Wide from '~/components/card/wide.vue';
 export default {
     computed: {
         firstArticle() {
-            return this.$store.state.articles[0];
+            return this.$store.state.articles[0]; // get the first article
         },
-		articles() {
-			return this.$store.state.articles;
-		}
-	},
+        articles() {
+            let articles = [...this.$store.state.articles];
+            articles.shift(); // get articles after the first
+            return articles;
+        }
+    },
+    components: { Wide }
 }
 </script>
 
@@ -80,8 +83,5 @@ export default {
     .copy-hero,
     .embed-responsive {
         flex: 1;
-    }
-    .article-img {
-        border-radius: 8px;
     }
 </style>

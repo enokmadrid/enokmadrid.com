@@ -1,15 +1,15 @@
 <template>
 	<main>
-		{{initProject}}
-		<div class="jumbotron jumbotron-fluid dark shift-up has-overlay" :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${project.imageHero.url});`">
+		{{initArticles}}
+		<div class="jumbotron jumbotron-fluid dark shift-up has-overlay" :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${article.coverImage.url});`">
 			<div class="container text-center">
-				<h1 class="display-3">{{project.title}}</h1>
-				<card-image :src="`${project.imageScreen.url}`" class="img-fluid featured-image"/>
+				<h1 class="display-3">{{article.headline}}</h1>
+				<card-image :src="`${article.coverImage.url}`" class="img-fluid featured-image"/>
 			</div>
 		</div>
 
 		<section class="container-fluid bg--gray">
-			<p class="container introduction hidden-md-down">{{project.description}}</p>
+			<p class="container introduction hidden-md-down">{{article.description}}</p>
 		</section>
 
 		<section class="container-fluid">
@@ -18,33 +18,16 @@
 						<div class="col-md-4 content--summary">
 							<div class="row">
 								<div class="col-md-6 col-lg-12 mb-4">
-									<span class="content--step-subtext">My Roles</span>
+									<span class="content--step-subtext">Tags</span>
 									<ul class="content--tools project-tags">
-										<li v-for="role in project.roles" :key="role.id">{{role.title}}</li>
+										<li v-for="tag in article.tags" :key="tag.id">{{tag.title}}</li>
 									</ul>
-								</div>
-								<div class="col-md-6 col-lg-12">
-									<span class="content--step-subtext">Technologies</span>
-									<ul class="content--tools project-tags">
-										<li v-for="tool in project.tools" :key="tool.id">{{tool.title}}</li>
-									</ul>
-								</div>
-
-								<div class="col-md-12 mt-3">
-									<Button 
-										class="btn btn-sm btn-primary rounded-pill btn-space"
-										:href="`${project.url}`" 
-										target="_blank"
-									>Launch Project</Button>
-
 								</div>
 							</div>
 						</div>
 						<div class="col-md-8 content--about">
-							<h5 class="content--title">The Challenge</h5>
-							<p>{{project.challenge}}</p>
-							<h5 class="content--title">Getting To Work</h5>
-							<p>{{project.solution}}</p>
+							<h5 class="content--title">The Description</h5>
+							<p>{{article.description}}</p>
 						</div>
 					</div>
 				</div>
@@ -53,7 +36,7 @@
 		<section class="container-fluid cms-editable format-paragraph">
 			<div class="container">
 				<div class="row">
-					<div class="col-12" v-html="$md.render(project.content)"></div>
+					<div class="col-12" v-html="$md.render(article.content)"></div>
 				</div>
 			</div>
 		</section>
@@ -65,13 +48,11 @@
 export default {
 	data: () => ({
 		loading: 0,
-		project: {},
-		projectPrevious: '',
-		projectNext: '',
+		article: {},
 	}),
 	computed: {
-		initProject() {
-			this.project = this.$store.getters.getProjectBySlug(this.$route.params.slug);
+		initArticles() {
+			this.article = this.$store.getters.getArticlesBySlug(this.$route.params.slug);
 		}
 	}
 }

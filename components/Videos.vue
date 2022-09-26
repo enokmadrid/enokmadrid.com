@@ -1,11 +1,11 @@
 <template>
     <div class="d-flex flex-sm-row justify-content-between">
-        <ThumbnailLink
+        <thumbnail-link
             v-for="video in videos"
             :href="video.url"
             :thumbnailUrl="video.thumbnailUrl"
             :key="video.id"
-        ></ThumbnailLink>
+        ></thumbnail-link>
     </div>
 </template>
 
