@@ -5,6 +5,12 @@ query getArticles {
     description,
     videoUrl,
     content,
-    updatedAt
+    updatedAt,
+    coverImage {
+      url
+    },
+    tags {
+      title
+    }
   }
 }

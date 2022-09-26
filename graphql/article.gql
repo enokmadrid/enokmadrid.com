@@ -6,6 +6,9 @@ query getArticle($slug: String!) {
     description,
     videoUrl,
     content,
-    updatedAt
+    updatedAt,
+    coverImage {
+      url
+    }
   }
 }

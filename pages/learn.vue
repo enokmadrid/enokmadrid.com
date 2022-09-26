@@ -32,13 +32,13 @@
                 
                 <div class="row mb-5">
                     <div class="col-6">
-                        <img src="https://via.placeholder.com/450x250">
+                        <img :src="firstArticle.coverImage.url" class="article-img img-fluid" alt="Responsive image">
                     </div>
                     <div class="col-6">
-                        <span>Story</span>
-                        <h3>From Graffiti Artist to Web Development and UX Design</h3>
-                        <p>This is my story on how I went from being a graffiti artist to a web developer and now a full-time UX designer.</p>
-                        <time>Aug 16, 2022</time>
+                        <span>{{firstArticle.tags.title}}</span>
+                        <h3>{{firstArticle.headline}}</h3>
+                        <p>{{firstArticle.description}}</p>
+                        <time>{{firstArticle.updatedAt}}</time>
                     </div>
                 </div>
 
@@ -60,6 +60,19 @@
     </div>
 </template>
 
+<script>
+export default {
+    computed: {
+        firstArticle() {
+            return this.$store.state.articles[0];
+        },
+		articles() {
+			return this.$store.state.articles;
+		}
+	},
+}
+</script>
+
 <style lang="scss" scoped>
     .offset-bottom-5 {
         margin-bottom: -136px;
@@ -67,5 +80,8 @@
     .copy-hero,
     .embed-responsive {
         flex: 1;
+    }
+    .article-img {
+        border-radius: 8px;
     }
 </style>
