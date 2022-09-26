@@ -1,0 +1,6 @@
+query getVideo($id: String!) {
+  videos(where: { id: $id }) {
+    videoUrl,
+    thumbnailUrl
+  }
+}

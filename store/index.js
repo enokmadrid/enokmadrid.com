@@ -1,11 +1,13 @@
 // import dependency to handle HTTP request to our back end
 import projectsQuery from '~/graphql/projects.gql'
 import articlesQuery from '~/graphql/articles.gql'
+import videosQuery from '~/graphql/videos.gql'
 
 // STATE is our single source of truth for the store state
 export const state = () => ({
     projects:  [],
     articles: [],
+    videos: [],
     activeProject: null,
     currentPage: null,
     navClass: ''
@@ -38,6 +40,9 @@ export const mutations = {
     set_navClass(state, classname) {
         state.navClass = classname;
     },
+    set_videos(state, payload) {
+        state.videos = payload;
+    },
     set_articles(state, payload) {
         state.articles = payload
     }
@@ -53,6 +58,10 @@ export const actions = {
         const response2 = await this.app.apolloProvider.defaultClient
         .query({ query: articlesQuery })
         commit("set_articles", response2.data.articles);
+
+        const response3 = await this.app.apolloProvider.defaultClient
+        .query({ query: videosQuery })
+        commit("set_videos", response3.data.videos);
     },
     changeNavClass({commit}) {
         let classname;
