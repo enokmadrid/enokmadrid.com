@@ -56,8 +56,20 @@ export default {
   modules: [
     '@nuxtjs/content',
     '@nuxtjs/apollo',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/dayjs'
   ],
+
+  // Dayjs Options:
+  dayjs: {
+    locales: ['en'],
+    defaultLocale: 'en',
+    plugins: [
+      'utc', // import 'dayjs/plugin/utc'
+      'timezone' // import 'dayjs/plugin/timezone'
+    ]
+  },
+
   // Apollo Options: 
   apollo: {
     tokenName: "nuxt-apollo",

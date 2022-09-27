@@ -7,12 +7,13 @@
             <tag :title="tag" :theme="tagTheme"></tag>
             <h3 class="headline">{{headline}}</h3>
             <p>{{description}}</p>
-            <time class="time">{{updatedAt}}</time>
+            <time class="time">{{getDate}}</time>
         </div>
     </a>
 </template>
 
 <script>
+    import dayjs from 'dayjs';
     export default {
         props: [
             "articleUrl",
@@ -23,6 +24,11 @@
             "description",
             "updatedAt",
         ],
+        computed: {
+            getDate() {
+                return dayjs(this.updatedAt).format('MMM DD, YYYY');
+            }
+        }
     }
 </script>
 
