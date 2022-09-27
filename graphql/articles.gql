@@ -10,7 +10,8 @@ query getArticles {
       url
     },
     tags {
-      title
+      title,
+      theme
     }
   }
 }

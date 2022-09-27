@@ -9,6 +9,10 @@ query getArticle($slug: String!) {
     updatedAt,
     coverImage {
       url
+    },
+    tags {
+      title,
+      theme
     }
   }
 }
