@@ -43,7 +43,7 @@ export default {
     ['@nuxtjs/fontawesome', {
       component: 'fa',
       proIcons: {
-        solid: ['faHeart', 'faPhone', 'faArrowRight', 'faUser', 'faSuitcase', 'faSitemap', 'faPaperPlane', 'faBackpack', 'faChalkboardTeacher'],
+        solid: ['faHeart', 'faPhone', 'faArrowRight', 'faUser', 'faSuitcase', 'faSitemap', 'faPaperPlane', 'faBackpack', 'faChalkboardTeacher', 'faPlay'],
         regular: ['faHeart', 'faPhone', 'faArrowRight', 'faUser', 'faSuitcase', 'faSitemap', 'faPaperPlane', 'faBackpack', 'faChalkboardTeacher']
       },
       icons: {
@@ -56,8 +56,20 @@ export default {
   modules: [
     '@nuxtjs/content',
     '@nuxtjs/apollo',
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/dayjs'
   ],
+
+  // Dayjs Options:
+  dayjs: {
+    locales: ['en'],
+    defaultLocale: 'en',
+    plugins: [
+      'utc', // import 'dayjs/plugin/utc'
+      'timezone' // import 'dayjs/plugin/timezone'
+    ]
+  },
+
   // Apollo Options: 
   apollo: {
     tokenName: "nuxt-apollo",

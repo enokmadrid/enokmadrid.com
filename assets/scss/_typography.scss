@@ -36,6 +36,12 @@ body {
   }
 }
 
+body .cms-editable p {
+  font-size: 20px;
+  line-height: 2rem;
+  margin-bottom: 10px;
+}
+
 // FORMAT PARAGRAPH WITH 75 CPL
 .format-paragraph p {
   max-width: 79ch;

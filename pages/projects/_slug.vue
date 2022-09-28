@@ -4,7 +4,7 @@
 		<div class="jumbotron jumbotron-fluid dark shift-up has-overlay" :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${project.imageHero.url});`">
 			<div class="container text-center">
 				<h1 class="display-3">{{project.title}}</h1>
-				<ProjectImage :src="`${project.imageScreen.url}`" class="img-fluid featured-image"/>
+				<card-image :src="`${project.imageScreen.url}`" class="img-fluid featured-image"/>
 			</div>
 		</div>
 

@@ -1,0 +1,26 @@
+query getArticle($slug: String!) {
+  article(where: { slug: $slug }) {
+    id,
+    slug,
+    headline,
+    description,
+    videoUrl,
+    content,
+    createdAt,
+    publishedAt,
+    updatedAt,
+    coverImage {
+      url
+    },
+    tags {
+      title,
+      theme
+    },
+    author {
+      fullName,
+      avatar {
+        url(transformation: {image: {resize: {height: 40, width: 40}}})
+      }
+    }
+  }
+}

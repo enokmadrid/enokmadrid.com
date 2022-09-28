@@ -1,0 +1,6 @@
+query getVideos {
+  videos {
+    thumbnailUrl
+    url
+  }
+}

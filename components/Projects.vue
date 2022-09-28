@@ -5,7 +5,7 @@
 				<span class="text-left display-1 text-decoration d-block">Recent Work</span>
 				<img src="~/assets/images/svg/robot-animated.svg" width="360" height="281" alt="robot-animation" class="float-right img-fluid">
 			</div>
-			<project-card
+			<card-project
 				v-for="(project, index) in projects"
 				:index="index"
 				:key="project.id"
@@ -20,7 +20,7 @@
 				data-aos-duration="500"
 				data-aos-easing="ease-in-out-cubic"
 				>
-			</project-card>
+			</card-project>
 			<div class="item-last">
 				<span class="d-block text-center display-1 text-decoration">Enjoying These?</span>
 				<Button class="btn btn-primary btn-lg rounded-pill brand-gradient has-arrow __right" to="/projects">See All my Projects</Button>
