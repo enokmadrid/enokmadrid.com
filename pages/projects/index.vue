@@ -24,7 +24,7 @@
 						</Button>
 					</header>
 					<aside class="col-lg-8 col-lg-push-1 no-gutter project--image">
-						<ProjectImage :src="`${project.imageScreen.url}`" class="img-fluid" />
+						<card-image :src="`${project.imageScreen.url}`" class="img-fluid" />
 					</aside>
 				</div>
 			</article>

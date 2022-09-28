@@ -5,6 +5,8 @@ query getArticles {
     description,
     videoUrl,
     content,
+    createdAt,
+    publishedAt,
     updatedAt,
     coverImage {
       url
@@ -12,6 +14,12 @@ query getArticles {
     tags {
       title,
       theme
+    },
+    author {
+      fullName,
+      avatar {
+        url(transformation: {image: {resize: {height: 40, width: 40}}})
+      }
     }
   }
 }

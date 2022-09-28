@@ -6,6 +6,8 @@ query getArticle($slug: String!) {
     description,
     videoUrl,
     content,
+    createdAt,
+    publishedAt,
     updatedAt,
     coverImage {
       url
@@ -13,6 +15,12 @@ query getArticle($slug: String!) {
     tags {
       title,
       theme
+    },
+    author {
+      fullName,
+      avatar {
+        url(transformation: {image: {resize: {height: 40, width: 40}}})
+      }
     }
   }
 }
