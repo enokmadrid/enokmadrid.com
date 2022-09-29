@@ -3,7 +3,7 @@
 		{{initArticles}}
 		<div class="jumbotron jumbotron-fluid dark shift-up has-overlay d-flex align-items-center" :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${article.coverImage.url});`">
 			<div class="container text-center height-70 d-flex flex-column justify-content-end">
-				<a :if="article.videoUrl" :href="article.videoUrl" target="_blank" class="play-button">
+				<a v-if="article.videoUrl" :href="article.videoUrl" target="_blank" class="play-button">
 					<fa :icon="['fas', 'play']"/>
 				</a>
 				<h1 class="display-3">{{article.headline}}</h1>
@@ -16,15 +16,15 @@
 				<dt>by</dt>
 				<dd>{{article.author.fullName}}</dd>
 			</dl>
-			<dl class="data-label">
+			<dl v-if="article.readingTime" class="data-label">
 				<dt>Reading Time</dt>
-				<dd>5 min</dd>
+				<dd>{{article.readingTime}} min</dd>
 			</dl>
 			<dl class="data-label">
 				<dt>Created</dt>
 				<dd>{{getCreatedDate}}</dd>
 			</dl>
-			<dl :if="article.updatedAt" class="data-label">
+			<dl v-if="article.updatedAt" class="data-label">
 				<dt>Updated</dt>
 				<dd>{{getUpdatedDate}}</dd>
 			</dl>
@@ -51,16 +51,16 @@ export default {
 			this.article = this.$store.getters.getArticlesBySlug(this.$route.params.slug);
 		},
 		getCreatedDate() {
-			if (this.createdAt);
-			return dayjs(this.createdAt).format('MMM DD, YYYY');
+			if (this.article.createdAt);
+			return dayjs(this.article.createdAt).format('MMM DD, YYYY');
 		},
 		getPublishedDate() {
-			if (this.publishedAt);
-			return dayjs(this.publishedAt).format('MMM DD, YYYY');
+			if (this.article.publishedAt);
+			return dayjs(this.article.publishedAt).format('MMM DD, YYYY');
 		},
 		getUpdatedDate() {
-			if (this.updatedAt);
-			return dayjs(this.updatedAt).format('MMM DD, YYYY');
+			if (this.article.updatedAt);
+			return dayjs(this.article.updatedAt).format('MMM DD, YYYY');
 		}
 	}
 }

@@ -5,6 +5,7 @@ query getArticles {
     description,
     videoUrl,
     content,
+    readingTime,
     createdAt,
     publishedAt,
     updatedAt,
