@@ -1,5 +1,5 @@
 <template>
-<section v-if="!loading" id="projects"
+<section v-if="!loading" id="projects" class="scroll-snap"
 	data-aos="fade-in"
 	data-aos-easing="ease-in-out-cubic">
 	<section v-for="project in projects" 
@@ -62,6 +62,7 @@ export default {
   background-repeat: no-repeat;
   background-size: cover;
   padding-top: 200px;
+  height: 100vh;
 
   .project-title, li, p {
     color: #fff;
@@ -102,6 +103,18 @@ export default {
 
   .project-text {
     margin-bottom: $space-semi;
+  }
+}
+
+.scroll-snap {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  &::-webkit-scrollbar {
+	display: none;
+	}
+  .project--fullwidth {
+	scroll-snap-align: start;
   }
 }
 </style>
