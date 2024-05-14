@@ -27,4 +27,10 @@
             transform: scale(1.05);
         }
     }
+    @include breakpoint(lg-down) {
+        .thumbnail-link {
+            width: 200px;
+            height: 120px;
+        }
+    }
 </style>
