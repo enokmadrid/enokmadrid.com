@@ -3,6 +3,8 @@
 ## Build Setup
 
 ```bash
+# Using Node v16.2.0
+
 # install dependencies
 $ npm install
 
