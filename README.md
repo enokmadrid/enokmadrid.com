@@ -1,4 +1,5 @@
 # enokmadrid.com
+[![Netlify Status](https://api.netlify.com/api/v1/badges/8811e465-b3c7-4ad7-bd2f-027b2882d228/deploy-status)](https://app.netlify.com/sites/enokmadrid/deploys)
 
 ## Build Setup
 
