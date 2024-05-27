@@ -1,7 +1,7 @@
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
-    title: 'Portfolio of Enok Madrid | UX Designer & UI Engineer',
+    title: 'Enok Madrid | UI/UX Design Engineer',
     htmlAttrs: {
       lang: 'en'
     },

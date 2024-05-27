@@ -80,7 +80,7 @@ export default {
 	height: auto;
 	overflow: hidden;
 }
-$section-height: 1150px;
+$section-height: 1250px;
 @include breakpoint(lg-up) {
 	.section-height {
 		height: $section-height;

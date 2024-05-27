@@ -7,7 +7,10 @@
 		</div>
 		<div class="footer--row">
 			<div class="container d-none d-sm-flex justify-content-between align-items-center py-3">
-				<small>Made with <fa :icon="['fas', 'heart']"/> in Las Vegas</small>
+				<small>
+					Designed and 
+					<a href="https://github.com/enokmadrid/enokmadrid.com" target="_blank">Handcrafted</a> 
+					with <fa :icon="['fas', 'heart']"/> in Las Vegas</small>
 				<div class="social-media">
 					<a href="https://github.com/enokmadrid" target="_blank"><fa :icon="['fab', 'github']"/></a>
 					<a href="https://www.instagram.com/enokmadrid" target="_blank"><fa :icon="['fab', 'instagram']"/></a>

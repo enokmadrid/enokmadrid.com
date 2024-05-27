@@ -1,6 +1,6 @@
 <template>
-	<div class="text-center offset-top-50">
-		<b class="d-block">Tool I Use</b>
+	<div class="text-center offset-top-50 rounded-panel">
+		<b class="d-block">My Tech Stack</b>
 		<div class="list-icons">
 			<i v-for="icon in icons" :key="icon">
 				<img :src="require(`~/assets/images/svg/logos/${icon}`)" alt="">
@@ -15,12 +15,11 @@ export default {
 		return {
 			icons: [
 				'figma.svg',
-				'sketch.svg',
-				'invision.svg',
-				'principle.svg',
-				'ai.svg',
+				'rive.jpeg',
 				'html5.svg',
+				'javascript.svg',
 				'sass.svg',
+				'vuejs.svg',
 				'nuxt.svg',
 				'laravel.svg'
 			]
@@ -31,24 +30,27 @@ export default {
 
 <style lang="scss" scoped>
 @import '~/assets/scss/_mixins.scss';
-.offset-top-50 {
-	margin-top: -50px;
-}
-.list-icons {
+.rounded-panel {
 	@include breakpoint(sm) {
 		max-width: 520px;
 	}
 	@include breakpoint(md) {
 		max-width: 620px;
 	}
+	max-width: 860px;
+	width: 100%;
+	margin: 0 auto;
+	background-color: white;
+	border-radius: $border-radius-default;
+}
+.offset-top-50 {
+	margin-top: -50px;
+}
+.list-icons {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	align-content: center;
-	margin: 0 auto;
-	background-color: white;
-	max-width: 860px;
-	border-radius: $border-radius-default;
 	padding: $space-small;
 	box-shadow: $shadow-large;
 
