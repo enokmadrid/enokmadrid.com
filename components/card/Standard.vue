@@ -44,7 +44,7 @@
         text-decoration: none;
     }
     .headline {
-        font-family: "Proxima Nova";
+        font-family: "proxima-nova";
         font-weight: 800;
         font-size: $space-standard;
         text-transform: none;

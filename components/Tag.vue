@@ -20,7 +20,7 @@
 }
 span {
     display: inline-block;
-    font-family: "Proxima Nova";
+    font-family: "proxima-nova";
     font-size: 9px;
     font-weight: bold;
     text-transform: uppercase;
