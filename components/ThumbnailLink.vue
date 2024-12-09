@@ -29,8 +29,12 @@
     }
     @include breakpoint(lg-down) {
         .thumbnail-link {
-            width: 200px;
-            height: 120px;
+            // width: 200px;
+            min-width: 180px;
+            height: 100px;
+            &:not(:last-child){
+                margin-right: $space-small;
+            }
         }
     }
 </style>
