@@ -1,5 +1,5 @@
-@import 'media-screens/x-small.scss';
-@import 'media-screens/small.scss';
-@import 'media-screens/medium.scss';
-@import 'media-screens/large.scss';
-@import 'media-screens/x-large.scss';
+@use 'media-screens/x-small.scss' as *;
+@use 'media-screens/small.scss' as *;
+@use 'media-screens/medium.scss' as *;
+@use 'media-screens/large.scss' as *;
+@use 'media-screens/x-large.scss' as *;

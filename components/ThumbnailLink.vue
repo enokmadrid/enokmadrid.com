@@ -3,38 +3,25 @@
 		:href="href"
 		@click="$emit('click')"
 		role="button"
-        class="thumbnail-link" 
+        class="block rounded-lg h-[150px] w-[267px] bg-cover transition-transform duration-150 ease-in-out hover:scale-105 lg:min-w-[180px] lg:h-[100px] lg:not-last:mr-4" 
         target="_blank"
         :style="`background-image: url(${thumbnailUrl});`"
     >
     </a>
 </template>
-<script>
-    export default {
-        props: [ "href", "thumbnailUrl" ]
-    }
-</script>
 
-<style lang="scss" scoped>
-    @import '~/assets/scss/_mixins.scss';
-    .thumbnail-link {
-        border-radius: 8px;
-        height: 150px;
-        width: 267px;
-        background-size: cover;
-        transition: all 150ms ease-in-out;
-        &:hover {
-            transform: scale(1.05);
+<script>
+export default {
+    name: 'ThumbnailLink',
+    props: {
+        href: {
+            type: String,
+            required: true
+        },
+        thumbnailUrl: {
+            type: String,
+            required: true
         }
     }
-    @include breakpoint(lg-down) {
-        .thumbnail-link {
-            // width: 200px;
-            min-width: 180px;
-            height: 100px;
-            &:not(:last-child){
-                margin-right: $space-small;
-            }
-        }
-    }
-</style>
+}
+</script>

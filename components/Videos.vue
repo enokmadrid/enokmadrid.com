@@ -1,5 +1,5 @@
 <template>
-    <div class="d-flex flex-sm-row justify-content-between thumbnails">
+    <div class="flex flex-row justify-between lg:scrollbar-hide lg:overflow-y-scroll lg:justify-evenly">
         <thumbnail-link
             v-for="video in videos"
             :href="video.url"
@@ -11,26 +11,14 @@
 
 <script>
 export default {
+    name: 'Videos',
     data: () => ({
-		limit: 4
-	}),
+        limit: 4
+    }),
     computed: {
-		videos() {
-			return this.$store.state.videos.slice(0,this.limit);
-		}
-	},
-}
-</script>
-
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-@include breakpoint(lg-down) {
-    .thumbnails {
-        overflow-y: scroll;
-        justify-content: space-evenly;
-        &::-webkit-scrollbar {
-            display: none;
+        videos() {
+            return this.$store?.state?.videos?.slice(0, this.limit) || [];
         }
     }
 }
-</style>
+</script>

@@ -1,13 +1,13 @@
 <template>
-    <a :class="['blog-card', 'row mb-5']" :href="articleUrl">
-        <div class="col-6">
-            <img :src="imageUrl" class="article-img img-fluid" alt="Responsive image">
+    <a class="flex items-center mb-5 text-current hover:text-current hover:no-underline" :href="articleUrl">
+        <div class="w-1/2">
+            <img :src="imageUrl" class="w-full rounded-lg" alt="Responsive image">
         </div>
-        <div class="col-6 d-inline-flex flex-column align-items-start justify-content-center">
+        <div class="w-1/2 flex flex-col items-start justify-center">
             <tag :title="tag" :theme="tagTheme"></tag>
-            <h3 class="headline">{{headline}}</h3>
-            <p>{{description}}</p>
-            <time class="time">{{getDate}}</time>
+            <h3 class="font-['proxima-nova'] font-extrabold text-lg mb-4">{{headline}}</h3>
+            <p class="mb-4">{{description}}</p>
+            <time class="text-xs font-bold">{{getDate}}</time>
         </div>
     </a>
 </template>
@@ -31,33 +31,3 @@
         }
     }
 </script>
-
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-
-.article-img {
-    border-radius: 8px;
-}
-.blog-card {
-    color: unset;
-    &:hover {
-        color: unset;
-        text-decoration: none;
-    }
-    .headline {
-        font-family: "proxima-nova";
-        font-weight: 800;
-        font-size: $space-standard;
-        text-transform: none;
-        margin-bottom: $space-standard;
-    }
-    .time {
-        font-size: 11px;
-        font-weight: 700;
-    }
-    .headline,
-    .decription {
-        margin-bottom: $space-standard;
-    }
-}
-</style>

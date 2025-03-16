@@ -1,36 +1,22 @@
 <template>
-	<div class="section-title">
-		<h2 class="display-3 decoration-line">{{ title }}</h2>
-		<p class="section-subtitle">{{ subtitle }}</p>
+	<div class="w-full block">
+		<h2 class="text-4xl font-bold text-center mb-6 after:content-[''] after:block after:w-24 after:h-1 after:bg-primary after:mx-auto after:my-6">{{ title }}</h2>
+		<p class="text-xl text-center max-w-[600px] mx-auto">{{ subtitle }}</p>
 	</div>
 </template>
 
 <script>
 export default {
-	props: [
-		"title",
-		"subtitle"
-	]
-}
-</script>
-
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-.section-title {
-	width: 100%;
-	display: block;
-	h1,h2,h3,h4,h5,h6,p {
-		text-align: center;
-		display: block;
-		&:after {
-			text-align: center;
-			margin: $space-standard auto;
+	name: 'Title',
+	props: {
+		title: {
+			type: String,
+			required: true
+		},
+		subtitle: {
+			type: String,
+			required: true
 		}
 	}
-	.section-subtitle {
-		font-size: 1.25rem;
-		max-width: 600px;
-		margin: 0 auto;
-	}
 }
-</style>
+</script>

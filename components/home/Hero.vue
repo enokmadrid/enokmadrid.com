@@ -1,145 +1,32 @@
 <template>
-	<div class="jumbotron jumbotron-fluid shift-up hero fullscreen">
-		<div class="container position-relative z-5">
-			<div class="d-flex flex-column-reverse flex-sm-row">
-				<div class="copy-hero">
-					<span class="display-1 mb-4 text-decoration">Hi, I'm Enok!</span>
-					<h1 class="display-2 text-hero-title">Design Engineer</h1>
-					<p class="mt-4 text-hero-description">I <a href="https://www.youtube.com/enokmadrid" target="blank">create UX content</a> and help tech startups make profits by leading them into delighting their customers.</p>
+	<div class="relative -mt-16 bg-white bg-center bg-no-repeat bg-cover">
+		<div class="container relative z-5 sm:py-30 md:py-[250px] md:pb-15">
+			<div class="flex flex-col-reverse sm:flex-row">
+				<div class="w-full md:w-[70%] lg:w-[60%] text-center sm:text-left">
+					<span class="block text-6xl mb-4 font-bold relative after:content-[''] after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-24 after:h-1 after:bg-primary">Hi, I'm Enok!</span>
+					<h1 class="text-5xl text-hero-title">Design Engineer</h1>
+					<p class="mt-4 lg:pr-[30%] text-hero-description">I <a href="https://www.youtube.com/enokmadrid" target="blank" class="text-primary hover:text-primary-dark">create UX content</a> and help tech startups make profits by leading them into delighting their customers.</p>
 				</div>
-				<Gravatar class="align-self-center large"/>
+				<Gravatar class="self-center large"/>
 			</div>
-			<div class="mt-4 mb-1 ctas">
+			<div class="mt-4 mb-1 xs:space-y-2 sm:space-x-4">
 				<Button class="btn rounded-pill btn-lg btn-primary brand-gradient has-arrow __right" href="#solutions">Learn How I Can Help</Button>
 				<Button class="btn rounded-pill btn-lg btn-light" to="/projects">View My Portfolio</Button>
 			</div>
 		</div>
-		<div class="overflow-hidden d-none d-lg-block">
-			<div class="angle-split">
-				<div class="brand-pattern-bg"></div>
+		<div class="hidden lg:block absolute inset-0 overflow-hidden">
+			<div class="absolute inset-0 h-[700px] -mr-[40%] ml-[60%] border-l-[7px] border-[#e21955] bg-[#070710] transform skew-x-45">
+				<div class="absolute left-[-49%] top-0 border-b-[5px] border-[#e21955]"></div>
 			</div>
 		</div>
 	</div>
 </template>
 
-<script>
-import aosMixin from '~/mixins/aos'
-export default {
-	mixins: [aosMixin]
-}
+<script setup lang="ts">
+import { useAos } from '~/composables/useAos'
+
+useAos({
+	duration: 500,
+	easing: 'ease-in-out-cubic'
+})
 </script>
-
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-@include breakpoint(lg-up) {
-	.text-hero-description {
-		padding-right: 30%;
-	}
-}
-
-.jumbotron-fluid {
-	&.shift-up {
-		@include breakpoint(sm-up) {
-		padding: 120px 0;
-		}
-		@include breakpoint(md-up) {
-		padding: 250px 0 60px;
-		margin-top: -88px;
-		}
-	}
-
-	&.hero {
-		.container {
-			top: 40%;
-		}
-		@include breakpoint(xs) {
-			text-align: center;
-			height:100vh;
-			.container {
-				position: absolute;
-				top: 15%;
-			}
-		}
-	}
-
-  	.copy-hero {
-		@include breakpoint(md-down) {
-			width: 100%;
-		}
-		@include breakpoint(md-up) {
-			width: 70%;
-		}
-		@include breakpoint(lg-up) {
-			width: 60%;
-		}
-  	}
-
-  	.scroll {
-		margin-top: 0 !important;
-		position: absolute;
-		right: 0;
-		left: 0;
-		bottom: 5%;
-		text-align: center;
-		i {
-			font-size: 36px;
-			color: white;
-			opacity: 0.3;
-		}
-  	}
-
-	&.hero {
-		background-color: white;
-		background-position: center top;
-		background-repeat: no-repeat;
-		background-size: cover;
-	}
-}
-
-.overflow-hidden {
-	position: absolute;
-	left: 0%;
-	top: 0%;
-	right: 0%;
-	bottom: 0%;
-	z-index: 0;
-	display: block;
-	overflow: hidden;
-}
-
-
-.angle-split {
-	position: absolute;
-	left: 0%;
-	top: 0%;
-	right: 0%;
-	bottom: 0%;
-	overflow: hidden;
-	height: 700px;
-	margin-right: -40%;
-	margin-left: 60%;
-	border-left: 7px solid #e21955;
-	background-color: #070710;
-	-webkit-transform: skew(45deg, 0deg);
-	-ms-transform: skew(45deg, 0deg);
-	transform: skew(45deg, 0deg);
-}
-
-
-.brand-pattern-bg {
-	left: -49%;
-	top: 0%;
-	bottom: auto;
-	border-bottom: 5px solid #e21955;
-}
-
-.ctas {
-	@include breakpoint(xs) {
-		.btn {
-		margin-top: 0;
-		margin-bottom: 8px;
-		width: 100%;
-		}
-	}
-}
-</style>

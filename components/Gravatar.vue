@@ -1,40 +1,9 @@
 <template>
-	<span class="gravatar"></span>
+	<span class="block rounded-full h-[140px] w-[140px] mt-2.5 bg-[url('https://s.gravatar.com/avatar/e19387847005ca3f652b3176c370b4d1?s=280')] bg-center bg-no-repeat bg-contain transition-transform duration-250 ease-in-out scale-95 hover:scale-100 sm:shadow-[0_0_0_5px_#FF1A55]"></span>
 </template>
 
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-.gravatar {
-	border-radius: 50%;
-	height: 140px;
-	width: 140px;
-	margin-top: 10px;
-	display: block;
-	background: url('https://s.gravatar.com/avatar/e19387847005ca3f652b3176c370b4d1?s=280') no-repeat center center;
-	background-size: 100%;
-	transition: transform 250ms ease-in-out;
-	transform: scale(.95);
-	&:hover {
-		transform: scale(1);
-	}
-	@include breakpoint(sm-up) {
-		box-shadow: 0 0 0 5px $primary;
-	}
+<script lang="ts">
+export default {
+	name: 'Gravatar'
 }
-.large {
-	@include breakpoint(xs) {
-		padding: $space-xlarge;
-		margin-bottom: $space-small;
-	}
-	@include breakpoint(sm) {
-		width: 100px;
-		height: 100px;
-		padding: 70px;
-		margin-left: $space-large;
-	}
-	@include breakpoint(md-up) {
-		width: 180px;
-		height: 180px;
-	}
-}
-</style>
+</script>

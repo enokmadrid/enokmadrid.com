@@ -1,38 +1,39 @@
 <template>
 	<main>
 		{{initArticles}}
-		<div class="jumbotron jumbotron-fluid dark shift-up has-overlay d-flex align-items-center" :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${article.coverImage.url});`">
-			<div class="container text-center height-70 d-flex flex-column justify-content-end">
-				<a v-if="article.videoUrl" :href="article.videoUrl" target="_blank" class="play-button">
-					<fa :icon="['fas', 'play']"/>
+		<div class="relative h-[450px] bg-top flex items-center" :style="`background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0)), url(${article.coverImage.url});`">
+			<div class="container mx-auto text-center h-[70%] flex flex-col justify-end">
+				<a v-if="article.videoUrl" :href="article.videoUrl" target="_blank" 
+					class="h-[72px] w-[72px] rounded-full bg-white block text-xs leading-[72px] mx-auto mb-12 text-center shadow-md transition-transform duration-150 ease-in-out hover:scale-110">
+					<fa :icon="['fas', 'play']" class="text-primary"/>
 				</a>
-				<h1 class="display-3">{{article.headline}}</h1>
+				<h1 class="text-4xl">{{article.headline}}</h1>
 			</div>
 		</div>
 
-		<section class="container pill-large">
-			<img class="avatar" :src="article.author.avatar.url" alt="Author Avatar">
-			<dl class="data-label">
-				<dt>by</dt>
-				<dd>{{article.author.fullName}}</dd>
+		<section class="container mx-auto h-[100px] bg-white shadow-md rounded-[50px] -mt-[50px] flex items-center justify-start px-8">
+			<img class="float-left rounded-[20px] mr-2" :src="article.author.avatar.url" alt="Author Avatar">
+			<dl class="mr-32 mb-0">
+				<dt class="text-xs font-bold text-gray-500">by</dt>
+				<dd class="text-base font-bold text-gray-900 mb-0">{{article.author.fullName}}</dd>
 			</dl>
-			<dl v-if="article.readingTime" class="data-label">
-				<dt>Reading Time</dt>
-				<dd>{{article.readingTime}} min</dd>
+			<dl v-if="article.readingTime" class="mr-32 mb-0">
+				<dt class="text-xs font-bold text-gray-500">Reading Time</dt>
+				<dd class="text-base font-bold text-gray-900 mb-0">{{article.readingTime}} min</dd>
 			</dl>
-			<dl class="data-label">
-				<dt>Created</dt>
-				<dd>{{getCreatedDate}}</dd>
+			<dl class="mr-32 mb-0">
+				<dt class="text-xs font-bold text-gray-500">Created</dt>
+				<dd class="text-base font-bold text-gray-900 mb-0">{{getCreatedDate}}</dd>
 			</dl>
-			<dl v-if="article.updatedAt" class="data-label">
-				<dt>Updated</dt>
-				<dd>{{getUpdatedDate}}</dd>
+			<dl v-if="article.updatedAt" class="mr-32 mb-0">
+				<dt class="text-xs font-bold text-gray-500">Updated</dt>
+				<dd class="text-base font-bold text-gray-900 mb-0">{{getUpdatedDate}}</dd>
 			</dl>
 		</section>
 
-		<section class="container cms-editable format-paragraph">
-			<div class="row justify-content-center">
-				<div class="col-7 text-left" v-html="$md.render(article.content)"></div>
+		<section class="container mx-auto cms-editable format-paragraph">
+			<div class="flex justify-center">
+				<div class="w-7/12 text-left" v-html="$md.render(article.content)"></div>
 			</div>
 		</section>
 		<PrevNext/>
@@ -65,70 +66,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-.jumbotron {
-	height: 450px;
-	background-position-y: top;
-}
-.height-70 {
-	height: 70%;
-}
-.play-button {
-	height: 72px;
-	width: 72px;
-	border-radius: 50%;
-	background-color: white;
-	display: block;
-	font-size: 12px;
-	line-height: 72px;
-	margin: 0 auto 48px;
-	text-align: center;
-	box-shadow: $shadow-medium;
-	transition: transform $speed-150 $ease-standard;
-	svg path {
-		fill: $brand-action-primary;
-	}
-
-	&:hover {
-		transform: scale(1.2);
-	}
-}
-.pill-large {
-	height: 100px;
-	background: white;
-	box-shadow: $shadow-medium;
-	border-radius: 50px;
-	margin-top: -50px;
-	display: flex;
-	align-items: center;
-	justify-content: flex-start;
-	padding-left: 32px;
-	padding-right: 32px; 
-}
-.data-label {
-	margin-right: 128px;
-	margin-bottom: 0;
-	address {
-		margin: 0;
-	}
-	dt {
-		font-size: 12px;
-		font-weight: bold;
-		color: $brand-text-light;
-	}
-	dd {
-		font-size: 16px;
-		font-weight: bold;
-		color: $brand-text;
-		margin-bottom: 0;
-	}
-}
-.avatar {
-	float: left;
-	border-radius: 20px;
-	margin-right: 8px;
-}
-
-</style>

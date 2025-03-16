@@ -18,9 +18,11 @@
   </div>
 </template>
 
-<script>
-import aosMixin from '~/mixins/aos'
-export default {
-  mixins: [aosMixin]
-}
+<script setup lang="ts">
+import { useAos } from '~/composables/useAos'
+
+useAos({
+  duration: 500,
+  easing: 'ease-in-out-cubic'
+})
 </script>

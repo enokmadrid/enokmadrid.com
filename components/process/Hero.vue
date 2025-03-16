@@ -1,15 +1,14 @@
 <template>
-	<div class="jumbotron jumbotron-fluid dark">
-		<div class="container text-center hero-small-title">
-			<h1 class="display-3">My Process</h1>
-			<p class="lead d-none d-sm-block">This is a high-level view of my core skills</p>
+	<div class="relative py-16 bg-gray-900 text-white">
+		<div class="container mx-auto px-4 text-center mt-12">
+			<h1 class="text-5xl font-bold mb-4">My Process</h1>
+			<p class="text-xl text-gray-300 hidden sm:block">This is a high-level view of my core skills</p>
 		</div>
 	</div>
 </template>
 
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-.hero-small-title {
-	margin-top: 3rem;
+<script>
+export default {
+	name: 'ProcessHero'
 }
-</style>
+</script>

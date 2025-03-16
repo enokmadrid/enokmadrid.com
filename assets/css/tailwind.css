@@ -1,0 +1,169 @@
+@import './_mixins.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-2 font-semibold transition-all duration-200 ease-in-out;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-opacity-90;
+  }
+  
+  .btn-light {
+    @apply bg-white text-secondary hover:bg-gray-100;
+  }
+  
+  .btn-outline-primary {
+    @apply border-2 border-primary text-primary hover:bg-primary hover:text-white;
+  }
+  
+  .btn-sm {
+    @apply px-4 py-1 text-sm;
+  }
+  
+  .btn-lg {
+    @apply px-8 py-3 text-lg;
+  }
+  
+  .rounded-pill {
+    @apply rounded-full;
+  }
+  
+  .navbar {
+    @apply py-3 w-full;
+  }
+  
+  .navbar-brand {
+    @apply text-xl font-bold;
+  }
+  
+  .navbar-nav {
+    @apply flex space-x-6;
+  }
+  
+  .dark {
+    @apply bg-brand-black text-white bg-brand-pattern bg-cover bg-no-repeat bg-center;
+  }
+  
+  .container {
+    @apply mx-auto px-4 max-w-7xl;
+  }
+  
+  .container-fluid {
+    @apply w-full px-4;
+  }
+  
+  .row {
+    @apply flex flex-wrap -mx-4;
+  }
+  
+  .col-12 {
+    @apply w-full px-4;
+  }
+  
+  .col-6 {
+    @apply w-1/2 px-4;
+  }
+  
+  .col-4 {
+    @apply w-1/3 px-4;
+  }
+  
+  .col-md-4 {
+    @apply w-full md:w-1/3 px-4;
+  }
+  
+  .col-md-6 {
+    @apply w-full md:w-1/2 px-4;
+  }
+  
+  .col-md-8 {
+    @apply w-full md:w-2/3 px-4;
+  }
+  
+  .text-center {
+    @apply text-center;
+  }
+  
+  .d-flex {
+    @apply flex;
+  }
+  
+  .flex-column {
+    @apply flex-col;
+  }
+  
+  .justify-content-between {
+    @apply justify-between;
+  }
+  
+  .align-items-center {
+    @apply items-center;
+  }
+  
+  .has-arrow {
+    @apply relative;
+  }
+  
+  .has-arrow.__right {
+    @apply pr-8;
+  }
+  
+  .has-arrow.__right::after {
+    @apply absolute right-4 transition-all duration-200;
+    content: "→";
+  }
+  
+  .has-arrow.__right:hover::after {
+    @apply translate-x-2;
+  }
+  
+  .has-arrow.__left {
+    @apply pl-8;
+  }
+  
+  .has-arrow.__left::before {
+    @apply absolute left-4 transition-all duration-200;
+    content: "←";
+  }
+  
+  .has-arrow.__left:hover::before {
+    @apply -translate-x-2;
+  }
+  
+  .brand-gradient {
+    @apply bg-gradient-to-r from-primary to-secondary;
+  }
+}
+
+@layer utilities {
+  .bg--gray {
+    @apply bg-gray-50;
+  }
+  
+  .shift-up {
+    @apply -mt-16;
+  }
+  
+  .height-70 {
+    @apply h-70;
+  }
+  
+  .z-5 {
+    z-index: 5;
+  }
+  
+  .z-10 {
+    z-index: 10;
+  }
+} 

@@ -1,5 +1,16 @@
+@use "sass:math";
+@use "sass:color";
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+
+// Import Bootstrap functions and variables first
+@forward "bootstrap/scss/functions";
+@forward "bootstrap/scss/variables";
+@forward "bootstrap/scss/mixins";
+
 @function calculateRem($size) {
-  $remSize: calc($size / 16px);
+  $remSize: math.div($size, 16px);
   @return #{$remSize}rem;
 }
 

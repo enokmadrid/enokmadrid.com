@@ -1,13 +1,15 @@
+@use "sass:color";
+
 // Brand Colors
 $brand-action-primary:      #FF1A55 !default;
 $brand-action-secondary:    #BF0E66 !default;
 $brand-primary:             #8984FA !default;
 $brand-secondary:           #5952F9 !default;
 $brand-black:               #101018 !default;
-$brand-black-light:         lighten($brand-black, 10%)  !default;
+$brand-black-light:         color.adjust($brand-black, $lightness: 10%) !default;
 $brand-black-lighter:       #2E2E36 !default;
 $brand-text:                #484b89 !default;
-$brand-text-light:          lighten($brand-text, 20%)  !default;
+$brand-text-light:          color.adjust($brand-text, $lightness: 20%) !default;
 
 // Bootstrap 4.4.1 Variables map
 $primary:                   $brand-action-primary !default;

@@ -1,33 +1,48 @@
 <template>
-    <nav class="navbar navbar-expand-lg py-3 z-10 fixed-top" 
-        :class="`${this.$store.getters.getNavClass}`">
-        <div class="container">
-            <NuxtLink class="navbar-brand text-uppercase" to="/">
-                <img class="logo" src="~/assets/images/enok-logo.svg" alt="Enok Madrid Logo">
-                Enok Madrid
-            </NuxtLink>
+    <nav class="fixed top-0 w-full z-10 py-3 transition-all duration-300 ease-in-out delay-250" 
+        :class="[
+            navClass,
+            'navbar-base',
+            {'navbar-split': isSplit},
+            {'navbar-dark': isDark},
+            {'navbar-scroll': isScrolled},
+            {'navbar-offset': isOffset}
+        ]">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between">
+                <NuxtLink class="flex items-center text-lg font-bold uppercase font-['trumpgothicpro'] hover:no-underline" 
+                    :class="[
+                        {'text-gray-900': !isDark && !isSplit}, 
+                        {'text-white': isDark || isSplit}
+                    ]" 
+                    to="/">
+                    <img class="h-[30px] w-auto mr-[5px]" src="~/assets/images/enok-logo.svg" alt="Enok Madrid Logo">
+                    Enok Madrid
+                </NuxtLink>
 
-            <div class="navbar-collapse collapse">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <NuxtLink to="/" exact class="nav-link">Work</NuxtLink>
-                </li>
-                <li class="nav-item">
-                    <NuxtLink to="/about" class="nav-link">About</NuxtLink>
-                </li>
-                <li class="nav-item">
-                    <NuxtLink to="/process" class="nav-link">Process</NuxtLink>
-                </li>
-                <li class="nav-item">
-                    <NuxtLink to="/learn" class="nav-link">Learn</NuxtLink>
-                </li>
-            </ul>
-            
-            <div class="my-2 my-md-0">
-                <Button href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank" class="btn btn-primary rounded-pill btn-sm">
-                  <fa :icon="['fas', 'phone']"/> Contact me
-                </Button>
-            </div>
+                <div class="hidden lg:flex items-center space-x-8">
+                    <ul class="flex space-x-6">
+                        <li v-for="(item, index) in navItems" :key="index">
+                            <NuxtLink :to="item.path" :exact="item.exact"
+                                class="font-['proxima-nova'] text-xs font-semibold uppercase tracking-wider transition-colors duration-250"
+                                :class="[
+                                    {'text-gray-600 hover:text-gray-900': !isDark && !isSplit},
+                                    {'text-white/80 hover:text-white': isDark || isSplit},
+                                    {'text-gray-900': !isDark && !isSplit && $route.path === item.path},
+                                    {'text-white': (isDark || isSplit) && $route.path === item.path}
+                                ]">
+                                {{ item.text }}
+                            </NuxtLink>
+                        </li>
+                    </ul>
+                    
+                    <div>
+                        <Button href="https://goo.gl/forms/ipwbE95jv0x5FXbX2" target="_blank" 
+                            class="inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-primary hover:bg-primary-dark rounded-full transition-colors">
+                            <fa :icon="['fas', 'phone']" class="mr-2"/> Contact me
+                        </Button>
+                    </div>
+                </div>
             </div>
         </div>
     </nav>
@@ -35,179 +50,94 @@
 
 <script>
 export default {
+    name: 'Navigation',
+    data() {
+        return {
+            isScrolled: false,
+            isOffset: false,
+            isSplit: false,
+            isDark: false,
+            scrollPos: 0,
+            navItems: [
+                { path: '/', text: 'Work', exact: true },
+                { path: '/about', text: 'About', exact: false },
+                { path: '/process', text: 'Process', exact: false },
+                { path: '/learn', text: 'Learn', exact: false }
+            ]
+        }
+    },
+    computed: {
+        navClass() {
+            return this.$store?.getters?.getNavClass || '';
+        }
+    },
     mounted() {
-        let nav = document.querySelector('.navbar.fixed-top');
-        this.navToggle(nav);
+        this.initNavbar();
     },
     created() {
-        this.$store.commit('set_currentPage', this.$route.path);
-        this.$store.dispatch('changeNavClass');
+        if (this.$store) {
+            this.$store.commit('set_currentPage', this.$route.path);
+            this.$store.dispatch('changeNavClass');
+        }
+        this.updateNavbarState();
     },
     methods: {
-        navToggle (nav) {
-            let scrollPos = 0;
-            const height = nav.clientHeight;
+        initNavbar() {
+            window.addEventListener('scroll', this.handleScroll);
+            this.updateNavbarState();
+        },
+        handleScroll() {
+            const currentScrollPos = window.scrollY;
+            const height = 74; // Navbar height
+
+            // Update scroll state
+            this.isScrolled = currentScrollPos > height;
             
-            // Switch between dark and light navbar on scroll
-            if (nav.classList.contains("navbar-split")) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > height) {
-                        nav.classList.remove("navbar-split");
-                        nav.classList.add("navbar-scroll-down-revealed");
-                    }
-                    else {
-                        nav.classList.remove("navbar-scroll-down-revealed", "navbar-dark", "navbar-transparent");
-                        nav.classList.add("navbar-split");
-                    }
-                    offsetNav((document.body.getBoundingClientRect()).top);
-                    scrollPos = (document.body.getBoundingClientRect()).top;
-                });
-            } 
-            else if (nav.classList.contains("navbar-transparent")) {
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > height) {
-                        nav.classList.remove("navbar-transparent");
-                        nav.classList.add("navbar-scroll-down-revealed");
-                    }
-                    else {
-                        nav.classList.remove("navbar-scroll-down-revealed", "navbar-split", "navbar-dark");
-                        nav.classList.add("navbar-transparent");
-                    }
-                    offsetNav((document.body.getBoundingClientRect()).top);
-                    scrollPos = (document.body.getBoundingClientRect()).top;
-                });
-            }
-            else if (nav.classList.contains("navbar-dark")) {  
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > height) {
-                        nav.classList.remove("navbar-dark");
-                        nav.classList.add("navbar-scroll-down-revealed");
-                    }
-                    else {
-                        nav.classList.remove("navbar-scroll-down-revealed", "navbar-split", "navbar-transparent");
-                        nav.classList.add("navbar-dark");
-                    }
-                    offsetNav((document.body.getBoundingClientRect()).top);
-                    scrollPos = (document.body.getBoundingClientRect()).top;
-                });
-            }
-            // hide and show navbar on scroll
-            function offsetNav(currentScrollPos) {
-                (currentScrollPos > scrollPos) ? nav.classList.remove("offset") : nav.classList.add("offset");
+            // Update offset state for hide/show on scroll
+            this.isOffset = currentScrollPos > this.scrollPos;
+            
+            // Update scroll position
+            this.scrollPos = currentScrollPos;
+
+            // Update navbar theme based on scroll
+            this.updateNavbarState();
+        },
+        updateNavbarState() {
+            if (!this.$store?.getters?.getNavClass) return;
+            
+            const navClass = this.$store.getters.getNavClass;
+            this.isSplit = navClass.includes('navbar-split');
+            this.isDark = navClass.includes('navbar-dark');
+
+            if (this.isScrolled) {
+                this.isSplit = false;
+                this.isDark = false;
             }
         }
     },
     watch: {
-        '$route' () {
-            this.$store.commit('set_currentPage', this.$route.path);
-            this.$store.dispatch('changeNavClass');
-            let nav = document.querySelector('.navbar.fixed-top');
-            this.navToggle(nav);
+        '$route'() {
+            if (this.$store) {
+                this.$store.commit('set_currentPage', this.$route.path);
+                this.$store.dispatch('changeNavClass');
+            }
+            this.updateNavbarState();
         }
+    },
+    beforeDestroy() {
+        window.removeEventListener('scroll', this.handleScroll);
     }
 }
 </script>
 
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-.flexbox-container {
-	// Theme for Dark Backgrounds
-	&.dark {
-		.logo a {
-			color: #FFFFFF;
-		}
-
-		.navigation a {
-			color: #FFFFFF;
-			&:hover {
-				color: $brand-primary;
-			}
-		}
-	}
+<style>
+.navbar-base {
+    @apply transition-all duration-300 ease-in-out;
 }
-
-// Navbar
-.navbar {
-    .nav-link {
-        font-family: "proxima-nova";
-        font-size: 0.75rem;
-        font-weight: 600;
-        letter-spacing: 1px;
-        text-transform: uppercase;
-        transition: color 250ms ease-in-out;
-    }
-    .nav-link {
-        color: $brand-text-light;
-        &:hover, 
-        &:focus,
-        &.nuxt-link-active,
-		&.nuxt-link-exact-active { 
-            color: $brand-text;
-        }
-    }
-    .navbar-brand {
-        color: $brand-text;
-        &:hover, &:focus {
-            color: $brand-text;
-        }
-    }
-	transition: all 350ms ease-in-out;
-	transition-delay: 250ms;
-	transition-property: transform;
+.navbar-scroll {
+    @apply bg-white/85 backdrop-blur-lg shadow-md;
 }
-.navbar-split {
-    .nav-link {
-        color: rgba(white, 0.8);
-		&:hover, 
-        &:focus,
-        &.nuxt-link-active,
-		&.nuxt-link-exact-active { 
-			color: white; 
-		}
-	}
+.navbar-offset {
+    @apply -translate-y-[74px];
 }
-.navbar-dark {
-	.nav-link {
-        color: rgba(white, 0.8);
-        &:hover, 
-        &:focus,
-        &.nuxt-link-active,
-		&.nuxt-link-exact-active { 
-            color: white;
-        }
-    }
-    .navbar-brand {
-        color: white;
-        &:hover, &:focus {
-            color: white;
-        }
-    }
-}
-
-.navbar-scroll-down-revealed {
-	background: rgba(255,255,255, 0.85);
-    backdrop-filter: blur(8px);
-    box-shadow: $shadow-medium;
-    @extend %transition-fade-in;
-}
-
-.offset {
-  	transform: translateY(-74px);
-}
-
-
-
-// LOGO CONTAINER
-.navbar-brand {
-	font-weight: 600;
-	font-family: trumpgothicpro, sans-serif;
-	&:hover, &:focus, &:active {
-		text-decoration: none;
-	}
-	.logo {
-		width: 30px;
-		margin-right: 5px;
-	}
-}
-
 </style>

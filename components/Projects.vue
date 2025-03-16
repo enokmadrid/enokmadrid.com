@@ -1,9 +1,9 @@
 <template>
-	<section v-if="!loading" id="projects" class="section-space mb-5">
+	<section v-if="!loading" id="projects" class="py-16 mb-5">
 		<div class="grid container">
 			<div class="item-first">
-				<span class="text-left display-1 text-decoration d-block">Recent Work</span>
-				<img src="~/assets/images/svg/robot-animated.svg" width="360" height="281" alt="robot-animation" class="float-right img-fluid">
+				<span class="text-left text-6xl text-decoration block">Recent Work</span>
+				<img src="~/assets/images/svg/robot-animated.svg" width="360" height="281" alt="robot-animation" class="float-right">
 			</div>
 			<card-project
 				v-for="(project, index) in projects"
@@ -22,91 +22,91 @@
 				>
 			</card-project>
 			<div class="item-last">
-				<span class="d-block text-center display-1 text-decoration">Enjoying These?</span>
+				<span class="block text-center text-6xl text-decoration">Enjoying These?</span>
 				<Button class="btn btn-primary btn-lg rounded-pill brand-gradient has-arrow __right" to="/projects">See All my Projects</Button>
 			</div>
 		</div>
 	</section>
 </template>
 
-<script>
-import aosMixin from '~/mixins/aos'
+<script lang="ts">
+interface Project {
+	id: string;
+	title: string;
+	slug: string;
+	clientDescription: string;
+	roles: string[];
+	order: number;
+	color: {
+		hex: string;
+	};
+	imageCard: {
+		url: string;
+	};
+	imageHero: {
+		url: string;
+	};
+}
+
+interface GraphQLResponse {
+	projects: Project[];
+}
+
 export default {
-	data: () => ({
-		loading: 0,
-		projectNext: '',
-		projectPrevious: '',
-		limit: 5
-	}),
-	computed: {
-		projects() {
-			return this.$store.state.projects.slice(0,this.limit);
+	data() {
+		return {
+			loading: true,
+			projects: [] as Project[]
 		}
 	},
-	mixins: [aosMixin]
+	async fetch() {
+		const query = `
+			query {
+				projects(first: 6, orderBy: order_ASC) {
+					id
+					title
+					slug
+					clientDescription
+					roles
+					order
+					color {
+						hex
+					}
+					imageCard {
+						url
+					}
+					imageHero {
+						url
+					}
+				}
+			}
+		`
+		const { projects } = (await this.$graphql.default.request(query)) as GraphQLResponse
+		this.projects = projects
+		this.loading = false
+	}
 }
 </script>
 
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
+<style lang="postcss" scoped>
 .grid {
-	margin-bottom: $space-xlarge;
-	@include breakpoint(sm-down) {
-		display: flex;
-		flex-direction: column;
-	}
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(15, 1fr); 
-	gap: 0 $space-standard; 
-	grid-template-areas: 
-	"item-1 item-first"
-	"item-1 item-first"
-	"item-1 item-2"
-	"item-1 item-2"
-	"item-1 item-2"
-	"item-3 item-2"
-	"item-3 item-2"
-	"item-3 item-4"
-	"item-3 item-4"
-	"item-3 item-4"
-	"item-5 item-4"
-	"item-5 item-4"
-	"item-5 item-last"
-	"item-5 item-last"
-	"item-5 item-last";
-
-	.item-first { 
-		grid-area: item-first;
-		span {
-			margin-top: 2rem;
-		}
-		img {
-			margin-top: -7rem;
-		}
-	}
-	.item-1 { grid-area: item-1; }
-	.item-2 { grid-area: item-2; }
-	.item-3 { grid-area: item-3; }
-	.item-4 { grid-area: item-4; }
-	.item-5 { grid-area: item-5; }
-	.item-last { 
-		grid-area: item-last;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		flex-direction: column;
-	}
+	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
 }
-.project--image {
-	img {
-		@include breakpoint(md-down) {
-			margin-top: $space-semi;
-			padding: {
-				left: $space-standard;
-				right: $space-standard;
-			}
-		}
-	}
+
+.item-first {
+	@apply col-span-full text-center mb-16;
+}
+
+.item-last {
+	@apply col-span-full text-center mt-16;
+}
+
+.text-decoration {
+	@apply font-bold relative;
+}
+
+.text-decoration::after {
+	content: '';
+	@apply absolute bottom-0 left-1/2 -translate-x-1/2 w-24 h-1 bg-primary;
 }
 </style>

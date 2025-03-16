@@ -1,19 +1,17 @@
 <template>
 	<div>
 		<ProcessHero />
-		<section class="container-fluid bg--gray">
-				<div class="container content--container">
-					<div class="row">
-						<div v-for="step in steps" :key="step.id" class="col-md-4 col-sm-6 col-xs-12">
-							<NuxtLink :to="`${step.path}`" class="process-card">
-								<div class="card mb-3">
-									<i :class="['icon', step.navIcon]"></i>
-									<b class="card-subtitle"> {{step.title}}</b>
-								</div>
-							</NuxtLink>
+		<section class="bg-gray-50">
+			<div class="container mx-auto px-4 py-16">
+				<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+					<NuxtLink v-for="step in steps" :key="step.id" :to="`${step.path}`" class="text-center text-current hover:no-underline">
+						<div class="bg-white rounded-lg shadow-sm hover:shadow-lg transition-shadow duration-150 ease-in-out py-8 mb-3">
+							<i :class="['icon text-primary mx-auto my-7.5 text-[60px]', step.navIcon]"></i>
+							<b class="block"> {{step.title}}</b>
 						</div>
-					</div>
+					</NuxtLink>
 				</div>
+			</div>
 		</section>
 	</div>
 </template>
@@ -28,32 +26,3 @@ export default {
 	}
 }
 </script>
-
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-
-.process-card {
-	text-align: center;
-	color: unset;
-	.icon {
-		color: $brand-action-primary;
-		margin: 30px auto;
-		&::before {
-			font-size: 60px;
-		}
-	}
-	.card {
-		box-shadow: $shadow-small;
-		transition: box-shadow $speed-350 $ease-standard;
-		padding: $space-large 0;
-		border: none;
-	}
-	&:hover {
-		text-decoration: none;
-		.card {
-			box-shadow: $shadow-large;
-			transition: box-shadow $speed-150 $ease-standard;
-		}
-	}
-}
-</style>

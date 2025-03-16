@@ -5,81 +5,79 @@
 		:href="href"
 		@click="$emit('click')"
 		role="button"
+		:class="[
+			'transition-fade-in uppercase tracking-wider shadow-sm hover:shadow-lg',
+			{ 'text-primary': isPrimary },
+			{ 'w-full': isMobile },
+			{ 'text-sm tracking-wide': isSmall },
+			{ 'inline-block mb-1.5': isSpaced }
+		]"
 	>
 		<slot></slot>
 	</component>
 </template>
-<script>
+
+<script lang="ts">
+interface Props {
+	to?: string;
+	href?: string;
+	label?: string;
+	isPrimary?: boolean;
+	isSmall?: boolean;
+	isSpaced?: boolean;
+}
+
 export default {
-	props: [ "to", "href", "label" ]
+	props: {
+		to: String,
+		href: String,
+		label: String,
+		isPrimary: Boolean,
+		isSmall: Boolean,
+		isSpaced: Boolean
+	},
+	data() {
+		return {
+			isMobile: window.innerWidth < 576
+		}
+	},
+	mounted() {
+		window.addEventListener('resize', this.handleResize)
+	},
+	beforeDestroy() {
+		window.removeEventListener('resize', this.handleResize)
+	},
+	methods: {
+		handleResize() {
+			this.isMobile = window.innerWidth < 576
+		}
+	}
 }
 </script>
 
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-
-.c-primary {
-	color: $brand-primary;
+<style lang="postcss" scoped>
+.has-arrow.__right::after, 
+.has-arrow.__left::before {
+	@apply font-['streamline-icons-font'] opacity-100 relative top-0.5 leading-[0.9] transition-all duration-150 ease-in-out;
 }
 
-.btn:not(.btn-link) {
-	box-shadow: $shadow-small;
-	@extend %transition-gradient;
-  
-	&:hover {
-		box-shadow: $shadow-large;
+.has-arrow.__right {
+	&::after {
+		content: "\65";
+		@apply relative left-2;
+	}
+	&:hover::after {
+		@apply left-[15px];
 	}
 }
 
-.has-arrow {
-	&.__right::after, 
-	&.__left::before {
-		font-family: "streamline-icons-font" !important;
-		opacity: 1;
-		position: relative;
-		top: 2px;
-		line-height: 0.9;
-		transition: all 0.15s ease-in-out;
+.has-arrow.__left {
+	&::before {
+		content: "\63";
+		@apply relative right-2;
 	}
-	&.__right {
-		&::after {
-			content: "\65";
-			left: 8px;
-			text-transform: none;
-		}
-		&:hover::after {
-			left: 15px;
-		}
-	}
-	&.__left {
-		&::before {
-			content: "\63";
-			right: 8px;
-			text-transform: none;
-		}
-		&:hover::before {
-			right: 15px;
-		}
-	}
-}
-
-.btn {
-	&.btn-sm {
-		font-size: 0.7rem;
-		letter-spacing: 0.02rem;
-	}
-	text-transform: uppercase;
-	letter-spacing: 0.05rem;
-}
-
-.btn-space {
-	margin-bottom: 6px;
-	display: inline-block;
-}
-
-@include breakpoint(xs) {
-	.btn {
-		width: 100%;
+	&:hover::before {
+		@apply right-[15px];
 	}
 }
 </style>

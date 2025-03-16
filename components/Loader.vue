@@ -1,17 +1,23 @@
 <template>
-    <div class="loading-page">
-        <svg class="animate-flicker" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 56 56">
-        <defs>
-            <linearGradient id="a" x1="1.15" x2="42.43" y1="54.58" y2="13.3" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#ff1a55" offset="0"/>
-            <stop stop-color="#bf0e66" offset="1"/>
-            </linearGradient>
-        </defs>
-        <title>enok-logo</title>
-        <path class="cls-1" d="m30.38 6.38l-24.06 24.11a3.64 3.64 0 0 1 -5.15 -5.14c5.14-5.14 18.92-19 24.06-24.11a3.64 3.64 0 0 1 5.15 5.14zm25.12 21.54a3.64 3.64 0 0 0 -6.21 -2.57l-24.06 24.12a3.58 3.58 0 0 0 -1.06 2.53 3.63 3.63 0 0 0 6.21 2.57l24.06-24.08a3.64 3.64 0 0 0 1.06 -2.57zm-24.06 0a3.64 3.64 0 0 0 -6.21 -2.57l-24.06 24.12a3.63 3.63 0 1 0 5.15 5.13l24.06-24.11a3.6 3.6 0 0 0 1.06 -2.57z"/>
+    <div class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-gradient-radial from-[#2e2e51] to-[#06060c]">
+        <svg class="w-10 animate-pulse" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 56 56">
+            <defs>
+                <linearGradient id="a" x1="1.15" x2="42.43" y1="54.58" y2="13.3" gradientUnits="userSpaceOnUse">
+                    <stop stop-color="#ff1a55" offset="0"/>
+                    <stop stop-color="#bf0e66" offset="1"/>
+                </linearGradient>
+            </defs>
+            <title>enok-logo</title>
+            <path class="cls-1" d="m30.38 6.38l-24.06 24.11a3.64 3.64 0 0 1 -5.15 -5.14c5.14-5.14 18.92-19 24.06-24.11a3.64 3.64 0 0 1 5.15 5.14zm25.12 21.54a3.64 3.64 0 0 0 -6.21 -2.57l-24.06 24.12a3.58 3.58 0 0 0 -1.06 2.53 3.63 3.63 0 0 0 6.21 2.57l24.06-24.08a3.64 3.64 0 0 0 1.06 -2.57zm-24.06 0a3.64 3.64 0 0 0 -6.21 -2.57l-24.06 24.12a3.63 3.63 0 1 0 5.15 5.13l24.06-24.11a3.6 3.6 0 0 0 1.06 -2.57z"/>
         </svg>
     </div>
 </template>
+
+<script>
+export default {
+    name: 'Loader'
+}
+</script>
 
 <style scoped>
 .loading-page {

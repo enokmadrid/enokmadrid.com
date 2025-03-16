@@ -1,0 +1,161 @@
+@layer components {
+  /* Transitions */
+  .transition-fade-in {
+    @apply transition-all duration-200 ease-in-out;
+  }
+
+  /* Media Queries are handled by Tailwind's responsive prefixes */
+  
+  /* Flexbox utilities */
+  .flexbox-container {
+    @apply flex flex-row flex-wrap justify-around items-stretch content-center;
+  }
+
+  .flex-link {
+    @apply flex items-center justify-center flex-1 transition-fade-in hover:transition-fade-in;
+  }
+
+  .flex-text-left {
+    @apply justify-start;
+  }
+
+  .flex-text-right {
+    @apply justify-end;
+  }
+
+  /* Content Menu */
+  .content--menu {
+    @apply border-t border-gray-100;
+  }
+
+  .content--menu .flex-link {
+    @apply py-[70px] bg-white hover:bg-gray-100 hover:no-underline hover:text-primary;
+  }
+
+  .content--menu .flex-link.nuxt-link-active {
+    @apply border-b-6 border-secondary text-secondary;
+  }
+
+  /* Project styles */
+  .project--image-container {
+    @apply flex flex-row-reverse;
+  }
+
+  .project--image-container img {
+    @apply block w-full;
+  }
+
+  .grid-overflow {
+    @apply float-right overflow-hidden;
+  }
+
+  /* Mobile menu */
+  .mobile-menu .icon::before {
+    @apply text-4xl;
+  }
+
+  /* Process steps */
+  .content--container {
+    @apply py-16;
+  }
+
+  .content--container h3,
+  .content--container .content--step-title {
+    @apply font-bold;
+  }
+
+  .content--container h4,
+  .content--container h5 {
+    @apply font-semibold;
+  }
+
+  .content--container .content--step-subtext {
+    @apply text-primary;
+  }
+
+  .content--container .content--icon {
+    @apply text-7xl text-center block opacity-20;
+  }
+
+  .content--container .content--tools,
+  .content--container .content--tools ul {
+    @apply mt-5 pl-2.5 text-gray-light text-xs;
+  }
+
+  .content--container .content--tools li {
+    @apply list-none leading-[15px];
+  }
+
+  .content--container .content--tools li::before {
+    @apply content-['·'] text-4xl align-middle mr-4;
+  }
+
+  /* Project styles */
+  .introduction {
+    @apply text-2xl font-light leading-[1.8] py-20 text-center font-merriweather;
+  }
+
+  .featured-image {
+    @apply mt-[60px] mx-auto;
+  }
+
+  .content--summary {
+    @apply pb-10;
+  }
+
+  .content--title {
+    @apply font-semibold mt-[50px] first:mt-0;
+  }
+
+  .cms-editable {
+    @apply block text-center py-16;
+  }
+
+  .cms-editable img {
+    @apply mx-auto pb-10;
+  }
+
+  .cms-editable h1,
+  .cms-editable h2,
+  .cms-editable h3,
+  .cms-editable h4,
+  .cms-editable h5,
+  .cms-editable h6,
+  .cms-editable p {
+    @apply pb-5;
+  }
+
+  /* Overlay styles */
+  .overlay {
+    @apply h-0 w-full fixed z-[1] top-0 left-0 bg-brand-black/95 overflow-y-hidden transition-all duration-500;
+  }
+
+  .overlay a {
+    @apply p-2 no-underline text-4xl text-gray-400 block transition-all duration-300 hover:text-gray-100;
+  }
+
+  .overlay .closebtn {
+    @apply absolute top-5 right-[45px] text-6xl;
+  }
+
+  .overlay .form-group input,
+  .overlay .form-group textarea {
+    @apply bg-brand-black-light text-white border-none w-full rounded-[40px] p-4;
+  }
+
+  .overlay .form-group textarea {
+    @apply h-[170px];
+  }
+
+  .overlay-content {
+    @apply relative top-[15%] w-full;
+  }
+
+  .overlay-content h4 {
+    @apply text-white;
+  }
+
+  .overlay-content form {
+    @apply mx-auto w-[500px] text-center;
+  }
+} 

@@ -4,7 +4,12 @@
 // consistent naming. Ex: $nav-link-disabled-color and $modal-content-box-shadow-xs.
 
 // Color system
-@import "brand-colors";
+@use "sass:color";
+@use "sass:math";
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+@forward "brand-colors";
 
 // Body
 $body-bg:                           $white !default;
@@ -23,7 +28,7 @@ $nav-link-padding-x:                2rem !default;
 // Navbar
 $navbar-nav-link-padding-x:         1.3rem !default;
 $navbar-brand-font-size:            1.375rem !default;
-$navbar-light-color:                transparentize($brand-text, 0.4) !default;
+$navbar-light-color:                color.change($brand-text, $alpha: 0.6) !default;
 $navbar-light-hover-color:          $brand-text !default;
 $navbar-light-active-color:         $brand-text !default;
 
@@ -93,5 +98,45 @@ $container-max-widths: (
   lg: 940px,
   xl: 1160px
 ) !default;
+
+// Custom variable overrides
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px,
+  xxl: 1320px
+);
+
+// Brand Colors
+$brand-primary: #FF1A55;
+$brand-secondary: #1A1A1A;
+$brand-action-primary: #FF1A55;
+$brand-action-secondary: #1A1A1A;
+$brand-text: #1A1A1A;
+$brand-black: #1A1A1A;
+$brand-black-light: #2A2A2A;
+
+// Spacing
+$space-micro: 4px;
+$space-small: 8px;
+$space-standard: 16px;
+$space-semi: 24px;
+$space-large: 32px;
+$space-xlarge: 48px;
+$space-xxlarge: 64px;
+
+// Typography
+$font-family-sans-serif: proxima-nova, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 
 

@@ -1,47 +1,35 @@
 <template>
-	<li class="col-md-4 col-sm-6 col-xs-12">
-		<article class="icon-card">
-			<img :src="icon" :alt="`${title} Icon`" class="icon">
-			<h4 class="title">{{ title }}</h4>
-			<p>{{ description }}</p>
+	<li class="list-none m-0">
+		<article class="p-9 text-center">
+			<img :src="icon" :alt="`${title} Icon`" class="w-full h-16 object-contain mb-4 mx-auto">
+			<h4 class="text-2xl font-semibold text-white mb-4">{{ title }}</h4>
+			<p class="text-gray-200 m-0">{{ description }}</p>
 		</article>
 	</li>
 </template>
 
-<script>
+<script lang="ts">
+interface Props {
+	icon: string;
+	title: string;
+	description: string;
+}
+
 export default {
-	props: ["icon", "title", "description"]
+	name: 'IconCard',
+	props: {
+		icon: {
+			type: String,
+			required: true
+		},
+		title: {
+			type: String,
+			required: true
+		},
+		description: {
+			type: String,
+			required: true
+		}
+	} as Record<keyof Props, any>
 }
 </script>
-
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-
-li {
-	list-style: none;
-	margin: 0;
-}
-.icon-card {
-  padding: 35px;
-  border: none;
-
-	.icon {
-		width: 100%;
-		height: 65px;
-		margin: 30px auto;
-		font-size: 70px;
-	}
-
-	.title, p {
-		text-align: center;
-		display: block;
-		margin: 0 auto;
-	}
-
-	.title {
-		@include fontSize(32px);
-		font-weight: 600;
-		padding-bottom: 15px;
-	}
-}
-</style>

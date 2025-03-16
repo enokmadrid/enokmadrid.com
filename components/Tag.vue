@@ -1,64 +1,30 @@
 <template>
-    <span :class="theme">{{title}}</span>
+    <span :class="[
+        'inline-block font-[proxima-nova] text-[9px] font-bold uppercase tracking-wider leading-[22px] h-5 px-2 mb-4 rounded-md',
+        {
+            'text-primary bg-primary/15': theme === 'red',
+            'text-[#4540C2] bg-[#4540C2]/15': theme === 'burple',
+            'text-[#2F7D89] bg-[#2F7D89]/15': theme === 'mint',
+            'text-[#335EAD] bg-[#335EAD]/15': theme === 'blue',
+            'text-[#FF4F00] bg-[#FF4F00]/15': theme === 'orange',
+            'text-[#E91E63] bg-[#E91E63]/15': theme === 'raspberry'
+        }
+    ]">{{ title }}</span>
 </template>
 
 <script>
-
-    export default {
-        props: [
-            "title",
-            "theme"
-        ]
+export default {
+    name: 'Tag',
+    props: {
+        title: {
+            type: String,
+            required: true
+        },
+        theme: {
+            type: String,
+            required: true,
+            validator: (value) => ['red', 'burple', 'mint', 'blue', 'orange', 'raspberry'].includes(value)
+        }
     }
+}
 </script>
-
-<style lang="scss" scoped>
-@import '~/assets/scss/_mixins.scss';
-@mixin setTagColor($color) {
-    color: $color;
-    background-color: rgba($color, 0.15);
-}
-span {
-    display: inline-block;
-    font-family: "proxima-nova";
-    font-size: 9px;
-    font-weight: bold;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    line-height: 22px;
-    height: 20px;
-    padding-left: $space-tiny;
-    padding-right: $space-tiny;
-    margin-bottom: $space-small;
-    border-radius: $space-small;
-}
-.red {
-    @include setTagColor($brand-action-primary);
-}
-.burple {
-    @include setTagColor(#4540C2);
-}
-.mint {
-    @include setTagColor(#2F7D89);
-}
-.blue {
-    @include setTagColor(#335EAD);
-}
-.orange {
-    @include setTagColor(#FF4F00);
-}
-.raspberry {
-    @include setTagColor(#AA00B6);
-}
-.green {
-    @include setTagColor(#03A000);
-}
-.gold {
-    @include setTagColor(#AC7F00);
-}
-.gray {
-    @include setTagColor(#677077);
-}
-
-
-</style>
