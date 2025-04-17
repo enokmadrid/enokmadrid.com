@@ -1,6 +1,6 @@
 <template>
 	<section v-if="!loading" id="projects" class="py-16 mb-5">
-		<div class="grid container">
+		<div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 			<div class="item-first">
 				<span class="text-left text-6xl text-decoration block">Recent Work</span>
 				<img src="~/assets/images/svg/robot-animated.svg" width="360" height="281" alt="robot-animation" class="float-right">
@@ -29,7 +29,10 @@
 	</section>
 </template>
 
-<script lang="ts">
+<script setup lang="ts">
+import { ref, onMounted } from 'vue'
+import gql from 'graphql-tag'
+
 interface Project {
 	id: string;
 	title: string;
@@ -48,51 +51,70 @@ interface Project {
 	};
 }
 
-interface GraphQLResponse {
+interface ProjectsData {
 	projects: Project[];
 }
 
-export default {
-	data() {
-		return {
-			loading: true,
-			projects: [] as Project[]
-		}
-	},
-	async fetch() {
-		const query = `
-			query {
-				projects(first: 6, orderBy: order_ASC) {
-					id
-					title
-					slug
-					clientDescription
-					roles
-					order
-					color {
-						hex
-					}
-					imageCard {
-						url
-					}
-					imageHero {
-						url
-					}
-				}
+const loading = ref(true)
+const projects = ref<Project[]>([])
+
+const PROJECTS_QUERY = gql`
+	query GetProjects {
+		projects(first: 6, orderBy: order_ASC) {
+			id
+			title
+			slug
+			clientDescription
+			roles
+			order
+			color {
+				hex
 			}
-		`
-		const { projects } = (await this.$graphql.default.request(query)) as GraphQLResponse
-		this.projects = projects
-		this.loading = false
+			imageCard {
+				url
+			}
+			imageHero {
+				url
+			}
+		}
+	}
+`
+
+const fetchProjects = async () => {
+	try {
+		const nuxtApp = useNuxtApp()
+		const config = useRuntimeConfig()
+		console.log('Environment endpoint:', config.public.graphcmsEndpoint)
+		console.log('Apollo Client Config:', nuxtApp.$apollo.clients.default)
+		console.log('Query:', PROJECTS_QUERY)
+		const { data } = await nuxtApp.$apollo.clients.default.query<ProjectsData>({
+			query: PROJECTS_QUERY,
+			fetchPolicy: 'no-cache' // Temporarily disable cache to ensure fresh request
+		})
+		projects.value = data.projects
+		loading.value = false
+	} catch (error) {
+		if (error instanceof Error) {
+			console.error('Error details:', {
+				message: error.message,
+				// @ts-ignore - Apollo error properties
+				networkError: error.networkError,
+				// @ts-ignore - Apollo error properties
+				graphQLErrors: error.graphQLErrors
+			})
+		} else {
+			console.error('Unknown error:', error)
+		}
+		loading.value = false
 	}
 }
+
+onMounted(() => {
+	fetchProjects()
+})
 </script>
 
 <style lang="postcss" scoped>
-.grid {
-	@apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8;
-}
-
 .item-first {
 	@apply col-span-full text-center mb-16;
 }

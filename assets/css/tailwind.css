@@ -91,26 +91,6 @@
     @apply w-full md:w-2/3 px-4;
   }
   
-  .text-center {
-    @apply text-center;
-  }
-  
-  .d-flex {
-    @apply flex;
-  }
-  
-  .flex-column {
-    @apply flex-col;
-  }
-  
-  .justify-content-between {
-    @apply justify-between;
-  }
-  
-  .align-items-center {
-    @apply items-center;
-  }
-  
   .has-arrow {
     @apply relative;
   }

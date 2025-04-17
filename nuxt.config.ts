@@ -42,17 +42,34 @@ export default defineNuxtConfig({
 
   // Modules
   modules: [
-    '@nuxtjs/apollo',
+    // Temporarily disable Apollo until endpoint is fixed
+    // '@nuxtjs/apollo',
     '@pinia/nuxt',
-    '@nuxt/content'
+    '@nuxt/content',
+    '@nuxtjs/tailwindcss'
   ],
 
-  // Apollo configuration
+  // PostCSS Configuration
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
+
+  // Apollo configuration - temporarily disabled
+  /*
   apollo: {
     clients: {
       default: {
         httpEndpoint: process.env.GRAPHCMS_ENDPOINT ?? '',
         inMemoryCacheOptions: {},
+        httpLinkOptions: {
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+          }
+        },
         defaultOptions: {
           watchQuery: {
             fetchPolicy: 'cache-and-network',
@@ -61,6 +78,7 @@ export default defineNuxtConfig({
       }
     }
   },
+  */
 
   // Runtime config for environment variables
   runtimeConfig: {

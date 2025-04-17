@@ -1,11 +1,16 @@
 import { useAppStore } from '~/stores/app'
-import { projectsQuery, articlesQuery, videosQuery } from '~/graphql/queries'
-import type { ProjectsData, ArticlesData, VideosData } from '~/graphql/queries'
+// import { projectsQuery, articlesQuery, videosQuery } from '~/graphql/queries'
+// import type { ProjectsData, ArticlesData, VideosData } from '~/graphql/queries'
 
 export default defineNuxtPlugin(async (nuxtApp) => {
   const appStore = useAppStore()
-  const apollo = useApollo()
+  // Temporarily comment out Apollo usage
+  // const apollo = useApollo()
 
+  console.log('Init plugin loaded - Apollo queries disabled temporarily')
+
+  // Apollo client usage is disabled until endpoint issues are fixed
+  /*
   if (!apollo.clients?.default) {
     console.error('Apollo client not initialized')
     return
@@ -32,4 +37,10 @@ export default defineNuxtPlugin(async (nuxtApp) => {
   } catch (error) {
     console.error('Error initializing app data:', error)
   }
+  */
+
+  // Set empty placeholder data for development
+  appStore.setProjects([])
+  appStore.setArticles([])
+  appStore.setVideos([])
 }) 
