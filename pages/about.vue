@@ -30,7 +30,7 @@
 						<a target="_blank" href="http://www.enok-one.com">graffiti mural</a>. I'm always into something.
 					</p>
 					<Button class="btn btn-lg btn-primary rounded-pill brand-gradient has-arrow __right" href="https://www.linkedin.com/in/enokmadrid" target="_blank">Visit My Linkedin</Button>
-					<Button class="btn btn-lg btn-outline-primary rounded-pill" href="/enok_resume_2025.pdf" download target="_blank">Download My Resume <fa :icon="['fas', 'download']"/></Button>
+					<Button class="btn btn-lg btn-outline-primary rounded-pill" href="/files/enok_resume_2025.pdf" download target="_blank">Download My Resume <fa :icon="['fas', 'download']"/></Button>
 				</div>
 			</div>
 		</div>
