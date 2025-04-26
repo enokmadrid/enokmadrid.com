@@ -14,10 +14,10 @@
 				</div>
 				<div class="col-md-6 col-xs-12 copy-about">
 					<p>
-						My name is Enok Madrid, based in Las Vegas with over 7 years of experience - focused on uniting simplicity, form and function in modern web applications, with a fresh touch of ui design. That’s what makes me tick.
+						My name is Enok Madrid, based in Las Vegas with over 7 years of experience - focused on uniting simplicity, form and function in modern web applications, with a fresh touch of ui design. That's what makes me tick.
 					</p>
 					<p>
-						I’ve worked on all sorts of projects, and they all have one thing in common, that they had to sell, market and be promoted to make profits. The best way to achieve this is by going through a solid UX process, with focus on the user satisfaction and making sure everything is aligned with the business objectives. As much as I love design, how the product works is the most important and I achieve this by doing user research, usability testing, prototyping and reiterating the process. Every single detail matters - structure, typography, photography, proportions, colors, UI patterns, iconography, visual branding, content, etc. Everything must be synchronized to complete the maximum user experience.
+						I've worked on all sorts of projects, and they all have one thing in common, that they had to sell, market and be promoted to make profits. The best way to achieve this is by going through a solid UX process, with focus on the user satisfaction and making sure everything is aligned with the business objectives. As much as I love design, how the product works is the most important and I achieve this by doing user research, usability testing, prototyping and reiterating the process. Every single detail matters - structure, typography, photography, proportions, colors, UI patterns, iconography, visual branding, content, etc. Everything must be synchronized to complete the maximum user experience.
 					</p>
 				</div>
 				<div class="col-md-6 col-xs-12 copy-about">
@@ -25,11 +25,12 @@
 						My strength is in the design process and front-end development. Turning pixels into beautiful, semantic HTML & CSS. I have solid experience with front-end frameworks like Foundation and Bootstrap, as well as CMS systems including, GraphCMS, Strapi, AEM, and October CMS. I also have experience working on front-end templating in collaboration with backend engineers using frameworks like Laravel, Rails, and NuxtJS.
 					</p>
 					<p class="hidden-sm-down">
-						Beyond the Web Development spectrum, my interests include illustrating icons and graphical assets like mascots, logos and the whole branding process. When I’m not in front of the computer, I’ll switch gears to my creative side and work on some
+						Beyond the Web Development spectrum, my interests include illustrating icons and graphical assets like mascots, logos and the whole branding process. When I'm not in front of the computer, I'll switch gears to my creative side and work on some
 						<a target="_blank" href="http://www.airbrushlasvegas.com/enok-madrid">airbrush paintings</a> or simply plan for my next
-						<a target="_blank" href="http://www.enok-one.com">graffiti mural</a>. I’m always into something.
+						<a target="_blank" href="http://www.enok-one.com">graffiti mural</a>. I'm always into something.
 					</p>
-					<Button class="btn btn-lg btn-outline-primary rounded-pill has-arrow __right" href="https://www.linkedin.com/in/enokmadrid" target="_blank">View Resume</Button>
+					<Button class="btn btn-lg btn-primary rounded-pill brand-gradient has-arrow __right" href="https://www.linkedin.com/in/enokmadrid" target="_blank">Visit My Linkedin</Button>
+					<Button class="btn btn-lg btn-outline-primary rounded-pill" href="/enok_resume_2025.pdf" download target="_blank">Download My Resume <fa :icon="['fas', 'download']"/></Button>
 				</div>
 			</div>
 		</div>
